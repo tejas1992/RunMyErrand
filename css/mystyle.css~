@@ -1,0 +1,9 @@
+#Registerbtn{
+	padding-left:10px;
+	padding-top:10px;
+	}
+
+#loginwidget{
+padding-top:100px;
+}
+

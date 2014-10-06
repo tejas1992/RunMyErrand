@@ -16,22 +16,23 @@
                 <div class="panel-heading"> <strong class="">Login</strong>
                 </div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form">
+                    <form action="/RunMyErrand/LoginAuthentication.do" class="form-horizontal" role="form" method="post">
+                    	${error}
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
                             <div class="col-sm-9">
-                                <input class="form-control" id="inputEmail3" placeholder="Email" type="email">
+                                <input class="form-control" id="inputEmail3" placeholder="Email" type="email" name="email">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputPassword3" class="col-sm-3 control-label">Password</label>
                             <div class="col-sm-9">
-                                <input class="form-control" id="inputPassword3" placeholder="Password" type="password">
+                                <input class="form-control" id="inputPassword3" placeholder="Password" type="password" name="password">
                             </div>
                         </div>
                         <div class="form-group last">
                             <div class="col-sm-offset-3 col-sm-9">
-                                <button type="submit" class="btn btn-success btn-sm" onClick="dashboard.html">Sign in</button>
+                                <button type="submit" class="btn btn-success btn-sm">Sign in</button>
                                 <button type="reset" class="btn btn-default btn-sm">Reset</button>
                             </div>
                         </div>

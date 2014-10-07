@@ -1,5 +1,6 @@
 package com.runMyErrand.controllers;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,15 +13,17 @@ import com.runMyErrand.model.Login;
 @Controller
 public class LoginController{
 
+	private static final Logger logger = Logger.getLogger(LoginController.class);
+	
 	String username ="shah_tejas92@yahoo.co.in";
 	String password = "abcd";
 
 	@RequestMapping("/")
 	public ModelAndView login()
 	{
+		logger.debug("Entering Controller");
 		System.out.println("From database the value is :"+ JdbcDaoImpl.getCircleCount());
 		System.out.println("From database the name is :"+ JdbcDaoImpl.getName(1));
-		System.out.println("Hello");
 		ModelAndView model = new ModelAndView("signin");		
 		return model;
 	}

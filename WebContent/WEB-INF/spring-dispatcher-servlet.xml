@@ -10,11 +10,24 @@
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context.xsd">
   
- <context:component-scan base-package="com.runMyErrand.controllers"/>	
- 
-<mvc:resources mapping="bootstrap/css/**" location="bootstrap/css/"/>
-<mvc:resources mapping="bootstrap/js/**" location="bootstrap/js/"/>
+	<context:component-scan base-package="com.runMyErrand.controllers"/>	
+	<mvc:resources mapping="bootstrap/css/**" location="bootstrap/css/"/>
+	<mvc:resources mapping="bootstrap/js/**" location="bootstrap/js/"/>
 	<mvc:annotation-driven />
+	
+	<bean id = "dataSource" class = "org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name = "driverClassName" value = "com.mysql.jdbc.Driver"/>
+		<property name = "url" value = "jdbc:mysql://localhost/test"/>	
+	</bean>
+	
+	<bean id = "jdbcTemplate" class = "org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref = "dataSource"/>
+	</bean>
+	
+	<bean id = "jdbcDaoImpl" class = "com.runMyErrand.dao.JdbcDaoImpl">
+		<property name="jdbcTemplate" ref = "jdbcTemplate"/>
+	</bean>
+	 
 	 <bean id="viewResolver"
     	class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
         <property name="prefix">
@@ -23,7 +36,6 @@
         <property name="suffix">
             <value>.jsp</value>
         </property>
- </bean>
+ 	</bean>
 
-	
 </beans>

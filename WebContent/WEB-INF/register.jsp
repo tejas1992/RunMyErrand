@@ -1,60 +1,20 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-   <head>
-	<meta charset=”utf-8”> 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Sign in page</title>
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="bootstrap/css/datepicker.css">
-    <link rel="stylesheet" href="bootstrap/css/mystyle.css">		
-   </head>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
 <body>
-  <div class="container" id = "loginwidget">
-    <div class="row">
-        <div class="col-md-5 col-md-offset-3">
-            <div class="panel panel-default">
-                <div class="panel-heading"> <strong class="">Login</strong>
-                </div>
-                <div class="panel-body">
-                    <form action="/RunMyErrand/LoginAuthentication.do" class="form-horizontal" role="form" method="post">
-                    	${error}
-                        <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
-                            <div class="col-sm-9">
-                                <input class="form-control" id="inputEmail3" placeholder="Email" type="email" name="email">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputPassword3" class="col-sm-3 control-label">Password</label>
-                            <div class="col-sm-9">
-                                <input class="form-control" id="inputPassword3" placeholder="Password" type="password" name="password">
-                            </div>
-                        </div>
-                        <div class="form-group last">
-                            <div class="col-sm-offset-3 col-sm-9">
-                                <button type="submit" class="btn btn-success btn-sm">Sign in</button>
-                                <button type="reset" class="btn btn-default btn-sm">Reset</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="panel-footer">Not Registered? <a id="signupLink">Sign Up here</a>
-                </div>
-                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
-                      </div>
-                      <div class="modal-body">
-                            <form role="form" action="/RunMyErrand/Register.do" method="post">
+
+  <form role="form" action="/RunMyErrand/Register.do" method="post">
                                 <div class="form-group">
                                   <label for="firstname">
                                     First Name:
                                   </label>
                                   <div>
-                                    <input type="text" class="form-control" id="firstname" placeholder="Enter First Name" name="firstname">
+                                    <input type="text" class="form-control" id="firstname" placeholder="Enter First Name" name="firstName">
                                     <p class="help-block">
                                     </p>
                                   </div>
@@ -65,7 +25,7 @@
                                     Last Name:
                                   </label>
                                   <div>
-                                    <input type="text" class="form-control" id="lastname" placeholder="Enter Last Name" name="lastname">
+                                    <input type="text" class="form-control" id="lastname" placeholder="Enter Last Name" name="lastName">
                                     <p class="help-block">
                                     </p>
                                   </div>
@@ -123,7 +83,10 @@
                                     </p>
                                   </div>
                                 </div>
-                             
+                                <label for="room">
+                                    Room
+                                  </label>
+                                <input type="text" class="form-control" id="password" placeholder="Enter Password" name="room">
                                 <div class="form-group">
                                   <label for="password">
                                     Password:
@@ -145,23 +108,9 @@
                                     <p class="help-block">
                                     </p>
                                 </div>
+                                <button type="submit" class="btn btn-success btn-sm">Register</button>
                               </form>
-                        </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-success">Register</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
 
-            </div>
-        </div>
-    </div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="bootstrap/js/bootstrap-datepicker.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js"></script>
-        <script src="bootstrap/js/myscript.js"></script>	
-        </body>
+</body>
 </html>

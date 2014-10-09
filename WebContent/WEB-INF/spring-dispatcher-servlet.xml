@@ -27,6 +27,23 @@
 	<bean id = "jdbcDaoImpl" class = "com.runMyErrand.dao.JdbcDaoImpl">
 		<property name="jdbcTemplate" ref = "jdbcTemplate"/>
 	</bean>
+	
+	<bean id = "userDao" class = "com.runMyErrand.dao.UserDao">
+		<property name="jdbcTemplate" ref = "jdbcTemplate"/>
+	</bean>
+	
+	<bean id = "taskDao" class = "com.runMyErrand.dao.TaskDao">
+		<property name="jdbcTemplate" ref = "jdbcTemplate"/>
+	</bean>
+	
+	<bean id = "userservices" class = "com.runMyErrand.services.UserServices">
+		<property name="userDao" ref = "userDao"/>
+	</bean>
+	
+	<bean id = "taskservices" class = "com.runMyErrand.services.TaskServices">
+		<property name="taskDao" ref = "taskDao"/>
+	</bean>
+	
 	 
 	 <bean id="viewResolver"
     	class="org.springframework.web.servlet.view.InternalResourceViewResolver" >

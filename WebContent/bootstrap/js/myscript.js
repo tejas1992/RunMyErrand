@@ -1,6 +1,6 @@
 $(document).ready(function () {
 $('#dob').datepicker({
-    format: "dd/mm/yyyy"
+	format:"yyyy-mm-dd"
 });
 $('#signupLink').click(function(){
 	$("#myModal").modal({backdrop:false});

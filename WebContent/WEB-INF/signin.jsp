@@ -48,13 +48,13 @@
                         <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
                       </div>
                       <div class="modal-body">
-                            <form role="form" action="/RunMyErrand/Register.do" method="post">
+  						<form role="form" action="/RunMyErrand/Register.do" method="post">
                                 <div class="form-group">
                                   <label for="firstname">
                                     First Name:
                                   </label>
                                   <div>
-                                    <input type="text" class="form-control" id="firstname" placeholder="Enter First Name" name="firstname">
+                                    <input type="text" class="form-control" id="firstname" placeholder="Enter First Name" name="firstName">
                                     <p class="help-block">
                                     </p>
                                   </div>
@@ -65,7 +65,7 @@
                                     Last Name:
                                   </label>
                                   <div>
-                                    <input type="text" class="form-control" id="lastname" placeholder="Enter Last Name" name="lastname">
+                                    <input type="text" class="form-control" id="lastname" placeholder="Enter Last Name" name="lastName">
                                     <p class="help-block">
                                     </p>
                                   </div>
@@ -123,7 +123,10 @@
                                     </p>
                                   </div>
                                 </div>
-                             
+                                <label for="room">
+                                    Room
+                                  </label>
+                                <input type="text" class="form-control" id="password" placeholder="Enter Password" name="room">
                                 <div class="form-group">
                                   <label for="password">
                                     Password:
@@ -145,12 +148,11 @@
                                     <p class="help-block">
                                     </p>
                                 </div>
+                      <div class="modal-footer">
+                                <button type="submit" class="btn btn-success btn-sm">Register</button>
+                      </div>                                
                               </form>
                         </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-success">Register</button>
-                      </div>
                     </div>
                   </div>
                 </div>

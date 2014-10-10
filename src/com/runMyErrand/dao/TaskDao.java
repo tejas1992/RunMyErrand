@@ -2,15 +2,19 @@ package com.runMyErrand.dao;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.runMyErrand.model.TaskInfo;
+import com.runMyErrand.model.UserInfo;
 
 public class TaskDao {
 	
 private static JdbcTemplate jdbcTemplate;
 private static String sql;	
+
+private static final Logger logger = Logger.getLogger(TaskDao.class);
 
 	@Autowired
 	public void setJdbcTemplate(JdbcTemplate jdbcTemp) {
@@ -21,10 +25,45 @@ private static String sql;
 	{
 		sql = "select * from task";
 		List<TaskInfo> taskList = jdbcTemplate.query(sql, new TaskRowMapper());
-		System.out.println(taskList);
+		logger.debug(taskList);
 		
 		return taskList;
-		
 	}
-
+	
+	public static List<TaskInfo> selectAssigned(String firstname){
+		
+		String selectSql = "SELECT * from task where assignedto = ?";
+		List<TaskInfo> mytask;
+		try{
+			mytask = jdbcTemplate.query(selectSql, new Object[] {firstname}, new TaskRowMapper());
+			logger.debug(mytask);
+		}	
+		catch(Exception e)
+		{
+			mytask = null;
+		}
+		return  mytask;
+	}
+	
+	public static List<TaskInfo> selectUnAssigned(){
+		
+		String selectSql = "SELECT * from task where assignedto is ?";
+		List<TaskInfo> unassignedtask;
+		try{
+			unassignedtask = jdbcTemplate.query(selectSql, new Object[] {null}, new TaskRowMapper());
+			logger.debug(unassignedtask);
+		}	
+		catch(Exception e)
+		{
+			unassignedtask = null;
+		}
+		return  unassignedtask;
+	}
+	
+	public void updateTaskAssignedto(String task, String name)
+	{
+		jdbcTemplate.update("update task set assignedto = ? where taskDescription = ?", name, task);
+	}
+	
+	
 }

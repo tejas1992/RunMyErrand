@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -11,7 +12,8 @@ import org.springframework.jdbc.core.RowMapper;
 import com.runMyErrand.model.UserInfo;
 
 public class UserDao {
-	
+
+private static final Logger logger = Logger.getLogger(UserDao.class);
 private static JdbcTemplate jdbcTemplate;
 	
 	@Autowired
@@ -25,7 +27,7 @@ private static JdbcTemplate jdbcTemplate;
 		UserInfo info;
 		try{
 			info =  (UserInfo) jdbcTemplate.queryForObject(selectSql, new Object[] {username}, new UserRowMapper());
-			System.out.println(info.getFirstName());
+			logger.debug(info.getFirstName());
 		}	
 		catch(Exception e)
 		{
@@ -59,7 +61,6 @@ private static JdbcTemplate jdbcTemplate;
 		String password = user.getPassword();
 		
 		jdbcTemplate.update(insertSql,new Object[]{fname,lname, sex, dob, room, email, phone, password});
-		 
 		}
 }	
 

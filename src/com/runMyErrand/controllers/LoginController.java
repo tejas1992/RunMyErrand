@@ -1,43 +1,36 @@
 package com.runMyErrand.controllers;
 
 import java.util.ArrayList;
-import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.runMyErrand.dao.JdbcDaoImpl;
 import com.runMyErrand.model.UserInfo;
 import com.runMyErrand.services.TaskServices;
 import com.runMyErrand.services.UserServices;
 
 @Controller
+@SessionAttributes("user")
 public class LoginController{
 
-	//private static final Logger logger = Logger.getLogger(LoginController.class);
+	private static final Logger logger = Logger.getLogger(LoginController.class);
 	
-//	String username ="shah_tejas92@yahoo.co.in";
-//	String password = "abcd";
-
 	@RequestMapping("/")
 	public ModelAndView login()
 	{
-	//	logger.debug("Entering Controller");
-		System.out.println("From database the value is :"+ JdbcDaoImpl.getCircleCount());
-		System.out.println("From database the name is :"+ JdbcDaoImpl.getName(1));
+		logger.debug("Entering Controller");
 		ModelAndView model = new ModelAndView("signin");		
 		return model;
 	}
 	@RequestMapping("/register")
 	public ModelAndView register()
 	{
-	//	logger.debug("Entering Controller");
-		System.out.println("From database the value is :"+ JdbcDaoImpl.getCircleCount());
-		System.out.println("From database the name is :"+ JdbcDaoImpl.getName(1));
 		ModelAndView model = new ModelAndView("register");		
 		return model;
 	}
@@ -47,22 +40,17 @@ public class LoginController{
 		
 		ModelAndView model = new ModelAndView("signin");
 		String errormsg ="";
-		ArrayList list_roomy=null;
-		ArrayList list_task=null;
+		UserInfo user1 = UserServices.selectUser(username); 
 				
-		UserInfo user = UserServices.selectUser(username); //retriever userdata for the one who is trying to login
-				
-		if (user!=null)//checking username and password
+		if (user1!=null)
 		{
-			System.out.println("User retrieved");
-			if(user.getPassword().equals(password))
+			logger.debug("User retrieved");
+			if(user1.getPassword().equals(password))
 			{
-				System.out.println("password matched");
-				model = new ModelAndView("Dashboard");
-				list_roomy = (ArrayList) UserServices.selectMyRoomies(user.getRoom(), user.getFirstName());//getting other roommates
-				System.out.println(list_roomy);
-				list_task = (ArrayList) TaskServices.retriveAllTasks();
-				System.out.println(list_task);
+				model.addObject("user", user1);
+			//	model.addObject("email", )
+				logger.debug("password matched");
+				model = new ModelAndView("forward:dashboard");
 			}
 			else
 			{
@@ -73,13 +61,44 @@ public class LoginController{
 		{
 			errormsg = "Email Not found";
 		}
+		model.addObject("error", errormsg);		
+		logger.debug("leaving controller");				
+		return model;
+	}
+	
+	@RequestMapping("/dashboard")	
+	public ModelAndView dashboard(@RequestParam("email") String username)
+	{
+		logger.debug("Entered dashboard"+ username);
+		UserInfo user = UserServices.selectUser(username); 
 		
-		model.addObject("error", errormsg);
+		ArrayList list_roomy = (ArrayList) UserServices.selectMyRoomies(user.getRoom(), user.getFirstName());//getting other roommates
+		logger.debug(list_roomy);
+		ArrayList list_task = (ArrayList) TaskServices.retriveAllTasks();
+		logger.debug(list_task);
+		ArrayList mytasks = (ArrayList) TaskServices.retrieveMyTasks(user.getFirstName());
+		logger.debug(mytasks);
+		ArrayList unassignedtasks = (ArrayList) TaskServices.retrieveUnassignedTasks();
+		logger.debug(unassignedtasks);
+		ModelAndView model = new ModelAndView("Dashboard");
+
+	
 		model.addObject("user", user);
 		model.addObject("roomies", list_roomy);
 		model.addObject("tasks", list_task);
-						
+		model.addObject("mytasks", mytasks);
+		model.addObject("unassigned", unassignedtasks);
+		
 		return model;
+	}
+	
+	@RequestMapping(value="/Assigntask.do" ,method = RequestMethod.POST)
+	public ModelAndView assigntask(@RequestParam("task") String task, @RequestParam("assigned") String assignedto)
+	{
+		logger.debug("task: "+task);
+		logger.debug("assignedto: "+assignedto);
+		TaskServices.assignTask(task, assignedto);
+		return new ModelAndView("forward:dashboard");
 	}
 	
 	@RequestMapping(value="/Register.do", method = RequestMethod.POST)

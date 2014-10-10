@@ -17,11 +17,32 @@ Your Roomates are:
 </c:forEach></ul></p>
 <p>
 The Lists of Tasks are:
-<ul>
+<tr>
 <c:forEach var="tasks" items= "${tasks}">
-	<li> ${tasks.taskDescription} </li>              
+	<td> ${tasks.taskDescription} </td> 
+	<td> ${tasks.points}</td>            
+</c:forEach></tr></p>
+<p>
+Your tasks are:
+<ul>
+<c:forEach var="mytasks" items= "${mytasks}">
+	<li> ${mytasks.taskDescription} </li>              
 </c:forEach></ul></p>
-
+<form action="/RunMyErrand/Assigntask.do" method="post">
+<select name="task">
+<c:forEach var="tasksleft" items= "${unassigned}">
+	<option value="${tasksleft.taskDescription}">${tasksleft.taskDescription}</option>      
+</c:forEach></ul></p>
+</select>
+<select name="assigned">
+	<option value="${user.firstName}">${user.firstName}</option>
+<c:forEach var="roomy" items= "${roomies}">
+	<option value="${roomy}">${roomy}</option>      
+</c:forEach></ul></p>
+</select>
+<input type ="hidden" name="email" value="${user.email}" /> 
+<button type="submit">AssignTasks</button>
+</form>
 
 </body>
 </html>

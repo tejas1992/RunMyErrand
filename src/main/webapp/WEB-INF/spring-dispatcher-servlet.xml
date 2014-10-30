@@ -1,0 +1,60 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/mvc 
+    http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd	
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd">
+  
+	<context:component-scan base-package="com.runMyErrand.controllers"/>	
+	<mvc:resources mapping="bootstrap/css/**" location="bootstrap/css/"/>
+	<mvc:resources mapping="bootstrap/js/**" location="bootstrap/js/"/>
+	<mvc:annotation-driven />
+	
+	<bean id = "dataSource" class = "org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name = "driverClassName" value = "com.mysql.jdbc.Driver"/>
+		<property name = "url" value = "jdbc:mysql://localhost/test"/>	
+	</bean>
+	
+	<bean id = "jdbcTemplate" class = "org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref = "dataSource"/>
+	</bean>
+	
+	<bean id = "jdbcDaoImpl" class = "com.runMyErrand.dao.JdbcDaoImpl">
+		<property name="jdbcTemplate" ref = "jdbcTemplate"/>
+	</bean>
+	
+	<bean id = "userDao" class = "com.runMyErrand.dao.UserDao">
+		<property name="jdbcTemplate" ref = "jdbcTemplate"/>
+	</bean>
+	
+	<bean id = "taskDao" class = "com.runMyErrand.dao.TaskDao">
+		<property name="jdbcTemplate" ref = "jdbcTemplate"/>
+	</bean>
+	
+	<bean id = "userservices" class = "com.runMyErrand.services.UserServices">
+		<property name="userDao" ref = "userDao"/>
+	</bean>
+	
+	<bean id = "taskservices" class = "com.runMyErrand.services.TaskServices">
+		<property name="taskDao" ref = "taskDao"/>
+	</bean>
+	
+	
+	
+	 
+	 <bean id="viewResolver"
+    	class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
+        <property name="prefix">
+            <value>/WEB-INF/pages/</value>
+        </property>
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+ 	</bean>
+
+</beans>

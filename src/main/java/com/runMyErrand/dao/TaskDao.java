@@ -64,6 +64,18 @@ private static final Logger logger = Logger.getLogger(TaskDao.class);
 	{
 		jdbcTemplate.update("update task set assignedto = ? where taskDescription = ?", name, task);
 	}
+
+	public void insert(TaskInfo task) {
+		String insertSql ="INSERT INTO task (TaskDescription, Score, Start_Date, End_Date, Completed) VALUES(?,?,?,?,?);";
+
+		String desc = task.getTaskDescription();
+		int points = task.getPoints();
+		String sdate = task.getStartDate();
+		String edate = task.getEndDate();
+
+		jdbcTemplate.update(insertSql,new Object[]{desc,points, sdate, edate,0});
+		
+	}
 	
 	
 }

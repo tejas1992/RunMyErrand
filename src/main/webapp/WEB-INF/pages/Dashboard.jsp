@@ -12,16 +12,83 @@
     <link rel="stylesheet" href="bootstrap/css/mystyle.css">		
    </head>
 <body>
-	<c:url value="/j_spring_security_logout" var="logoutUrl" />  
   <div class="container">
     <div class = "row">
       <div class = "col-md-11">
          <h1>Dashboard of ${user.firstName}</h1>  
       </div>
       <div class = "col-md-1">
-          <h3><a href = "<c:url value="j_spring_security_logout" />">Logout</a></h3>
+          <h3><a href = "http://localhost:8080/RunMyErrand/">Logout</a></h3>
       </div>
     </div>  
+            <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal2">
+              Add a new task
+            </button>
+                
+                 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Add a new task</h4>
+                      </div>
+                      <div class="modal-body">
+                     <form role="form" action="/RunMyErrand/addtask.do" method="post">
+                                <div class="form-group">
+                                  <label for="taskDescription">
+                                    Description:
+                                  </label>
+                                  <div>
+                                    <input type="text" class="form-control" id="taskDescription" placeholder="Enter Task Description" name="taskDescription">
+                                    <p class="help-block">
+                                    </p>
+                                  </div>
+                                </div>
+                             
+                                <div class="form-group">
+                                  <label for="points">
+                                    Points:
+                                  </label>
+                                  <div>
+                                    <input type="text" class="form-control" id="points" placeholder="Enter Task points" name="points">
+                                    <p class="help-block">
+                                    </p>
+                                  </div>
+                                </div>
+                             
+                                <div class="form-group">
+                                  <label for="startDate">
+                                    Start Date:
+                                  </label>
+                                  <div>
+                                    <input  type="text" class="form-control" placeholder="Click to select Start Date"   id="startDate" name="startDate">
+                                    <p class="help-block">
+                                    </p>
+                                  </div>
+                                </div>
+
+                                <div class="form-group">
+                                  <label for="endDate">
+                                    End Date:
+                                  </label>
+                                  <div>
+                                    <input  type="text" class="form-control" placeholder="Click to select date of birth"   id="endDate" name="endDate">
+                                    <p class="help-block">
+                                    </p>
+                                  </div>
+                                </div>
+                                <input type ="hidden" name="email" value="${user.email}" /> 
+                      <div class="modal-footer">
+                                <button type="submit" class="btn btn-success btn-sm">Add Task</button>
+                      </div>                                
+                              </form>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
   <div class="panel-group" id="accordion">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -99,6 +166,7 @@
     </div>
    </div>
   </div>
+</div>
 </div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="bootstrap/js/bootstrap-datepicker.js"></script>

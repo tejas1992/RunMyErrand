@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.runMyErrand.dao.TaskDao;
+import com.runMyErrand.model.TaskInfo;
 
 @SuppressWarnings("rawtypes")
 
@@ -45,6 +46,10 @@ private static TaskDao taskdao;
 		logger.debug(task);
 		logger.debug(name);
 		getTaskDao().updateTaskAssignedto(task, name);
+	}
+
+	public static void addTask(TaskInfo task) {
+		getTaskDao().insert(task);		
 	}
 	
 

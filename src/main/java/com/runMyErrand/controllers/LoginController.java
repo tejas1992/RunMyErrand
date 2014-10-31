@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.runMyErrand.model.TaskInfo;
 import com.runMyErrand.model.UserInfo;
 import com.runMyErrand.services.TaskServices;
 import com.runMyErrand.services.UserServices;
@@ -49,6 +50,18 @@ public class LoginController{
 	{
 		ModelAndView model = new ModelAndView("signin");
 		model.addObject("error", "Invalid Username Or Password");
+		return model;
+	}
+	
+		
+	@RequestMapping(value="/Register.do", method = RequestMethod.POST)
+	public ModelAndView signup(@ModelAttribute("userinfo") UserInfo user)
+	{
+		UserServices.addUser(user);
+		
+		ModelAndView model = new ModelAndView("signin");
+		model.addObject("user", user);
+		
 		return model;
 	}
 	
@@ -91,14 +104,16 @@ public class LoginController{
 		return new ModelAndView("forward:dashboard");
 	}
 	
-	@RequestMapping(value="/Register.do", method = RequestMethod.POST)
-	public ModelAndView signup(@ModelAttribute("userinfo") UserInfo user)
-	{
-		UserServices.addUser(user);
-		
-		ModelAndView model = new ModelAndView("signin");
-		model.addObject("user", user);
-		
-		return model;
+	@RequestMapping(value = "/addtask.do", method = RequestMethod.POST)
+	public ModelAndView addtask(@ModelAttribute("task") TaskInfo task) {
+		logger.debug("Entering add task controller");
+		logger.info(task.getTaskDescription());
+		logger.info(task.getPoints());
+		logger.info(task.getStartDate());
+		logger.info(task.getEndDate());
+		TaskServices.addTask(task);
+		return new ModelAndView("forward:dashboard");
+
 	}
+
 }

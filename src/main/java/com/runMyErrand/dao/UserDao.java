@@ -36,20 +36,18 @@ private static JdbcTemplate jdbcTemplate;
 		return  info;
 	}
 	
-	public List<String> selectRoomies(String room, String name)
+	public List<UserInfo> selectRoomies(String room, String email)
 	{
-		String sql = "Select fname from userinfo where room = ? and fname != ?";
-		//return jdbcTemplate.query(sql, Object[]{room, name});
-		List<String> roomies = jdbcTemplate.query(sql, new Object[]{ room, name}, new RowMapper<String>(){
-            public String mapRow(ResultSet rs, int rowNum) throws SQLException {
-                    return rs.getString("fname");
-            }
-		});
+		String sql = "Select * from userinfo where room = ? and email != ?";
+		
+		List<UserInfo> roomies = jdbcTemplate.query(sql, new Object[]{ room, email}, new UserRowMapper());
         return roomies;
 	}
 	
-	public void insert(UserInfo user){
-		String insertSql ="INSERT INTO Userinfo (fname, lname, sex, dob, room, email, phone, password) VALUES(?,?,?,?,?,?,?,?);";
+	public String insertUserInfo(UserInfo user, String password){
+		String insertUserInfo ="INSERT INTO Userinfo (fname, lname, sex, dob, room, email, phone) VALUES(?,?,?,?,?,?,?);";
+		String insertUser = "INSERT INTO users(username, password, enabled) VALUES(?, ?, ?);";
+		String insertAuthority = "INSERT INTO authority(username, role) VALUES(?, ?);";
 		
 		String fname = user.getFirstName();
 		String lname = user.getLastName();
@@ -58,9 +56,22 @@ private static JdbcTemplate jdbcTemplate;
 		String email = user.getEmail();
 		String room = user.getRoom();
 		String phone = user.getPhoneNo();
-		String password = user.getPassword();
 		
-		jdbcTemplate.update(insertSql,new Object[]{fname,lname, sex, dob, room, email, phone, password});
+		try{
+			jdbcTemplate.update(insertUserInfo,new Object[]{fname,lname, sex, dob, room, email, phone});
+			jdbcTemplate.update(insertUser, new Object[]{email, password, 1});
+			jdbcTemplate.update(insertAuthority, new Object[]{email, "ROLE_USER"});
 		}
+		catch(Exception e)
+		{
+			logger.debug("email already exists");
+			return "Email already exist. Try signing up with a different email";
+		}
+		
+		
+		return null;
+	}
+	
+	
 }	
 

@@ -9,12 +9,17 @@
 
 	<http auto-config="true" use-expressions="true">
 		<intercept-url pattern="/dashboard**" access= "hasRole('ROLE_USER')" />
+		<intercept-url pattern="/Assigntask.do" access= "hasRole('ROLE_USER')" />
+		<intercept-url pattern="/roomyinfo/*" access= "hasRole('ROLE_USER')" />
 		<form-login login-page="/" 
 					default-target-url="/dashboard" 
 					authentication-failure-url="/loginfailed"
 					username-parameter="username"
 					password-parameter="password"/>
-		<logout logout-success-url="/logout" /> 
+		<session-management invalid-session-url="/" session-fixation-protection="newSession" >
+		   <concurrency-control max-sessions="1" error-if-maximum-exceeded="true" />
+		</session-management>
+		<logout logout-success-url="/logout" delete-cookies="JSESSIONID" /> 
 	</http>
 	
 	<authentication-manager>
@@ -26,7 +31,5 @@
 					"select username, role from authority where username =?  " />
 		</authentication-provider>
 	</authentication-manager>
-<!-- <session-management>
-    	<concurrency-control max-sessions="1" error-if-maximum-exceeded="true" />
-    </session-management> -->
+ 
 </beans:beans>

@@ -26,13 +26,14 @@ public class UserServices {
 		return getUserDao().selectOne(username);
 	}
 	
-	public static List<String> selectMyRoomies(String room, String name)
+	public static List<UserInfo> selectMyRoomies(String room, String email)
 	{
-		return getUserDao().selectRoomies(room, name);
+		return getUserDao().selectRoomies(room, email);
 	}
-	public static void addUser(UserInfo userinfo)
+	public static String addUser(UserInfo userinfo, String password)
 	{
-		getUserDao().insert(userinfo);
+		String success = getUserDao().insertUserInfo(userinfo, password);
+		return success;
 	}
 
 }

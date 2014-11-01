@@ -2,7 +2,10 @@ package com.runMyErrand.controllers;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.log4j.Logger;
+import org.springframework.http.HttpRequest;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -54,66 +57,20 @@ public class LoginController{
 	}
 	
 		
-	@RequestMapping(value="/Register.do", method = RequestMethod.POST)
-	public ModelAndView signup(@ModelAttribute("userinfo") UserInfo user)
-	{
-		UserServices.addUser(user);
+	@RequestMapping(value = "/Register.do", method = RequestMethod.POST)
+	public ModelAndView signup(@ModelAttribute("userinfo") UserInfo user,
+			@RequestParam("password") String password) {
 		
 		ModelAndView model = new ModelAndView("signin");
-		model.addObject("user", user);
+		String success = UserServices.addUser(user, password);
 		
+		if (success != null) {
+			model.addObject("error", success);
+		} 
+		else {
+			model.addObject("message", "Registration Successful. Please Login");
+			model.addObject("user", user);
+		}
 		return model;
 	}
-	
-	@RequestMapping("/dashboard**")	
-	public ModelAndView dashboard()
-	{
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-	   // String name = auth.getName();
-		
-		String username = auth.getName();
-		logger.debug("Entered dashboard"+ username);
-		UserInfo user = UserServices.selectUser(username); 
-		
-		ArrayList list_roomy = (ArrayList) UserServices.selectMyRoomies(user.getRoom(), user.getFirstName());//getting other roommates
-		logger.debug(list_roomy);
-		ArrayList list_task = (ArrayList) TaskServices.retriveAllTasks();
-		logger.debug(list_task);
-		ArrayList mytasks = (ArrayList) TaskServices.retrieveMyTasks(user.getFirstName());
-		logger.debug(mytasks);
-		ArrayList unassignedtasks = (ArrayList) TaskServices.retrieveUnassignedTasks();
-		logger.debug(unassignedtasks);
-		ModelAndView model = new ModelAndView("Dashboard");
-
-	
-		model.addObject("user", user);
-		model.addObject("roomies", list_roomy);
-		model.addObject("tasks", list_task);
-		model.addObject("mytasks", mytasks);
-		model.addObject("unassigned", unassignedtasks);
-		
-		return model;
-	}
-	
-	@RequestMapping(value="/Assigntask.do" ,method = RequestMethod.POST)
-	public ModelAndView assigntask(@RequestParam("task") String task, @RequestParam("assigned") String assignedto)
-	{
-		logger.debug("task: "+task);
-		logger.debug("assignedto: "+assignedto);
-		TaskServices.assignTask(task, assignedto);
-		return new ModelAndView("forward:dashboard");
-	}
-	
-	@RequestMapping(value = "/addtask.do", method = RequestMethod.POST)
-	public ModelAndView addtask(@ModelAttribute("task") TaskInfo task) {
-		logger.debug("Entering add task controller");
-		logger.info(task.getTaskDescription());
-		logger.info(task.getPoints());
-		logger.info(task.getStartDate());
-		logger.info(task.getEndDate());
-		TaskServices.addTask(task);
-		return new ModelAndView("forward:dashboard");
-
-	}
-
 }

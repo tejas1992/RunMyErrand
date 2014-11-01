@@ -22,6 +22,7 @@
                 <div class="panel-body">
                     <form action="<c:url value='/j_spring_security_check' />" class="form-horizontal" role="form" method="POST">
                     	${error}
+                    	${message}
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
                             <div class="col-sm-9">

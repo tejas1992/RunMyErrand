@@ -9,8 +9,7 @@ public class UserInfo {
 	private String email;
 	private String room;
 	private String phoneNo;
-	private String password;
-	
+		
 	public String getRoom() {
 		return room;
 	}
@@ -53,10 +52,5 @@ public class UserInfo {
 	public void setPhoneNo(String phoneNo) {
 		this.phoneNo = phoneNo;
 	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
+	
 }

@@ -1,181 +1,534 @@
-2014-10-19 19:04:40.706 DEBUG LoginController:27 - Entering Controller
-2014-10-19 19:05:05.107 DEBUG UserDao:30 - Tejas
-2014-10-19 19:05:05.109 DEBUG LoginController:47 - User retrieved
-2014-10-19 19:05:05.110 DEBUG LoginController:52 - password matched
-2014-10-19 19:05:05.111 DEBUG LoginController:65 - leaving controller
-2014-10-19 19:05:05.117 DEBUG LoginController:72 - Entered dashboardshah_tejas92@yahoo.co.in
-2014-10-19 19:05:05.169 DEBUG UserDao:30 - Tejas
-2014-10-19 19:05:05.230 DEBUG LoginController:76 - [Abhinav, Namrata, baba]
-2014-10-19 19:05:05.341 DEBUG TaskDao:28 - [com.runMyErrand.model.TaskInfo@5c00e819, com.runMyErrand.model.TaskInfo@3f85f07f, com.runMyErrand.model.TaskInfo@7270426d, com.runMyErrand.model.TaskInfo@28193ccd, com.runMyErrand.model.TaskInfo@10e6cb4c]
-2014-10-19 19:05:05.343 DEBUG LoginController:78 - [com.runMyErrand.model.TaskInfo@5c00e819, com.runMyErrand.model.TaskInfo@3f85f07f, com.runMyErrand.model.TaskInfo@7270426d, com.runMyErrand.model.TaskInfo@28193ccd, com.runMyErrand.model.TaskInfo@10e6cb4c]
-2014-10-19 19:05:05.409 DEBUG TaskDao:39 - [com.runMyErrand.model.TaskInfo@13e1668d, com.runMyErrand.model.TaskInfo@3313bd2d, com.runMyErrand.model.TaskInfo@54e8ef8d, com.runMyErrand.model.TaskInfo@8c73d88, com.runMyErrand.model.TaskInfo@5098b038]
-2014-10-19 19:05:05.410 DEBUG LoginController:80 - [com.runMyErrand.model.TaskInfo@13e1668d, com.runMyErrand.model.TaskInfo@3313bd2d, com.runMyErrand.model.TaskInfo@54e8ef8d, com.runMyErrand.model.TaskInfo@8c73d88, com.runMyErrand.model.TaskInfo@5098b038]
-2014-10-19 19:05:05.490 DEBUG TaskDao:54 - []
-2014-10-19 19:05:05.491 DEBUG LoginController:82 - []
-2014-10-19 19:05:09.486 DEBUG LoginController:27 - Entering Controller
-2014-10-19 19:05:18.931 DEBUG UserDao:30 - Tejas
-2014-10-19 19:05:18.935 DEBUG LoginController:47 - User retrieved
-2014-10-19 19:05:18.936 DEBUG LoginController:65 - leaving controller
-2014-10-19 19:05:26.914 DEBUG UserDao:30 - Tejas
-2014-10-19 19:05:26.915 DEBUG LoginController:47 - User retrieved
-2014-10-19 19:05:26.918 DEBUG LoginController:52 - password matched
-2014-10-19 19:05:26.920 DEBUG LoginController:65 - leaving controller
-2014-10-19 19:05:26.925 DEBUG LoginController:72 - Entered dashboardshah_tejas92@yahoo.co.in
-2014-10-19 19:05:27.008 DEBUG UserDao:30 - Tejas
-2014-10-19 19:05:27.044 DEBUG LoginController:76 - [Abhinav, Namrata, baba]
-2014-10-19 19:05:27.105 DEBUG TaskDao:28 - [com.runMyErrand.model.TaskInfo@510f00be, com.runMyErrand.model.TaskInfo@2ff9e385, com.runMyErrand.model.TaskInfo@3ec8495e, com.runMyErrand.model.TaskInfo@4f48da85, com.runMyErrand.model.TaskInfo@38027a6d]
-2014-10-19 19:05:27.109 DEBUG LoginController:78 - [com.runMyErrand.model.TaskInfo@510f00be, com.runMyErrand.model.TaskInfo@2ff9e385, com.runMyErrand.model.TaskInfo@3ec8495e, com.runMyErrand.model.TaskInfo@4f48da85, com.runMyErrand.model.TaskInfo@38027a6d]
-2014-10-19 19:05:27.184 DEBUG TaskDao:39 - [com.runMyErrand.model.TaskInfo@28e68a2f, com.runMyErrand.model.TaskInfo@377a28a3, com.runMyErrand.model.TaskInfo@350201c9, com.runMyErrand.model.TaskInfo@16c34e4f, com.runMyErrand.model.TaskInfo@704a3035]
-2014-10-19 19:05:27.185 DEBUG LoginController:80 - [com.runMyErrand.model.TaskInfo@28e68a2f, com.runMyErrand.model.TaskInfo@377a28a3, com.runMyErrand.model.TaskInfo@350201c9, com.runMyErrand.model.TaskInfo@16c34e4f, com.runMyErrand.model.TaskInfo@704a3035]
-2014-10-19 19:05:27.231 DEBUG TaskDao:54 - []
-2014-10-19 19:05:27.234 DEBUG LoginController:82 - []
-2014-10-19 19:11:16.779 DEBUG LoginController:27 - Entering Controller
-2014-10-19 19:13:38.318 DEBUG LoginController:27 - Entering Controller
-2014-10-29 01:38:05.570 DEBUG LoginController:27 - Entering Controller
-2014-10-29 01:39:59.489 DEBUG LoginController:27 - Entering Controller
-2014-10-29 01:41:35.042 DEBUG LoginController:27 - Entering Controller
-2014-10-29 01:41:43.789 DEBUG LoginController:27 - Entering Controller
-2014-10-29 03:05:11.638 DEBUG LoginController:27 - Entering Controller
-2014-10-29 03:05:21.940 DEBUG LoginController:27 - Entering Controller
-2014-10-29 03:05:42.921 DEBUG LoginController:27 - Entering Controller
-2014-10-29 03:24:24.849 DEBUG LoginController:27 - Entering Controller
-2014-10-29 19:00:40.457 DEBUG LoginController:29 - Entering Controller
-2014-10-29 19:01:01.340 DEBUG LoginController:29 - Entering Controller
-2014-10-29 19:01:07.355 DEBUG LoginController:62 - Entered dashboardanonymousUser
-2014-10-29 19:01:19.342 DEBUG LoginController:29 - Entering Controller
-2014-10-29 19:03:06.531 DEBUG LoginController:62 - Entered dashboardshah_tejas92@yahoo.co.in
-2014-10-29 19:03:06.676 DEBUG UserDao:30 - Tejas
-2014-10-29 19:03:06.728 DEBUG LoginController:66 - [Abhinav, Namrata, baba]
-2014-10-29 19:03:06.868 DEBUG TaskDao:28 - [com.runMyErrand.model.TaskInfo@132ce503, com.runMyErrand.model.TaskInfo@686f31ca, com.runMyErrand.model.TaskInfo@5c2dfa56, com.runMyErrand.model.TaskInfo@4e8e5361, com.runMyErrand.model.TaskInfo@62042d91]
-2014-10-29 19:03:06.870 DEBUG LoginController:68 - [com.runMyErrand.model.TaskInfo@132ce503, com.runMyErrand.model.TaskInfo@686f31ca, com.runMyErrand.model.TaskInfo@5c2dfa56, com.runMyErrand.model.TaskInfo@4e8e5361, com.runMyErrand.model.TaskInfo@62042d91]
-2014-10-29 19:03:06.905 DEBUG TaskDao:39 - [com.runMyErrand.model.TaskInfo@24ed3cfa, com.runMyErrand.model.TaskInfo@533e5406, com.runMyErrand.model.TaskInfo@20fe809c, com.runMyErrand.model.TaskInfo@24ad92b0, com.runMyErrand.model.TaskInfo@7f79739f]
-2014-10-29 19:03:06.906 DEBUG LoginController:70 - [com.runMyErrand.model.TaskInfo@24ed3cfa, com.runMyErrand.model.TaskInfo@533e5406, com.runMyErrand.model.TaskInfo@20fe809c, com.runMyErrand.model.TaskInfo@24ad92b0, com.runMyErrand.model.TaskInfo@7f79739f]
-2014-10-29 19:03:06.953 DEBUG TaskDao:54 - []
-2014-10-29 19:03:06.954 DEBUG LoginController:72 - []
-2014-10-29 19:04:34.224 DEBUG LoginController:62 - Entered dashboardshah_tejas92@yahoo.co.in
-2014-10-29 19:04:34.269 DEBUG UserDao:30 - Tejas
-2014-10-29 19:04:34.305 DEBUG LoginController:66 - [Abhinav, Namrata, baba]
-2014-10-29 19:04:34.343 DEBUG TaskDao:28 - [com.runMyErrand.model.TaskInfo@4f873240, com.runMyErrand.model.TaskInfo@34f4308a, com.runMyErrand.model.TaskInfo@b9ecf2f, com.runMyErrand.model.TaskInfo@67341c9e, com.runMyErrand.model.TaskInfo@e42fe01]
-2014-10-29 19:04:34.345 DEBUG LoginController:68 - [com.runMyErrand.model.TaskInfo@4f873240, com.runMyErrand.model.TaskInfo@34f4308a, com.runMyErrand.model.TaskInfo@b9ecf2f, com.runMyErrand.model.TaskInfo@67341c9e, com.runMyErrand.model.TaskInfo@e42fe01]
-2014-10-29 19:04:34.382 DEBUG TaskDao:39 - [com.runMyErrand.model.TaskInfo@52253f58, com.runMyErrand.model.TaskInfo@b61d48a, com.runMyErrand.model.TaskInfo@43c8b5dc, com.runMyErrand.model.TaskInfo@2e1ba148, com.runMyErrand.model.TaskInfo@17f9959e]
-2014-10-29 19:04:34.383 DEBUG LoginController:70 - [com.runMyErrand.model.TaskInfo@52253f58, com.runMyErrand.model.TaskInfo@b61d48a, com.runMyErrand.model.TaskInfo@43c8b5dc, com.runMyErrand.model.TaskInfo@2e1ba148, com.runMyErrand.model.TaskInfo@17f9959e]
-2014-10-29 19:04:34.425 DEBUG TaskDao:54 - []
-2014-10-29 19:04:34.428 DEBUG LoginController:72 - []
-2014-10-29 19:04:53.874 DEBUG LoginController:29 - Entering Controller
-2014-10-29 19:05:00.071 DEBUG LoginController:29 - Entering Controller
-2014-10-29 19:05:09.637 DEBUG LoginController:62 - Entered dashboardshah_tejas92@yahoo.co.in
-2014-10-29 19:05:09.706 DEBUG UserDao:30 - Tejas
-2014-10-29 19:05:09.774 DEBUG LoginController:66 - [Abhinav, Namrata, baba]
-2014-10-29 19:05:09.825 DEBUG TaskDao:28 - [com.runMyErrand.model.TaskInfo@31c11433, com.runMyErrand.model.TaskInfo@7b1539c9, com.runMyErrand.model.TaskInfo@2e84fa40, com.runMyErrand.model.TaskInfo@1c49979c, com.runMyErrand.model.TaskInfo@23809146]
-2014-10-29 19:05:09.827 DEBUG LoginController:68 - [com.runMyErrand.model.TaskInfo@31c11433, com.runMyErrand.model.TaskInfo@7b1539c9, com.runMyErrand.model.TaskInfo@2e84fa40, com.runMyErrand.model.TaskInfo@1c49979c, com.runMyErrand.model.TaskInfo@23809146]
-2014-10-29 19:05:09.865 DEBUG TaskDao:39 - [com.runMyErrand.model.TaskInfo@4f91212c, com.runMyErrand.model.TaskInfo@4118f883, com.runMyErrand.model.TaskInfo@4e6381d8, com.runMyErrand.model.TaskInfo@66e1b41c, com.runMyErrand.model.TaskInfo@6bf7cf08]
-2014-10-29 19:05:09.866 DEBUG LoginController:70 - [com.runMyErrand.model.TaskInfo@4f91212c, com.runMyErrand.model.TaskInfo@4118f883, com.runMyErrand.model.TaskInfo@4e6381d8, com.runMyErrand.model.TaskInfo@66e1b41c, com.runMyErrand.model.TaskInfo@6bf7cf08]
-2014-10-29 19:05:09.928 DEBUG TaskDao:54 - []
-2014-10-29 19:05:09.929 DEBUG LoginController:72 - []
-2014-10-29 19:08:39.269 DEBUG LoginController:29 - Entering Controller
-2014-10-29 19:08:46.832 DEBUG LoginController:29 - Entering Controller
-2014-10-29 19:08:54.065 DEBUG LoginController:62 - Entered dashboardshah_tejas92@yahoo.co.in
-2014-10-29 19:08:54.101 DEBUG UserDao:30 - Tejas
-2014-10-29 19:08:54.144 DEBUG LoginController:66 - [Abhinav, Namrata, baba]
-2014-10-29 19:08:54.191 DEBUG TaskDao:28 - [com.runMyErrand.model.TaskInfo@3901f9e7, com.runMyErrand.model.TaskInfo@30bdc9ee, com.runMyErrand.model.TaskInfo@7c144141, com.runMyErrand.model.TaskInfo@15c8520b, com.runMyErrand.model.TaskInfo@12825b59]
-2014-10-29 19:08:54.193 DEBUG LoginController:68 - [com.runMyErrand.model.TaskInfo@3901f9e7, com.runMyErrand.model.TaskInfo@30bdc9ee, com.runMyErrand.model.TaskInfo@7c144141, com.runMyErrand.model.TaskInfo@15c8520b, com.runMyErrand.model.TaskInfo@12825b59]
-2014-10-29 19:08:54.246 DEBUG TaskDao:39 - [com.runMyErrand.model.TaskInfo@6e156815, com.runMyErrand.model.TaskInfo@3f647329, com.runMyErrand.model.TaskInfo@5bc4a942, com.runMyErrand.model.TaskInfo@4c445b1f, com.runMyErrand.model.TaskInfo@1bba7757]
-2014-10-29 19:08:54.247 DEBUG LoginController:70 - [com.runMyErrand.model.TaskInfo@6e156815, com.runMyErrand.model.TaskInfo@3f647329, com.runMyErrand.model.TaskInfo@5bc4a942, com.runMyErrand.model.TaskInfo@4c445b1f, com.runMyErrand.model.TaskInfo@1bba7757]
-2014-10-29 19:08:54.282 DEBUG TaskDao:54 - []
-2014-10-29 19:08:54.283 DEBUG LoginController:72 - []
-2014-10-29 19:08:57.891 DEBUG LoginController:43 - Entering /logout
-2014-10-29 19:09:39.609 DEBUG LoginController:29 - Entering Controller
-2014-10-29 19:09:47.334 DEBUG LoginController:29 - Entering Controller
-2014-10-29 19:09:53.687 DEBUG LoginController:62 - Entered dashboardshah_tejas92@yahoo.co.in
-2014-10-29 19:09:53.736 DEBUG UserDao:30 - Tejas
-2014-10-29 19:09:53.789 DEBUG LoginController:66 - [Abhinav, Namrata, baba]
-2014-10-29 19:09:53.829 DEBUG TaskDao:28 - [com.runMyErrand.model.TaskInfo@48e32f94, com.runMyErrand.model.TaskInfo@3b48c2ee, com.runMyErrand.model.TaskInfo@25f5b5aa, com.runMyErrand.model.TaskInfo@2669bf5e, com.runMyErrand.model.TaskInfo@6892c805]
-2014-10-29 19:09:53.830 DEBUG LoginController:68 - [com.runMyErrand.model.TaskInfo@48e32f94, com.runMyErrand.model.TaskInfo@3b48c2ee, com.runMyErrand.model.TaskInfo@25f5b5aa, com.runMyErrand.model.TaskInfo@2669bf5e, com.runMyErrand.model.TaskInfo@6892c805]
-2014-10-29 19:09:53.866 DEBUG TaskDao:39 - [com.runMyErrand.model.TaskInfo@4043b48, com.runMyErrand.model.TaskInfo@31cff607, com.runMyErrand.model.TaskInfo@4c215f1d, com.runMyErrand.model.TaskInfo@22eb8ff7, com.runMyErrand.model.TaskInfo@1738b30a]
-2014-10-29 19:09:53.867 DEBUG LoginController:70 - [com.runMyErrand.model.TaskInfo@4043b48, com.runMyErrand.model.TaskInfo@31cff607, com.runMyErrand.model.TaskInfo@4c215f1d, com.runMyErrand.model.TaskInfo@22eb8ff7, com.runMyErrand.model.TaskInfo@1738b30a]
-2014-10-29 19:09:53.917 DEBUG TaskDao:54 - []
-2014-10-29 19:09:53.919 DEBUG LoginController:72 - []
-2014-10-29 19:09:56.535 DEBUG LoginController:43 - Entering /logout
-2014-10-29 19:09:59.350 DEBUG LoginController:62 - Entered dashboardanonymousUser
-2014-10-29 19:11:26.045 DEBUG LoginController:29 - Entering Controller
-2014-10-29 19:11:35.330 DEBUG LoginController:29 - Entering Controller
-2014-10-29 19:11:43.960 DEBUG LoginController:62 - Entered dashboardshah_tejas92@yahoo.co.in
-2014-10-29 19:11:44.011 DEBUG UserDao:30 - Tejas
-2014-10-29 19:11:44.054 DEBUG LoginController:66 - [Abhinav, Namrata, baba]
-2014-10-29 19:11:44.100 DEBUG TaskDao:28 - [com.runMyErrand.model.TaskInfo@87313f6, com.runMyErrand.model.TaskInfo@3b237fcf, com.runMyErrand.model.TaskInfo@179c0d5e, com.runMyErrand.model.TaskInfo@631a26e, com.runMyErrand.model.TaskInfo@249ee6ef]
-2014-10-29 19:11:44.103 DEBUG LoginController:68 - [com.runMyErrand.model.TaskInfo@87313f6, com.runMyErrand.model.TaskInfo@3b237fcf, com.runMyErrand.model.TaskInfo@179c0d5e, com.runMyErrand.model.TaskInfo@631a26e, com.runMyErrand.model.TaskInfo@249ee6ef]
-2014-10-29 19:11:44.137 DEBUG TaskDao:39 - [com.runMyErrand.model.TaskInfo@72abe407, com.runMyErrand.model.TaskInfo@7307c261, com.runMyErrand.model.TaskInfo@26aa947, com.runMyErrand.model.TaskInfo@288f758e, com.runMyErrand.model.TaskInfo@626ed26f]
-2014-10-29 19:11:44.139 DEBUG LoginController:70 - [com.runMyErrand.model.TaskInfo@72abe407, com.runMyErrand.model.TaskInfo@7307c261, com.runMyErrand.model.TaskInfo@26aa947, com.runMyErrand.model.TaskInfo@288f758e, com.runMyErrand.model.TaskInfo@626ed26f]
-2014-10-29 19:11:44.171 DEBUG TaskDao:54 - []
-2014-10-29 19:11:44.172 DEBUG LoginController:72 - []
-2014-10-29 19:11:47.419 DEBUG LoginController:43 - Entering /logout
-2014-10-29 19:11:49.785 DEBUG LoginController:62 - Entered dashboardanonymousUser
-2014-10-29 19:16:54.496 DEBUG LoginController:29 - Entering Controller
-2014-10-29 19:17:01.808 DEBUG LoginController:62 - Entered dashboardanonymousUser
-2014-10-29 19:17:07.449 DEBUG LoginController:29 - Entering Controller
-2014-10-29 19:17:14.757 DEBUG LoginController:62 - Entered dashboardanonymousUser
-2014-10-29 19:17:25.752 DEBUG LoginController:62 - Entered dashboardanonymousUser
-2014-10-29 19:35:27.528 DEBUG LoginController:29 - Entering Controller
-2014-10-29 19:35:57.417 DEBUG LoginController:29 - Entering Controller
-2014-10-29 19:38:19.818 DEBUG LoginController:29 - Entering Controller
-2014-10-29 19:38:28.677 DEBUG LoginController:29 - Entering Controller
-2014-10-29 19:39:21.938 DEBUG LoginController:29 - Entering Controller
-2014-10-29 19:39:29.032 DEBUG LoginController:29 - Entering Controller
-2014-10-29 19:40:15.793 DEBUG LoginController:29 - Entering Controller
-2014-10-29 19:40:25.339 DEBUG LoginController:29 - Entering Controller
-2014-10-29 19:41:34.346 DEBUG LoginController:29 - Entering Controller
-2014-10-29 19:41:41.808 DEBUG LoginController:29 - Entering Controller
-2014-10-29 19:41:47.587 DEBUG LoginController:29 - Entering Controller
-2014-10-29 19:42:43.969 DEBUG LoginController:29 - Entering Controller
-2014-10-29 19:42:50.000 DEBUG LoginController:62 - Entered dashboardshah_tejas92@yahoo.co.in
-2014-10-29 19:42:50.059 DEBUG UserDao:30 - Tejas
-2014-10-29 19:42:50.118 DEBUG LoginController:66 - [Abhinav, Namrata, baba]
-2014-10-29 19:42:50.180 DEBUG TaskDao:28 - [com.runMyErrand.model.TaskInfo@2754c15a, com.runMyErrand.model.TaskInfo@2d620fe2, com.runMyErrand.model.TaskInfo@100d5b5, com.runMyErrand.model.TaskInfo@5dce5e96, com.runMyErrand.model.TaskInfo@17a3f9f7]
-2014-10-29 19:42:50.182 DEBUG LoginController:68 - [com.runMyErrand.model.TaskInfo@2754c15a, com.runMyErrand.model.TaskInfo@2d620fe2, com.runMyErrand.model.TaskInfo@100d5b5, com.runMyErrand.model.TaskInfo@5dce5e96, com.runMyErrand.model.TaskInfo@17a3f9f7]
-2014-10-29 19:42:50.236 DEBUG TaskDao:39 - [com.runMyErrand.model.TaskInfo@7feec1bd, com.runMyErrand.model.TaskInfo@13f1a0e9, com.runMyErrand.model.TaskInfo@5c7b2b39, com.runMyErrand.model.TaskInfo@1a52da9e, com.runMyErrand.model.TaskInfo@358ec892]
-2014-10-29 19:42:50.237 DEBUG LoginController:70 - [com.runMyErrand.model.TaskInfo@7feec1bd, com.runMyErrand.model.TaskInfo@13f1a0e9, com.runMyErrand.model.TaskInfo@5c7b2b39, com.runMyErrand.model.TaskInfo@1a52da9e, com.runMyErrand.model.TaskInfo@358ec892]
-2014-10-29 19:42:50.302 DEBUG TaskDao:54 - []
-2014-10-29 19:42:50.304 DEBUG LoginController:72 - []
-2014-10-29 19:42:52.555 DEBUG LoginController:43 - Entering /logout
-2014-10-29 19:42:55.084 DEBUG LoginController:29 - Entering Controller
-2014-10-29 20:01:56.911 DEBUG LoginController:29 - Entering Controller
-2014-10-29 20:02:05.163 DEBUG LoginController:62 - Entered dashboardshah_tejas92@yahoo.co.in
-2014-10-29 20:02:05.201 DEBUG UserDao:30 - Tejas
-2014-10-29 20:02:05.279 DEBUG LoginController:66 - [Abhinav, Namrata, baba]
-2014-10-29 20:02:05.314 DEBUG TaskDao:28 - [com.runMyErrand.model.TaskInfo@32120874, com.runMyErrand.model.TaskInfo@3de9115a, com.runMyErrand.model.TaskInfo@10724b77, com.runMyErrand.model.TaskInfo@3fb87a10, com.runMyErrand.model.TaskInfo@6855d11e]
-2014-10-29 20:02:05.316 DEBUG LoginController:68 - [com.runMyErrand.model.TaskInfo@32120874, com.runMyErrand.model.TaskInfo@3de9115a, com.runMyErrand.model.TaskInfo@10724b77, com.runMyErrand.model.TaskInfo@3fb87a10, com.runMyErrand.model.TaskInfo@6855d11e]
-2014-10-29 20:02:05.360 DEBUG TaskDao:39 - [com.runMyErrand.model.TaskInfo@79f22cf1, com.runMyErrand.model.TaskInfo@a64c0c3, com.runMyErrand.model.TaskInfo@5cab4789, com.runMyErrand.model.TaskInfo@70e5a2e6, com.runMyErrand.model.TaskInfo@7429e3f1]
-2014-10-29 20:02:05.361 DEBUG LoginController:70 - [com.runMyErrand.model.TaskInfo@79f22cf1, com.runMyErrand.model.TaskInfo@a64c0c3, com.runMyErrand.model.TaskInfo@5cab4789, com.runMyErrand.model.TaskInfo@70e5a2e6, com.runMyErrand.model.TaskInfo@7429e3f1]
-2014-10-29 20:02:05.469 DEBUG TaskDao:54 - []
-2014-10-29 20:02:05.470 DEBUG LoginController:72 - []
-2014-10-29 20:02:08.396 DEBUG LoginController:43 - Entering /logout
-2014-10-29 20:02:10.607 DEBUG LoginController:29 - Entering Controller
-2014-10-29 20:02:13.696 DEBUG LoginController:29 - Entering Controller
-2014-10-29 20:02:13.916 DEBUG LoginController:29 - Entering Controller
-2014-10-29 20:02:14.117 DEBUG LoginController:29 - Entering Controller
-2014-10-29 20:04:02.907 DEBUG LoginController:29 - Entering Controller
-2014-10-29 20:04:16.271 DEBUG LoginController:62 - Entered dashboardshah_tejas92@yahoo.co.in
-2014-10-29 20:04:16.300 DEBUG UserDao:30 - Tejas
-2014-10-29 20:04:16.372 DEBUG LoginController:66 - [Abhinav, Namrata, baba]
-2014-10-29 20:04:16.405 DEBUG TaskDao:28 - [com.runMyErrand.model.TaskInfo@66463fe0, com.runMyErrand.model.TaskInfo@e0bbf95, com.runMyErrand.model.TaskInfo@254ed667, com.runMyErrand.model.TaskInfo@5ade1753, com.runMyErrand.model.TaskInfo@2acd78c0]
-2014-10-29 20:04:16.410 DEBUG LoginController:68 - [com.runMyErrand.model.TaskInfo@66463fe0, com.runMyErrand.model.TaskInfo@e0bbf95, com.runMyErrand.model.TaskInfo@254ed667, com.runMyErrand.model.TaskInfo@5ade1753, com.runMyErrand.model.TaskInfo@2acd78c0]
-2014-10-29 20:04:16.466 DEBUG TaskDao:39 - [com.runMyErrand.model.TaskInfo@1ac074d5, com.runMyErrand.model.TaskInfo@513659ab, com.runMyErrand.model.TaskInfo@47391334, com.runMyErrand.model.TaskInfo@741bdf73]
-2014-10-29 20:04:16.467 DEBUG LoginController:70 - [com.runMyErrand.model.TaskInfo@1ac074d5, com.runMyErrand.model.TaskInfo@513659ab, com.runMyErrand.model.TaskInfo@47391334, com.runMyErrand.model.TaskInfo@741bdf73]
-2014-10-29 20:04:16.522 DEBUG TaskDao:54 - [com.runMyErrand.model.TaskInfo@1a9be891]
-2014-10-29 20:04:16.523 DEBUG LoginController:72 - [com.runMyErrand.model.TaskInfo@1a9be891]
-2014-10-29 20:04:29.705 DEBUG LoginController:88 - task: Cleaning Dishes
-2014-10-29 20:04:29.707 DEBUG LoginController:89 - assignedto: Tejas
-2014-10-29 20:04:29.708 DEBUG TaskServices:44 - Entering Assign task
-2014-10-29 20:04:29.708 DEBUG TaskServices:45 - Cleaning Dishes
-2014-10-29 20:04:29.709 DEBUG TaskServices:46 - Tejas
-2014-10-29 20:04:29.792 DEBUG LoginController:62 - Entered dashboardshah_tejas92@yahoo.co.in
-2014-10-29 20:04:29.840 DEBUG UserDao:30 - Tejas
-2014-10-29 20:04:29.876 DEBUG LoginController:66 - [Abhinav, Namrata, baba]
-2014-10-29 20:04:29.943 DEBUG TaskDao:28 - [com.runMyErrand.model.TaskInfo@44e328f8, com.runMyErrand.model.TaskInfo@1d96d51d, com.runMyErrand.model.TaskInfo@19817218, com.runMyErrand.model.TaskInfo@16992bd, com.runMyErrand.model.TaskInfo@3a20b704]
-2014-10-29 20:04:29.946 DEBUG LoginController:68 - [com.runMyErrand.model.TaskInfo@44e328f8, com.runMyErrand.model.TaskInfo@1d96d51d, com.runMyErrand.model.TaskInfo@19817218, com.runMyErrand.model.TaskInfo@16992bd, com.runMyErrand.model.TaskInfo@3a20b704]
-2014-10-29 20:04:29.983 DEBUG TaskDao:39 - [com.runMyErrand.model.TaskInfo@7a6f415e, com.runMyErrand.model.TaskInfo@1e2cc11e, com.runMyErrand.model.TaskInfo@c3aa80c, com.runMyErrand.model.TaskInfo@5eeeb219, com.runMyErrand.model.TaskInfo@8eeb800]
-2014-10-29 20:04:29.984 DEBUG LoginController:70 - [com.runMyErrand.model.TaskInfo@7a6f415e, com.runMyErrand.model.TaskInfo@1e2cc11e, com.runMyErrand.model.TaskInfo@c3aa80c, com.runMyErrand.model.TaskInfo@5eeeb219, com.runMyErrand.model.TaskInfo@8eeb800]
-2014-10-29 20:04:30.007 DEBUG TaskDao:54 - []
-2014-10-29 20:04:30.008 DEBUG LoginController:72 - []
-2014-10-29 20:04:34.196 DEBUG LoginController:43 - Entering /logout
-2014-10-29 20:04:47.261 DEBUG LoginController:29 - Entering Controller
+2014-10-31 19:28:06.346 DEBUG LoginController:33 - Entering Controller
+2014-10-31 19:29:05.554 DEBUG LoginController:33 - Entering Controller
+2014-10-31 19:29:15.558 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-10-31 19:29:15.615 DEBUG UserDao:30 - Tejas
+2014-10-31 19:29:15.683 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@7dcbdb80]
+2014-10-31 19:29:15.684 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-10-31 19:29:15.727 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@1cee50af, com.runMyErrand.model.TaskInfo@61f31fff, com.runMyErrand.model.TaskInfo@20b9d096, com.runMyErrand.model.TaskInfo@72d38a3]
+2014-10-31 19:29:15.728 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@1cee50af, com.runMyErrand.model.TaskInfo@61f31fff, com.runMyErrand.model.TaskInfo@20b9d096, com.runMyErrand.model.TaskInfo@72d38a3]
+2014-10-31 19:29:15.729 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 19:29:15.774 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@46f3541e, com.runMyErrand.model.TaskInfo@1117a1f6]
+2014-10-31 19:29:15.775 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@46f3541e, com.runMyErrand.model.TaskInfo@1117a1f6]
+2014-10-31 19:29:15.833 DEBUG TaskDao:55 - [com.runMyErrand.model.TaskInfo@73f84a83]
+2014-10-31 19:29:15.834 DEBUG DashboardController:42 - [com.runMyErrand.model.TaskInfo@73f84a83]
+2014-10-31 19:30:09.982 DEBUG LoginController:33 - Entering Controller
+2014-10-31 19:30:17.569 DEBUG LoginController:33 - Entering Controller
+2014-10-31 19:30:28.297 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-10-31 19:30:28.338 DEBUG UserDao:30 - Tejas
+2014-10-31 19:30:28.380 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@277101bf]
+2014-10-31 19:30:28.384 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-10-31 19:30:28.420 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@7634c6b9, com.runMyErrand.model.TaskInfo@2e2d850, com.runMyErrand.model.TaskInfo@7ae76daa, com.runMyErrand.model.TaskInfo@6fd0f2ef]
+2014-10-31 19:30:28.421 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@7634c6b9, com.runMyErrand.model.TaskInfo@2e2d850, com.runMyErrand.model.TaskInfo@7ae76daa, com.runMyErrand.model.TaskInfo@6fd0f2ef]
+2014-10-31 19:30:28.423 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 19:30:28.459 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@5d15a5b8, com.runMyErrand.model.TaskInfo@383302c6]
+2014-10-31 19:30:28.460 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@5d15a5b8, com.runMyErrand.model.TaskInfo@383302c6]
+2014-10-31 19:30:28.490 DEBUG TaskDao:55 - [com.runMyErrand.model.TaskInfo@8445737]
+2014-10-31 19:30:28.491 DEBUG DashboardController:42 - [com.runMyErrand.model.TaskInfo@8445737]
+2014-10-31 19:30:33.507 DEBUG UserController:22 - Entered roomyinfo jmmodi@indiana
+2014-10-31 19:30:33.509 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 19:30:33.599 DEBUG TaskDao:39 - Mytask:[]
+2014-10-31 19:30:33.600 DEBUG UserController:28 - roomyInfo:[]
+2014-10-31 19:31:45.778 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-10-31 19:31:45.825 DEBUG UserDao:30 - Tejas
+2014-10-31 19:31:45.876 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@7d99dcc6]
+2014-10-31 19:31:45.877 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-10-31 19:31:45.961 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@7f30e007, com.runMyErrand.model.TaskInfo@61c42ccd, com.runMyErrand.model.TaskInfo@165978e0, com.runMyErrand.model.TaskInfo@4c0ec596]
+2014-10-31 19:31:45.963 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@7f30e007, com.runMyErrand.model.TaskInfo@61c42ccd, com.runMyErrand.model.TaskInfo@165978e0, com.runMyErrand.model.TaskInfo@4c0ec596]
+2014-10-31 19:31:45.964 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 19:31:46.000 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@7d9fb841, com.runMyErrand.model.TaskInfo@f9f3d6]
+2014-10-31 19:31:46.001 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@7d9fb841, com.runMyErrand.model.TaskInfo@f9f3d6]
+2014-10-31 19:31:46.031 DEBUG TaskDao:55 - [com.runMyErrand.model.TaskInfo@4330ad23]
+2014-10-31 19:31:46.032 DEBUG DashboardController:42 - [com.runMyErrand.model.TaskInfo@4330ad23]
+2014-10-31 19:32:19.550 DEBUG LoginController:33 - Entering Controller
+2014-10-31 19:32:25.525 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-10-31 19:32:25.558 DEBUG UserDao:30 - Tejas
+2014-10-31 19:32:25.589 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@7843fcef]
+2014-10-31 19:32:25.589 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-10-31 19:32:25.620 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@1d269d64, com.runMyErrand.model.TaskInfo@52271f2f, com.runMyErrand.model.TaskInfo@67070cc, com.runMyErrand.model.TaskInfo@3ffd6461]
+2014-10-31 19:32:25.620 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@1d269d64, com.runMyErrand.model.TaskInfo@52271f2f, com.runMyErrand.model.TaskInfo@67070cc, com.runMyErrand.model.TaskInfo@3ffd6461]
+2014-10-31 19:32:25.620 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 19:32:25.651 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@4a6227db, com.runMyErrand.model.TaskInfo@7226c103]
+2014-10-31 19:32:25.651 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@4a6227db, com.runMyErrand.model.TaskInfo@7226c103]
+2014-10-31 19:32:25.682 DEBUG TaskDao:55 - [com.runMyErrand.model.TaskInfo@64e1d399, com.runMyErrand.model.TaskInfo@260b158d]
+2014-10-31 19:32:25.682 DEBUG DashboardController:42 - [com.runMyErrand.model.TaskInfo@64e1d399, com.runMyErrand.model.TaskInfo@260b158d]
+2014-10-31 19:32:37.289 DEBUG TaskController:27 - task: Vacuum Cleaning
+2014-10-31 19:32:37.289 DEBUG TaskController:28 - assignedto: jmmodi@indiana.edu
+2014-10-31 19:32:37.289 DEBUG TaskServices:47 - Entering Assign task
+2014-10-31 19:32:37.289 DEBUG TaskServices:48 - Vacuum Cleaning
+2014-10-31 19:32:37.289 DEBUG TaskServices:49 - shah_tejas92@yahoo.co.in
+2014-10-31 19:32:37.321 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-10-31 19:32:37.368 DEBUG UserDao:30 - Tejas
+2014-10-31 19:32:37.399 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@49eda637]
+2014-10-31 19:32:37.399 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-10-31 19:32:37.430 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@6193196a, com.runMyErrand.model.TaskInfo@69b032, com.runMyErrand.model.TaskInfo@1aaea2d4, com.runMyErrand.model.TaskInfo@3f4419fb]
+2014-10-31 19:32:37.430 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@6193196a, com.runMyErrand.model.TaskInfo@69b032, com.runMyErrand.model.TaskInfo@1aaea2d4, com.runMyErrand.model.TaskInfo@3f4419fb]
+2014-10-31 19:32:37.430 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 19:32:37.508 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@6bdf5f43, com.runMyErrand.model.TaskInfo@15e75f09, com.runMyErrand.model.TaskInfo@910531b]
+2014-10-31 19:32:37.508 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@6bdf5f43, com.runMyErrand.model.TaskInfo@15e75f09, com.runMyErrand.model.TaskInfo@910531b]
+2014-10-31 19:32:37.524 DEBUG TaskDao:55 - [com.runMyErrand.model.TaskInfo@24d21e08]
+2014-10-31 19:32:37.524 DEBUG DashboardController:42 - [com.runMyErrand.model.TaskInfo@24d21e08]
+2014-10-31 19:32:43.389 DEBUG TaskController:27 - task: Clean the Car
+2014-10-31 19:32:43.389 DEBUG TaskController:28 - assignedto: jmmodi@indiana.edu
+2014-10-31 19:32:43.389 DEBUG TaskServices:47 - Entering Assign task
+2014-10-31 19:32:43.389 DEBUG TaskServices:48 - Clean the Car
+2014-10-31 19:32:43.389 DEBUG TaskServices:49 - shah_tejas92@yahoo.co.in
+2014-10-31 19:32:43.437 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-10-31 19:32:43.468 DEBUG UserDao:30 - Tejas
+2014-10-31 19:32:43.484 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@49658441]
+2014-10-31 19:32:43.500 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-10-31 19:32:43.515 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@2a798f1e, com.runMyErrand.model.TaskInfo@12a3105b, com.runMyErrand.model.TaskInfo@f86cfec, com.runMyErrand.model.TaskInfo@5bbc96ea]
+2014-10-31 19:32:43.531 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@2a798f1e, com.runMyErrand.model.TaskInfo@12a3105b, com.runMyErrand.model.TaskInfo@f86cfec, com.runMyErrand.model.TaskInfo@5bbc96ea]
+2014-10-31 19:32:43.531 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 19:32:43.546 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@4588f02b, com.runMyErrand.model.TaskInfo@214fbab7, com.runMyErrand.model.TaskInfo@796b5576, com.runMyErrand.model.TaskInfo@75b7f440]
+2014-10-31 19:32:43.562 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@4588f02b, com.runMyErrand.model.TaskInfo@214fbab7, com.runMyErrand.model.TaskInfo@796b5576, com.runMyErrand.model.TaskInfo@75b7f440]
+2014-10-31 19:32:43.624 DEBUG TaskDao:55 - []
+2014-10-31 19:32:43.624 DEBUG DashboardController:42 - []
+2014-10-31 19:36:15.437 DEBUG LoginController:33 - Entering Controller
+2014-10-31 19:37:13.045 DEBUG LoginController:33 - Entering Controller
+2014-10-31 19:37:19.995 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-10-31 19:37:20.045 DEBUG UserDao:30 - Tejas
+2014-10-31 19:37:20.096 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@20ad7108]
+2014-10-31 19:37:20.097 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-10-31 19:37:20.138 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@4765bae4, com.runMyErrand.model.TaskInfo@67d0f35a, com.runMyErrand.model.TaskInfo@4718cef5, com.runMyErrand.model.TaskInfo@2dbb5b4a]
+2014-10-31 19:37:20.139 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@4765bae4, com.runMyErrand.model.TaskInfo@67d0f35a, com.runMyErrand.model.TaskInfo@4718cef5, com.runMyErrand.model.TaskInfo@2dbb5b4a]
+2014-10-31 19:37:20.140 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 19:37:20.178 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@bdbc4bb]
+2014-10-31 19:37:20.179 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@bdbc4bb]
+2014-10-31 19:37:20.230 DEBUG TaskDao:55 - [com.runMyErrand.model.TaskInfo@3aee65b7, com.runMyErrand.model.TaskInfo@7957ef9a, com.runMyErrand.model.TaskInfo@7c33a5b2]
+2014-10-31 19:37:20.231 DEBUG DashboardController:42 - [com.runMyErrand.model.TaskInfo@3aee65b7, com.runMyErrand.model.TaskInfo@7957ef9a, com.runMyErrand.model.TaskInfo@7c33a5b2]
+2014-10-31 19:38:31.466 DEBUG TaskController:27 - task: Vacuum Cleaning
+2014-10-31 19:38:31.466 DEBUG TaskController:28 - assignedto: jmmodi@indiana.edu
+2014-10-31 19:38:31.466 DEBUG TaskServices:47 - Entering Assign task
+2014-10-31 19:38:31.466 DEBUG TaskServices:48 - Vacuum Cleaning
+2014-10-31 19:38:31.466 DEBUG TaskServices:49 - jmmodi@indiana.edu
+2014-10-31 19:38:31.514 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-10-31 19:38:31.545 DEBUG UserDao:30 - Tejas
+2014-10-31 19:38:31.576 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@40b6fb1b]
+2014-10-31 19:38:31.576 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-10-31 19:38:31.608 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@778fe91b, com.runMyErrand.model.TaskInfo@91128f0, com.runMyErrand.model.TaskInfo@4596a936, com.runMyErrand.model.TaskInfo@263f3beb]
+2014-10-31 19:38:31.608 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@778fe91b, com.runMyErrand.model.TaskInfo@91128f0, com.runMyErrand.model.TaskInfo@4596a936, com.runMyErrand.model.TaskInfo@263f3beb]
+2014-10-31 19:38:31.623 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 19:38:31.654 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@184cdd35]
+2014-10-31 19:38:31.654 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@184cdd35]
+2014-10-31 19:38:31.701 DEBUG TaskDao:55 - [com.runMyErrand.model.TaskInfo@a98f9ee, com.runMyErrand.model.TaskInfo@41407db1]
+2014-10-31 19:38:31.701 DEBUG DashboardController:42 - [com.runMyErrand.model.TaskInfo@a98f9ee, com.runMyErrand.model.TaskInfo@41407db1]
+2014-10-31 19:38:38.577 DEBUG TaskController:27 - task: Cooking
+2014-10-31 19:38:38.578 DEBUG TaskController:28 - assignedto: shah_tejas92@yahoo.co.in
+2014-10-31 19:38:38.579 DEBUG TaskServices:47 - Entering Assign task
+2014-10-31 19:38:38.580 DEBUG TaskServices:48 - Cooking
+2014-10-31 19:38:38.581 DEBUG TaskServices:49 - shah_tejas92@yahoo.co.in
+2014-10-31 19:38:38.622 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-10-31 19:38:38.731 DEBUG UserDao:30 - Tejas
+2014-10-31 19:38:38.763 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@726a5002]
+2014-10-31 19:38:38.768 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-10-31 19:38:38.809 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@7b1539c9, com.runMyErrand.model.TaskInfo@2e84fa40, com.runMyErrand.model.TaskInfo@1c49979c, com.runMyErrand.model.TaskInfo@23809146]
+2014-10-31 19:38:38.810 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@7b1539c9, com.runMyErrand.model.TaskInfo@2e84fa40, com.runMyErrand.model.TaskInfo@1c49979c, com.runMyErrand.model.TaskInfo@23809146]
+2014-10-31 19:38:38.812 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 19:38:38.848 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@7cad967c, com.runMyErrand.model.TaskInfo@6872e6d6]
+2014-10-31 19:38:38.850 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@7cad967c, com.runMyErrand.model.TaskInfo@6872e6d6]
+2014-10-31 19:38:38.882 DEBUG TaskDao:55 - [com.runMyErrand.model.TaskInfo@66e1b41c]
+2014-10-31 19:38:38.883 DEBUG DashboardController:42 - [com.runMyErrand.model.TaskInfo@66e1b41c]
+2014-10-31 19:38:45.291 DEBUG TaskController:27 - task: Clean the Car
+2014-10-31 19:38:45.292 DEBUG TaskController:28 - assignedto: jmmodi@indiana.edu
+2014-10-31 19:38:45.294 DEBUG TaskServices:47 - Entering Assign task
+2014-10-31 19:38:45.294 DEBUG TaskServices:48 - Clean the Car
+2014-10-31 19:38:45.295 DEBUG TaskServices:49 - jmmodi@indiana.edu
+2014-10-31 19:38:45.334 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-10-31 19:38:45.421 DEBUG UserDao:30 - Tejas
+2014-10-31 19:38:45.458 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@3ecd4682]
+2014-10-31 19:38:45.459 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-10-31 19:38:45.470 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@57b38184, com.runMyErrand.model.TaskInfo@49fc2e17, com.runMyErrand.model.TaskInfo@4b360df3, com.runMyErrand.model.TaskInfo@49cdf318]
+2014-10-31 19:38:45.486 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@57b38184, com.runMyErrand.model.TaskInfo@49fc2e17, com.runMyErrand.model.TaskInfo@4b360df3, com.runMyErrand.model.TaskInfo@49cdf318]
+2014-10-31 19:38:45.486 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 19:38:45.517 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@3500b854, com.runMyErrand.model.TaskInfo@4245adfb]
+2014-10-31 19:38:45.517 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@3500b854, com.runMyErrand.model.TaskInfo@4245adfb]
+2014-10-31 19:38:45.548 DEBUG TaskDao:55 - []
+2014-10-31 19:38:45.548 DEBUG DashboardController:42 - []
+2014-10-31 19:38:51.715 DEBUG UserController:22 - Entered roomyinfo jmmodi@indiana
+2014-10-31 19:38:51.716 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 19:38:51.747 DEBUG TaskDao:39 - Mytask:[]
+2014-10-31 19:38:51.748 DEBUG UserController:28 - roomyInfo:[]
+2014-10-31 19:44:16.111 DEBUG LoginController:33 - Entering Controller
+2014-10-31 19:44:56.909 DEBUG LoginController:33 - Entering Controller
+2014-10-31 19:45:05.034 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-10-31 19:45:05.050 DEBUG UserDao:30 - Tejas
+2014-10-31 19:45:05.082 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@52f54af0]
+2014-10-31 19:45:05.082 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-10-31 19:45:05.113 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@1d7e0813, com.runMyErrand.model.TaskInfo@3d442685, com.runMyErrand.model.TaskInfo@453d052f, com.runMyErrand.model.TaskInfo@291f742c]
+2014-10-31 19:45:05.113 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@1d7e0813, com.runMyErrand.model.TaskInfo@3d442685, com.runMyErrand.model.TaskInfo@453d052f, com.runMyErrand.model.TaskInfo@291f742c]
+2014-10-31 19:45:05.113 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 19:45:05.144 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@66938a3e, com.runMyErrand.model.TaskInfo@6059210e]
+2014-10-31 19:45:05.144 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@66938a3e, com.runMyErrand.model.TaskInfo@6059210e]
+2014-10-31 19:45:05.175 DEBUG TaskDao:55 - []
+2014-10-31 19:45:05.175 DEBUG DashboardController:42 - []
+2014-10-31 19:45:11.166 DEBUG UserController:22 - Entered roomyinfo jmmodi@indiana
+2014-10-31 19:45:11.168 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 19:45:11.193 DEBUG TaskDao:39 - Mytask:[]
+2014-10-31 19:45:11.194 DEBUG UserController:28 - roomyInfo:[]
+2014-10-31 19:49:31.719 DEBUG LoginController:33 - Entering Controller
+2014-10-31 19:49:43.286 DEBUG LoginController:33 - Entering Controller
+2014-10-31 19:49:49.321 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-10-31 19:49:49.376 DEBUG UserDao:30 - Tejas
+2014-10-31 19:49:49.432 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@1ed73524]
+2014-10-31 19:49:49.433 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-10-31 19:49:49.474 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@6e658b3b, com.runMyErrand.model.TaskInfo@4c98071c, com.runMyErrand.model.TaskInfo@10fae68d, com.runMyErrand.model.TaskInfo@48363bb0]
+2014-10-31 19:49:49.475 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@6e658b3b, com.runMyErrand.model.TaskInfo@4c98071c, com.runMyErrand.model.TaskInfo@10fae68d, com.runMyErrand.model.TaskInfo@48363bb0]
+2014-10-31 19:49:49.476 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 19:49:49.512 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@4f223c86, com.runMyErrand.model.TaskInfo@50b3aa00]
+2014-10-31 19:49:49.514 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@4f223c86, com.runMyErrand.model.TaskInfo@50b3aa00]
+2014-10-31 19:49:49.578 DEBUG TaskDao:55 - []
+2014-10-31 19:49:49.579 DEBUG DashboardController:42 - []
+2014-10-31 19:49:52.959 DEBUG UserController:24 - Entered roomyinfo jmmodi@indiana
+2014-10-31 19:49:52.961 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 19:49:52.997 DEBUG TaskDao:39 - Mytask:[]
+2014-10-31 19:49:53.001 DEBUG UserController:30 - roomyInfo:[]
+2014-10-31 19:55:04.336 DEBUG LoginController:33 - Entering Controller
+2014-10-31 19:55:23.702 DEBUG LoginController:33 - Entering Controller
+2014-10-31 19:55:29.897 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-10-31 19:55:29.953 DEBUG UserDao:30 - Tejas
+2014-10-31 19:55:30.017 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@281077ac]
+2014-10-31 19:55:30.019 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-10-31 19:55:30.062 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@7f4bd389, com.runMyErrand.model.TaskInfo@4b2d08a9, com.runMyErrand.model.TaskInfo@7993b5cd, com.runMyErrand.model.TaskInfo@5084e416]
+2014-10-31 19:55:30.063 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@7f4bd389, com.runMyErrand.model.TaskInfo@4b2d08a9, com.runMyErrand.model.TaskInfo@7993b5cd, com.runMyErrand.model.TaskInfo@5084e416]
+2014-10-31 19:55:30.064 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 19:55:30.116 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@64324eef, com.runMyErrand.model.TaskInfo@22dc604d]
+2014-10-31 19:55:30.117 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@64324eef, com.runMyErrand.model.TaskInfo@22dc604d]
+2014-10-31 19:55:30.181 DEBUG TaskDao:55 - []
+2014-10-31 19:55:30.182 DEBUG DashboardController:42 - []
+2014-10-31 19:55:32.389 DEBUG UserController:24 - Entered roomyinfo jmmodi@indiana.edu
+2014-10-31 19:55:32.391 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 19:55:32.438 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@64008acd, com.runMyErrand.model.TaskInfo@5f98cc05]
+2014-10-31 19:55:32.442 DEBUG UserController:30 - roomyInfo:[com.runMyErrand.model.TaskInfo@64008acd, com.runMyErrand.model.TaskInfo@5f98cc05]
+2014-10-31 19:58:21.636 DEBUG LoginController:33 - Entering Controller
+2014-10-31 19:58:21.901 DEBUG LoginController:33 - Entering Controller
+2014-10-31 19:58:33.603 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-10-31 19:58:33.669 DEBUG UserDao:30 - Tejas
+2014-10-31 19:58:33.735 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@72d38a3]
+2014-10-31 19:58:33.737 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-10-31 19:58:33.781 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@489c9308, com.runMyErrand.model.TaskInfo@1f791776, com.runMyErrand.model.TaskInfo@46f3541e, com.runMyErrand.model.TaskInfo@1117a1f6]
+2014-10-31 19:58:33.782 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@489c9308, com.runMyErrand.model.TaskInfo@1f791776, com.runMyErrand.model.TaskInfo@46f3541e, com.runMyErrand.model.TaskInfo@1117a1f6]
+2014-10-31 19:58:33.784 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 19:58:33.829 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@31e419f0, com.runMyErrand.model.TaskInfo@7662f526]
+2014-10-31 19:58:33.831 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@31e419f0, com.runMyErrand.model.TaskInfo@7662f526]
+2014-10-31 19:58:33.884 DEBUG TaskDao:55 - []
+2014-10-31 19:58:33.886 DEBUG DashboardController:42 - []
+2014-10-31 19:58:36.378 DEBUG UserController:24 - Entered roomyinfo jmmodi@indiana.edu
+2014-10-31 19:58:36.380 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 19:58:36.423 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@1b1bca6c, com.runMyErrand.model.TaskInfo@3d86865b]
+2014-10-31 19:58:36.428 DEBUG UserController:30 - roomyInfo:[com.runMyErrand.model.TaskInfo@1b1bca6c, com.runMyErrand.model.TaskInfo@3d86865b]
+2014-10-31 20:00:12.156 DEBUG LoginController:33 - Entering Controller
+2014-10-31 20:00:12.437 DEBUG LoginController:33 - Entering Controller
+2014-10-31 20:00:19.864 DEBUG LoginController:33 - Entering Controller
+2014-10-31 20:00:26.586 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-10-31 20:00:26.644 DEBUG UserDao:30 - Tejas
+2014-10-31 20:00:26.700 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@3033dde9]
+2014-10-31 20:00:26.702 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-10-31 20:00:26.751 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@1cc202b4, com.runMyErrand.model.TaskInfo@53f862c, com.runMyErrand.model.TaskInfo@d81b565, com.runMyErrand.model.TaskInfo@3eac00d0]
+2014-10-31 20:00:26.752 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@1cc202b4, com.runMyErrand.model.TaskInfo@53f862c, com.runMyErrand.model.TaskInfo@d81b565, com.runMyErrand.model.TaskInfo@3eac00d0]
+2014-10-31 20:00:26.753 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 20:00:26.803 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@41aabddc, com.runMyErrand.model.TaskInfo@3096d832]
+2014-10-31 20:00:26.804 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@41aabddc, com.runMyErrand.model.TaskInfo@3096d832]
+2014-10-31 20:00:26.855 DEBUG TaskDao:55 - []
+2014-10-31 20:00:26.856 DEBUG DashboardController:42 - []
+2014-10-31 20:00:28.414 DEBUG UserController:24 - Entered roomyinfo jmmodi@indiana.edu
+2014-10-31 20:00:28.415 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 20:00:28.461 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@6080a863, com.runMyErrand.model.TaskInfo@1eaf2d14]
+2014-10-31 20:00:28.464 DEBUG UserController:30 - roomyInfo:[com.runMyErrand.model.TaskInfo@6080a863, com.runMyErrand.model.TaskInfo@1eaf2d14]
+2014-10-31 20:06:35.203 DEBUG LoginController:33 - Entering Controller
+2014-10-31 20:06:59.790 DEBUG LoginController:33 - Entering Controller
+2014-10-31 20:07:05.298 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-10-31 20:07:05.349 DEBUG UserDao:30 - Tejas
+2014-10-31 20:07:05.398 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@482092f4]
+2014-10-31 20:07:05.399 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-10-31 20:07:05.440 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@2bd45389, com.runMyErrand.model.TaskInfo@b85dda, com.runMyErrand.model.TaskInfo@48199394, com.runMyErrand.model.TaskInfo@727fe87]
+2014-10-31 20:07:05.441 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@2bd45389, com.runMyErrand.model.TaskInfo@b85dda, com.runMyErrand.model.TaskInfo@48199394, com.runMyErrand.model.TaskInfo@727fe87]
+2014-10-31 20:07:05.443 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 20:07:05.480 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@62b8f140, com.runMyErrand.model.TaskInfo@5be6d362]
+2014-10-31 20:07:05.481 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@62b8f140, com.runMyErrand.model.TaskInfo@5be6d362]
+2014-10-31 20:07:05.537 DEBUG TaskDao:55 - []
+2014-10-31 20:07:05.538 DEBUG DashboardController:42 - []
+2014-10-31 20:07:07.554 DEBUG UserController:24 - Entered roomyinfo jmmodi@indiana.edu
+2014-10-31 20:07:07.555 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 20:07:07.608 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@3feee562, com.runMyErrand.model.TaskInfo@5d15a5b8]
+2014-10-31 20:07:07.613 DEBUG UserController:30 - roomyInfo:[com.runMyErrand.model.TaskInfo@3feee562, com.runMyErrand.model.TaskInfo@5d15a5b8]
+2014-10-31 20:07:07.704 DEBUG UserController:24 - Entered roomyinfo jmmodi@indiana.edu
+2014-10-31 20:07:07.718 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 20:07:07.754 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@339b9, com.runMyErrand.model.TaskInfo@53c2a0b0]
+2014-10-31 20:07:07.756 DEBUG UserController:30 - roomyInfo:[com.runMyErrand.model.TaskInfo@339b9, com.runMyErrand.model.TaskInfo@53c2a0b0]
+2014-10-31 20:10:36.116 DEBUG LoginController:33 - Entering Controller
+2014-10-31 20:10:45.274 DEBUG LoginController:33 - Entering Controller
+2014-10-31 20:10:51.067 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-10-31 20:10:51.103 DEBUG UserDao:30 - Tejas
+2014-10-31 20:10:51.151 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@260b158d]
+2014-10-31 20:10:51.152 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-10-31 20:10:51.194 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@2f7fa30, com.runMyErrand.model.TaskInfo@664a66d5, com.runMyErrand.model.TaskInfo@1ea55e6a, com.runMyErrand.model.TaskInfo@7ad990dd]
+2014-10-31 20:10:51.195 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@2f7fa30, com.runMyErrand.model.TaskInfo@664a66d5, com.runMyErrand.model.TaskInfo@1ea55e6a, com.runMyErrand.model.TaskInfo@7ad990dd]
+2014-10-31 20:10:51.196 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 20:10:51.242 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@1115793a, com.runMyErrand.model.TaskInfo@18c9d799]
+2014-10-31 20:10:51.243 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@1115793a, com.runMyErrand.model.TaskInfo@18c9d799]
+2014-10-31 20:10:51.306 DEBUG TaskDao:55 - []
+2014-10-31 20:10:51.308 DEBUG DashboardController:42 - []
+2014-10-31 20:10:52.993 DEBUG UserController:24 - Entered roomyinfo jmmodi@indiana.edu
+2014-10-31 20:10:52.994 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 20:10:53.031 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@113b8acc, com.runMyErrand.model.TaskInfo@5c155fea]
+2014-10-31 20:10:53.032 DEBUG UserController:30 - roomyInfo:[com.runMyErrand.model.TaskInfo@113b8acc, com.runMyErrand.model.TaskInfo@5c155fea]
+2014-10-31 20:12:05.066 DEBUG LoginController:33 - Entering Controller
+2014-10-31 20:12:11.190 DEBUG LoginController:33 - Entering Controller
+2014-10-31 20:12:16.660 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-10-31 20:12:16.715 DEBUG UserDao:30 - Tejas
+2014-10-31 20:12:16.776 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@21c2d11]
+2014-10-31 20:12:16.777 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-10-31 20:12:16.820 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@62b8f140, com.runMyErrand.model.TaskInfo@5be6d362, com.runMyErrand.model.TaskInfo@f3ff611, com.runMyErrand.model.TaskInfo@3033dde9]
+2014-10-31 20:12:16.822 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@62b8f140, com.runMyErrand.model.TaskInfo@5be6d362, com.runMyErrand.model.TaskInfo@f3ff611, com.runMyErrand.model.TaskInfo@3033dde9]
+2014-10-31 20:12:16.823 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 20:12:16.864 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@d81b565, com.runMyErrand.model.TaskInfo@3eac00d0]
+2014-10-31 20:12:16.865 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@d81b565, com.runMyErrand.model.TaskInfo@3eac00d0]
+2014-10-31 20:12:16.927 DEBUG TaskDao:55 - []
+2014-10-31 20:12:16.929 DEBUG DashboardController:42 - []
+2014-10-31 20:12:18.419 DEBUG UserController:24 - Entered roomyinfo jmmodi@indiana.edu
+2014-10-31 20:12:18.421 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 20:12:18.460 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@2d3e1c30, com.runMyErrand.model.TaskInfo@48acaa84]
+2014-10-31 20:12:18.465 DEBUG UserController:30 - roomyInfo:[com.runMyErrand.model.TaskInfo@2d3e1c30, com.runMyErrand.model.TaskInfo@48acaa84]
+2014-10-31 23:37:29.025 DEBUG LoginController:33 - Entering Controller
+2014-10-31 23:37:44.122 DEBUG UserController:24 - Entered roomyinfo jmmodi@indiana.edu
+2014-10-31 23:37:44.123 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 23:37:44.164 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@27b4e09d, com.runMyErrand.model.TaskInfo@540677c8]
+2014-10-31 23:37:44.166 DEBUG UserController:30 - roomyInfo:[com.runMyErrand.model.TaskInfo@27b4e09d, com.runMyErrand.model.TaskInfo@540677c8]
+2014-10-31 23:37:56.573 DEBUG UserController:24 - Entered roomyinfo shah_tejas92@yahoo.co.in
+2014-10-31 23:37:56.574 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 23:37:56.614 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@627ad5a0, com.runMyErrand.model.TaskInfo@6e5f2de2]
+2014-10-31 23:37:56.616 DEBUG UserController:30 - roomyInfo:[com.runMyErrand.model.TaskInfo@627ad5a0, com.runMyErrand.model.TaskInfo@6e5f2de2]
+2014-10-31 23:39:13.304 DEBUG LoginController:33 - Entering Controller
+2014-10-31 23:39:22.533 DEBUG LoginController:33 - Entering Controller
+2014-10-31 23:39:29.619 DEBUG LoginController:33 - Entering Controller
+2014-10-31 23:39:35.569 DEBUG UserController:24 - Entered roomyinfo shah_tejas92@yahoo.co.in
+2014-10-31 23:39:35.570 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 23:39:35.624 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@52b754bc, com.runMyErrand.model.TaskInfo@21c2d11]
+2014-10-31 23:39:35.625 DEBUG UserController:30 - roomyInfo:[com.runMyErrand.model.TaskInfo@52b754bc, com.runMyErrand.model.TaskInfo@21c2d11]
+2014-10-31 23:39:49.810 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-10-31 23:39:49.887 DEBUG UserDao:30 - Tejas
+2014-10-31 23:39:49.926 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@5c2cd07c]
+2014-10-31 23:39:49.927 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-10-31 23:39:49.969 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@33a33621, com.runMyErrand.model.TaskInfo@2036cb03, com.runMyErrand.model.TaskInfo@6d4a427a, com.runMyErrand.model.TaskInfo@26528fa4]
+2014-10-31 23:39:49.971 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@33a33621, com.runMyErrand.model.TaskInfo@2036cb03, com.runMyErrand.model.TaskInfo@6d4a427a, com.runMyErrand.model.TaskInfo@26528fa4]
+2014-10-31 23:39:49.972 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 23:39:50.019 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@70cede61, com.runMyErrand.model.TaskInfo@1d69ec23]
+2014-10-31 23:39:50.021 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@70cede61, com.runMyErrand.model.TaskInfo@1d69ec23]
+2014-10-31 23:39:50.100 DEBUG TaskDao:55 - []
+2014-10-31 23:39:50.101 DEBUG DashboardController:42 - []
+2014-10-31 23:39:57.722 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-10-31 23:39:57.756 DEBUG UserDao:30 - Tejas
+2014-10-31 23:39:57.796 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@5614bd77]
+2014-10-31 23:39:57.797 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-10-31 23:39:57.850 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@2ae6d0e2, com.runMyErrand.model.TaskInfo@179bbb6f, com.runMyErrand.model.TaskInfo@712e8084, com.runMyErrand.model.TaskInfo@23f79429]
+2014-10-31 23:39:57.851 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@2ae6d0e2, com.runMyErrand.model.TaskInfo@179bbb6f, com.runMyErrand.model.TaskInfo@712e8084, com.runMyErrand.model.TaskInfo@23f79429]
+2014-10-31 23:39:57.852 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 23:39:57.887 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@1d0c495f, com.runMyErrand.model.TaskInfo@11a50adf]
+2014-10-31 23:39:57.888 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@1d0c495f, com.runMyErrand.model.TaskInfo@11a50adf]
+2014-10-31 23:39:57.921 DEBUG TaskDao:55 - []
+2014-10-31 23:39:57.922 DEBUG DashboardController:42 - []
+2014-10-31 23:56:24.976 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-10-31 23:56:25.052 DEBUG UserDao:30 - Tejas
+2014-10-31 23:56:25.085 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@3ac8e0b1]
+2014-10-31 23:56:25.086 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-10-31 23:56:25.172 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@736fc7b6, com.runMyErrand.model.TaskInfo@2fa0b8ef, com.runMyErrand.model.TaskInfo@60cd6b56, com.runMyErrand.model.TaskInfo@4e420cc0]
+2014-10-31 23:56:25.177 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@736fc7b6, com.runMyErrand.model.TaskInfo@2fa0b8ef, com.runMyErrand.model.TaskInfo@60cd6b56, com.runMyErrand.model.TaskInfo@4e420cc0]
+2014-10-31 23:56:25.178 DEBUG TaskServices:36 - retrieveMyTasks
+2014-10-31 23:56:25.208 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@f1935c1, com.runMyErrand.model.TaskInfo@401819a5]
+2014-10-31 23:56:25.209 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@f1935c1, com.runMyErrand.model.TaskInfo@401819a5]
+2014-10-31 23:56:25.243 DEBUG TaskDao:55 - []
+2014-10-31 23:56:25.244 DEBUG DashboardController:42 - []
+2014-11-01 16:02:25.531 DEBUG LoginController:33 - Entering Controller
+2014-11-01 16:03:16.637 DEBUG LoginController:33 - Entering Controller
+2014-11-01 16:05:38.286 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-11-01 16:05:38.387 DEBUG UserDao:30 - Tejas
+2014-11-01 16:05:38.470 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@4af224f7]
+2014-11-01 16:05:38.471 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-11-01 16:05:38.597 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@60785ecd, com.runMyErrand.model.TaskInfo@7e981635, com.runMyErrand.model.TaskInfo@32da3281, com.runMyErrand.model.TaskInfo@1329cd3c]
+2014-11-01 16:05:38.599 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@60785ecd, com.runMyErrand.model.TaskInfo@7e981635, com.runMyErrand.model.TaskInfo@32da3281, com.runMyErrand.model.TaskInfo@1329cd3c]
+2014-11-01 16:05:38.600 DEBUG TaskServices:36 - retrieveMyTasks
+2014-11-01 16:05:38.644 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@75079a7b, com.runMyErrand.model.TaskInfo@462f3d43]
+2014-11-01 16:05:38.645 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@75079a7b, com.runMyErrand.model.TaskInfo@462f3d43]
+2014-11-01 16:06:36.401 DEBUG TaskDao:55 - []
+2014-11-01 16:06:36.405 DEBUG TaskController:30 - []
+2014-11-01 16:10:12.906 DEBUG LoginController:33 - Entering Controller
+2014-11-01 16:10:19.097 DEBUG LoginController:33 - Entering Controller
+2014-11-01 16:10:30.397 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-11-01 16:10:30.436 DEBUG UserDao:30 - Tejas
+2014-11-01 16:10:30.490 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@4f120e7]
+2014-11-01 16:10:30.491 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-11-01 16:10:30.530 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@bd0db2d, com.runMyErrand.model.TaskInfo@3ce56d6a, com.runMyErrand.model.TaskInfo@7a726961, com.runMyErrand.model.TaskInfo@6d649e14]
+2014-11-01 16:10:30.531 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@bd0db2d, com.runMyErrand.model.TaskInfo@3ce56d6a, com.runMyErrand.model.TaskInfo@7a726961, com.runMyErrand.model.TaskInfo@6d649e14]
+2014-11-01 16:10:30.533 DEBUG TaskServices:36 - retrieveMyTasks
+2014-11-01 16:10:30.568 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@7d8ae49a, com.runMyErrand.model.TaskInfo@29a67ada]
+2014-11-01 16:10:30.569 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@7d8ae49a, com.runMyErrand.model.TaskInfo@29a67ada]
+2014-11-01 16:10:33.867 DEBUG TaskDao:55 - []
+2014-11-01 16:10:33.868 DEBUG TaskController:30 - []
+2014-11-01 16:11:26.785 DEBUG TaskDao:55 - [com.runMyErrand.model.TaskInfo@e4be64a, com.runMyErrand.model.TaskInfo@18fc0b9b]
+2014-11-01 16:11:26.787 DEBUG TaskController:30 - [com.runMyErrand.model.TaskInfo@e4be64a, com.runMyErrand.model.TaskInfo@18fc0b9b]
+2014-11-01 16:14:05.745 DEBUG LoginController:33 - Entering Controller
+2014-11-01 16:17:49.967 DEBUG LoginController:33 - Entering Controller
+2014-11-01 16:17:57.748 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-11-01 16:17:57.802 DEBUG UserDao:30 - Tejas
+2014-11-01 16:17:57.855 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@62722d44]
+2014-11-01 16:17:57.857 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-11-01 16:17:57.896 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@1715987a, com.runMyErrand.model.TaskInfo@acd7d6d, com.runMyErrand.model.TaskInfo@38e584a5, com.runMyErrand.model.TaskInfo@646789d1]
+2014-11-01 16:17:57.898 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@1715987a, com.runMyErrand.model.TaskInfo@acd7d6d, com.runMyErrand.model.TaskInfo@38e584a5, com.runMyErrand.model.TaskInfo@646789d1]
+2014-11-01 16:17:57.899 DEBUG TaskServices:36 - retrieveMyTasks
+2014-11-01 16:17:57.938 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@4921abe5, com.runMyErrand.model.TaskInfo@419c6ce5]
+2014-11-01 16:17:57.939 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@4921abe5, com.runMyErrand.model.TaskInfo@419c6ce5]
+2014-11-01 16:18:02.699 DEBUG TaskDao:55 - [com.runMyErrand.model.TaskInfo@77a7b3d5, com.runMyErrand.model.TaskInfo@230fa252]
+2014-11-01 16:18:02.700 DEBUG TaskController:30 - [com.runMyErrand.model.TaskInfo@77a7b3d5, com.runMyErrand.model.TaskInfo@230fa252]
+2014-11-01 16:19:14.051 DEBUG LoginController:33 - Entering Controller
+2014-11-01 16:19:28.650 DEBUG LoginController:33 - Entering Controller
+2014-11-01 16:19:38.581 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-11-01 16:19:38.619 DEBUG UserDao:30 - Tejas
+2014-11-01 16:19:38.651 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@7043a6e6]
+2014-11-01 16:19:38.652 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-11-01 16:19:38.687 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@247eb64f, com.runMyErrand.model.TaskInfo@7af30f40, com.runMyErrand.model.TaskInfo@6b6e71cf, com.runMyErrand.model.TaskInfo@1ff20423]
+2014-11-01 16:19:38.688 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@247eb64f, com.runMyErrand.model.TaskInfo@7af30f40, com.runMyErrand.model.TaskInfo@6b6e71cf, com.runMyErrand.model.TaskInfo@1ff20423]
+2014-11-01 16:19:38.690 DEBUG TaskServices:36 - retrieveMyTasks
+2014-11-01 16:19:38.725 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@7f4c2ae0, com.runMyErrand.model.TaskInfo@6193196a]
+2014-11-01 16:19:38.726 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@7f4c2ae0, com.runMyErrand.model.TaskInfo@6193196a]
+2014-11-01 16:19:59.150 DEBUG TaskDao:55 - [com.runMyErrand.model.TaskInfo@49658441, com.runMyErrand.model.TaskInfo@27cded0c]
+2014-11-01 16:19:59.151 DEBUG TaskController:30 - [com.runMyErrand.model.TaskInfo@49658441, com.runMyErrand.model.TaskInfo@27cded0c]
+2014-11-01 16:29:41.227 DEBUG LoginController:33 - Entering Controller
+2014-11-01 16:29:49.666 DEBUG LoginController:33 - Entering Controller
+2014-11-01 16:29:57.991 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-11-01 16:29:58.027 DEBUG UserDao:30 - Tejas
+2014-11-01 16:29:58.063 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@21d18342]
+2014-11-01 16:29:58.064 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-11-01 16:29:58.143 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@2fb365c8, com.runMyErrand.model.TaskInfo@2adf45ef, com.runMyErrand.model.TaskInfo@286863e6, com.runMyErrand.model.TaskInfo@5d76a5c3]
+2014-11-01 16:29:58.144 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@2fb365c8, com.runMyErrand.model.TaskInfo@2adf45ef, com.runMyErrand.model.TaskInfo@286863e6, com.runMyErrand.model.TaskInfo@5d76a5c3]
+2014-11-01 16:29:58.146 DEBUG TaskServices:36 - retrieveMyTasks
+2014-11-01 16:29:58.176 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@70f94bc2, com.runMyErrand.model.TaskInfo@7edce77f]
+2014-11-01 16:29:58.177 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@70f94bc2, com.runMyErrand.model.TaskInfo@7edce77f]
+2014-11-01 16:30:01.092 DEBUG TaskDao:55 - [com.runMyErrand.model.TaskInfo@248ef8eb, com.runMyErrand.model.TaskInfo@26781f0d]
+2014-11-01 16:30:01.094 DEBUG TaskController:30 - [com.runMyErrand.model.TaskInfo@248ef8eb, com.runMyErrand.model.TaskInfo@26781f0d]
+2014-11-01 16:44:39.231 DEBUG LoginController:33 - Entering Controller
+2014-11-01 16:45:07.756 DEBUG LoginController:33 - Entering Controller
+2014-11-01 16:45:14.612 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-11-01 16:45:14.666 DEBUG UserDao:30 - Tejas
+2014-11-01 16:45:14.721 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@a6afebb]
+2014-11-01 16:45:14.723 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-11-01 16:45:14.764 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@367cc664, com.runMyErrand.model.TaskInfo@39c4eb2e, com.runMyErrand.model.TaskInfo@2f2c36a3, com.runMyErrand.model.TaskInfo@7fb71f86]
+2014-11-01 16:45:14.765 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@367cc664, com.runMyErrand.model.TaskInfo@39c4eb2e, com.runMyErrand.model.TaskInfo@2f2c36a3, com.runMyErrand.model.TaskInfo@7fb71f86]
+2014-11-01 16:45:14.766 DEBUG TaskServices:36 - retrieveMyTasks
+2014-11-01 16:45:14.809 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@3903a276, com.runMyErrand.model.TaskInfo@1d9f0e38]
+2014-11-01 16:45:14.810 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@3903a276, com.runMyErrand.model.TaskInfo@1d9f0e38]
+2014-11-01 16:45:18.810 DEBUG TaskDao:55 - [com.runMyErrand.model.TaskInfo@6376895f, com.runMyErrand.model.TaskInfo@7b34eefc]
+2014-11-01 16:45:18.811 DEBUG TaskController:31 - [com.runMyErrand.model.TaskInfo@6376895f, com.runMyErrand.model.TaskInfo@7b34eefc]
+2014-11-01 16:45:24.439 DEBUG TaskController:41 - task: Vacuum Cleaning
+2014-11-01 16:45:24.440 DEBUG TaskController:42 - assignedto: shah_tejas92@yahoo.co.in
+2014-11-01 16:45:24.441 DEBUG TaskServices:47 - Entering Assign task
+2014-11-01 16:45:24.442 DEBUG TaskServices:48 - Vacuum Cleaning
+2014-11-01 16:45:24.445 DEBUG TaskServices:49 - shah_tejas92@yahoo.co.in
+2014-11-01 16:45:24.543 DEBUG TaskDao:55 - [com.runMyErrand.model.TaskInfo@20f54495]
+2014-11-01 16:45:24.545 DEBUG TaskController:31 - [com.runMyErrand.model.TaskInfo@20f54495]
+2014-11-01 16:45:30.228 DEBUG TaskController:41 - task: Clean the Car
+2014-11-01 16:45:30.229 DEBUG TaskController:42 - assignedto: jmmodi@indiana.edu
+2014-11-01 16:45:30.230 DEBUG TaskServices:47 - Entering Assign task
+2014-11-01 16:45:30.231 DEBUG TaskServices:48 - Clean the Car
+2014-11-01 16:45:30.232 DEBUG TaskServices:49 - jmmodi@indiana.edu
+2014-11-01 16:45:30.304 DEBUG TaskDao:55 - []
+2014-11-01 16:45:30.306 DEBUG TaskController:31 - []
+2014-11-01 16:46:11.858 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-11-01 16:46:11.906 DEBUG UserDao:30 - Tejas
+2014-11-01 16:46:11.937 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@5d93036c]
+2014-11-01 16:46:11.937 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-11-01 16:46:12.000 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@25a06318, com.runMyErrand.model.TaskInfo@44c9cff4, com.runMyErrand.model.TaskInfo@1d73bf74, com.runMyErrand.model.TaskInfo@1a1e67c7]
+2014-11-01 16:46:12.000 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@25a06318, com.runMyErrand.model.TaskInfo@44c9cff4, com.runMyErrand.model.TaskInfo@1d73bf74, com.runMyErrand.model.TaskInfo@1a1e67c7]
+2014-11-01 16:46:12.000 DEBUG TaskServices:36 - retrieveMyTasks
+2014-11-01 16:46:12.031 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@46a14045, com.runMyErrand.model.TaskInfo@482963d, com.runMyErrand.model.TaskInfo@1955811b]
+2014-11-01 16:46:12.031 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@46a14045, com.runMyErrand.model.TaskInfo@482963d, com.runMyErrand.model.TaskInfo@1955811b]
+2014-11-01 16:46:27.126 DEBUG TaskDao:55 - []
+2014-11-01 16:46:27.127 DEBUG TaskController:31 - []
+2014-11-01 16:46:28.792 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-11-01 16:46:28.808 DEBUG UserDao:30 - Tejas
+2014-11-01 16:46:28.840 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@6ca4b6f2]
+2014-11-01 16:46:28.840 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-11-01 16:46:28.871 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@6a87a9d7, com.runMyErrand.model.TaskInfo@709f98e4, com.runMyErrand.model.TaskInfo@7deeda7f, com.runMyErrand.model.TaskInfo@4c4b0870]
+2014-11-01 16:46:28.871 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@6a87a9d7, com.runMyErrand.model.TaskInfo@709f98e4, com.runMyErrand.model.TaskInfo@7deeda7f, com.runMyErrand.model.TaskInfo@4c4b0870]
+2014-11-01 16:46:28.871 DEBUG TaskServices:36 - retrieveMyTasks
+2014-11-01 16:46:28.902 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@2e28b8d, com.runMyErrand.model.TaskInfo@6737d775, com.runMyErrand.model.TaskInfo@3227744]
+2014-11-01 16:46:28.902 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@2e28b8d, com.runMyErrand.model.TaskInfo@6737d775, com.runMyErrand.model.TaskInfo@3227744]
+2014-11-01 16:46:48.498 DEBUG UserController:24 - Entered roomyinfo jmmodi@indiana.edu
+2014-11-01 16:46:48.500 DEBUG TaskServices:36 - retrieveMyTasks
+2014-11-01 16:46:48.544 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@21403439]
+2014-11-01 16:46:48.546 DEBUG UserController:30 - roomyInfo:[com.runMyErrand.model.TaskInfo@21403439]
+2014-11-01 16:46:53.900 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-11-01 16:46:53.916 DEBUG UserDao:30 - Tejas
+2014-11-01 16:46:53.948 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@782942d0]
+2014-11-01 16:46:53.948 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-11-01 16:46:53.979 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@3a135e2a, com.runMyErrand.model.TaskInfo@4d8b352f, com.runMyErrand.model.TaskInfo@6e50c86e, com.runMyErrand.model.TaskInfo@7996e656]
+2014-11-01 16:46:53.979 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@3a135e2a, com.runMyErrand.model.TaskInfo@4d8b352f, com.runMyErrand.model.TaskInfo@6e50c86e, com.runMyErrand.model.TaskInfo@7996e656]
+2014-11-01 16:46:53.979 DEBUG TaskServices:36 - retrieveMyTasks
+2014-11-01 16:46:53.995 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@14202d6b, com.runMyErrand.model.TaskInfo@4c85d61f, com.runMyErrand.model.TaskInfo@66acb478]
+2014-11-01 16:46:53.995 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@14202d6b, com.runMyErrand.model.TaskInfo@4c85d61f, com.runMyErrand.model.TaskInfo@66acb478]
+2014-11-01 16:46:58.276 DEBUG TaskDao:55 - []
+2014-11-01 16:46:58.278 DEBUG TaskController:31 - []
+2014-11-01 16:46:59.818 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-11-01 16:46:59.851 DEBUG UserDao:30 - Tejas
+2014-11-01 16:46:59.866 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@599c489a]
+2014-11-01 16:46:59.866 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-11-01 16:46:59.913 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@6906b1ac, com.runMyErrand.model.TaskInfo@367ac912, com.runMyErrand.model.TaskInfo@3726d8af, com.runMyErrand.model.TaskInfo@575be572]
+2014-11-01 16:46:59.913 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@6906b1ac, com.runMyErrand.model.TaskInfo@367ac912, com.runMyErrand.model.TaskInfo@3726d8af, com.runMyErrand.model.TaskInfo@575be572]
+2014-11-01 16:46:59.913 DEBUG TaskServices:36 - retrieveMyTasks
+2014-11-01 16:46:59.929 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@598030eb, com.runMyErrand.model.TaskInfo@6f0bc234, com.runMyErrand.model.TaskInfo@6cfb1ce0]
+2014-11-01 16:46:59.944 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@598030eb, com.runMyErrand.model.TaskInfo@6f0bc234, com.runMyErrand.model.TaskInfo@6cfb1ce0]
+2014-11-01 16:47:10.848 DEBUG TaskDao:55 - []
+2014-11-01 16:47:10.849 DEBUG TaskController:31 - []
+2014-11-01 16:47:12.454 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-11-01 16:47:12.469 DEBUG UserDao:30 - Tejas
+2014-11-01 16:47:12.501 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@33fb8aab]
+2014-11-01 16:47:12.501 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-11-01 16:47:12.533 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@32834586, com.runMyErrand.model.TaskInfo@48497a52, com.runMyErrand.model.TaskInfo@4ffdc291, com.runMyErrand.model.TaskInfo@1cf0e69e]
+2014-11-01 16:47:12.533 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@32834586, com.runMyErrand.model.TaskInfo@48497a52, com.runMyErrand.model.TaskInfo@4ffdc291, com.runMyErrand.model.TaskInfo@1cf0e69e]
+2014-11-01 16:47:12.533 DEBUG TaskServices:36 - retrieveMyTasks
+2014-11-01 16:47:12.548 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@715155d1, com.runMyErrand.model.TaskInfo@12d94676, com.runMyErrand.model.TaskInfo@76a0f6a4]
+2014-11-01 16:47:12.548 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@715155d1, com.runMyErrand.model.TaskInfo@12d94676, com.runMyErrand.model.TaskInfo@76a0f6a4]
+2014-11-01 16:47:13.626 DEBUG LoginController:33 - Entering Controller
+2014-11-01 16:47:17.969 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-11-01 16:47:17.984 DEBUG UserDao:30 - Tejas
+2014-11-01 16:47:18.017 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@5e3666d9]
+2014-11-01 16:47:18.017 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-11-01 16:47:18.048 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@e61f416, com.runMyErrand.model.TaskInfo@40dfd7ba, com.runMyErrand.model.TaskInfo@27cc159c, com.runMyErrand.model.TaskInfo@479ec92d]
+2014-11-01 16:47:18.048 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@e61f416, com.runMyErrand.model.TaskInfo@40dfd7ba, com.runMyErrand.model.TaskInfo@27cc159c, com.runMyErrand.model.TaskInfo@479ec92d]
+2014-11-01 16:47:18.048 DEBUG TaskServices:36 - retrieveMyTasks
+2014-11-01 16:47:18.063 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@41255de1, com.runMyErrand.model.TaskInfo@7c368030, com.runMyErrand.model.TaskInfo@5e1a0f05]
+2014-11-01 16:47:18.063 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@41255de1, com.runMyErrand.model.TaskInfo@7c368030, com.runMyErrand.model.TaskInfo@5e1a0f05]
+2014-11-01 16:47:19.900 DEBUG LoginController:33 - Entering Controller
+2014-11-01 16:47:33.718 DEBUG DashboardController:32 - Entered dashboard jmmodi@indiana.edu
+2014-11-01 16:47:33.742 DEBUG UserDao:30 - Jay
+2014-11-01 16:47:33.802 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@205191be]
+2014-11-01 16:47:33.803 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-11-01 16:47:33.825 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@465f7da0, com.runMyErrand.model.TaskInfo@2730b778, com.runMyErrand.model.TaskInfo@6f5d3b61, com.runMyErrand.model.TaskInfo@51e59665]
+2014-11-01 16:47:33.826 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@465f7da0, com.runMyErrand.model.TaskInfo@2730b778, com.runMyErrand.model.TaskInfo@6f5d3b61, com.runMyErrand.model.TaskInfo@51e59665]
+2014-11-01 16:47:33.827 DEBUG TaskServices:36 - retrieveMyTasks
+2014-11-01 16:47:33.852 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@fb04727]
+2014-11-01 16:47:33.854 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@fb04727]
+2014-11-01 16:49:20.810 DEBUG LoginController:33 - Entering Controller
+2014-11-01 16:49:22.733 DEBUG LoginController:33 - Entering Controller
+2014-11-01 17:04:55.882 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-11-01 17:04:55.897 DEBUG UserDao:30 - Tejas
+2014-11-01 17:04:55.914 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@1d83c031]
+2014-11-01 17:04:55.914 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-11-01 17:04:55.945 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@ece463c, com.runMyErrand.model.TaskInfo@86514bc, com.runMyErrand.model.TaskInfo@243446f2, com.runMyErrand.model.TaskInfo@641dcc6f]
+2014-11-01 17:04:55.945 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@ece463c, com.runMyErrand.model.TaskInfo@86514bc, com.runMyErrand.model.TaskInfo@243446f2, com.runMyErrand.model.TaskInfo@641dcc6f]
+2014-11-01 17:04:55.945 DEBUG TaskServices:36 - retrieveMyTasks
+2014-11-01 17:04:55.976 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@30deda7f, com.runMyErrand.model.TaskInfo@76dae0e9, com.runMyErrand.model.TaskInfo@1be41df5]
+2014-11-01 17:04:55.976 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@30deda7f, com.runMyErrand.model.TaskInfo@76dae0e9, com.runMyErrand.model.TaskInfo@1be41df5]
+2014-11-01 17:05:00.391 DEBUG UserController:24 - Entered roomyinfo jmmodi@indiana.edu
+2014-11-01 17:05:00.391 DEBUG TaskServices:36 - retrieveMyTasks
+2014-11-01 17:05:00.407 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@3fb8165]
+2014-11-01 17:05:00.407 DEBUG UserController:30 - roomyInfo:[com.runMyErrand.model.TaskInfo@3fb8165]
+2014-11-01 17:05:16.039 DEBUG DashboardController:32 - Entered dashboard shah_tejas92@yahoo.co.in
+2014-11-01 17:05:16.055 DEBUG UserDao:30 - Tejas
+2014-11-01 17:05:16.071 DEBUG DashboardController:36 - [com.runMyErrand.model.UserInfo@5678e141]
+2014-11-01 17:05:16.071 DEBUG TaskServices:30 - Entering retrieveTasks
+2014-11-01 17:05:16.102 DEBUG TaskDao:28 - tasklist[com.runMyErrand.model.TaskInfo@7f0215e1, com.runMyErrand.model.TaskInfo@61eaa7eb, com.runMyErrand.model.TaskInfo@74b66785, com.runMyErrand.model.TaskInfo@7346889f]
+2014-11-01 17:05:16.102 DEBUG DashboardController:38 - [com.runMyErrand.model.TaskInfo@7f0215e1, com.runMyErrand.model.TaskInfo@61eaa7eb, com.runMyErrand.model.TaskInfo@74b66785, com.runMyErrand.model.TaskInfo@7346889f]
+2014-11-01 17:05:16.102 DEBUG TaskServices:36 - retrieveMyTasks
+2014-11-01 17:05:16.118 DEBUG TaskDao:39 - Mytask:[com.runMyErrand.model.TaskInfo@b43e0b0, com.runMyErrand.model.TaskInfo@15544897, com.runMyErrand.model.TaskInfo@5069bc71]
+2014-11-01 17:05:16.118 DEBUG DashboardController:40 - LOgin:[com.runMyErrand.model.TaskInfo@b43e0b0, com.runMyErrand.model.TaskInfo@15544897, com.runMyErrand.model.TaskInfo@5069bc71]
+2014-11-01 17:05:20.190 DEBUG LoginController:33 - Entering Controller

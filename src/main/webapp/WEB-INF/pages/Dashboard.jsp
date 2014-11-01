@@ -1,4 +1,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -18,7 +19,8 @@
          <h1>Dashboard of ${user.firstName}</h1>  
       </div>
       <div class = "col-md-1">
-          <h3><a href = "http://localhost:8080/RunMyErrand/">Logout</a></h3>
+               <a href = "<c:url value="/dashboard" />">Dashboard</a>
+          <h3><a href = "<c:url value="j_spring_security_logout" />">Logout</a></h3>
       </div>
     </div>  
             <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal2">
@@ -61,7 +63,7 @@
                                     Start Date:
                                   </label>
                                   <div>
-                                    <input  type="text" class="form-control" placeholder="Click to select Start Date"   id="startDate" name="startDate">
+                                    <input  type="text" class="form-control" placeholder="Click to select Start Date"   id="startDate" name="start_date">
                                     <p class="help-block">
                                     </p>
                                   </div>
@@ -72,7 +74,7 @@
                                     End Date:
                                   </label>
                                   <div>
-                                    <input  type="text" class="form-control" placeholder="Click to select date of birth"   id="endDate" name="endDate">
+                                    <input  type="text" class="form-control" placeholder="Click to select date of birth"   id="endDate" name="end_date">
                                     <p class="help-block">
                                     </p>
                                   </div>
@@ -99,7 +101,7 @@
         <div class="panel-body"> 
           <ul>
             <c:forEach var="roomy" items= "${roomies}">
-              <li> ${roomy} </li>              
+              <li><a href ="<c:url value="/roomyinfo/${roomy.email}"/>" > ${roomy.firstName}	${roomy.lastName} ${roomy.email}</a> </li>              
             </c:forEach>
           </ul>
         </div>
@@ -133,35 +135,32 @@
       </div>
       <div id="collapseThree" class="panel-collapse collapse">
         <div class="panel-body">
-            <ul>
+        <c:choose>
+         <c:when test="${fn:length(mytasks) > 0 }">
+        	<ul>
               <c:forEach var="mytasks" items= "${mytasks}">
                 <li> ${mytasks.taskDescription} </li>              
               </c:forEach>
             </ul>
+          </c:when>
+          <c:otherwise>
+          	No Tasks for You!!
+          </c:otherwise>
+        </c:choose>
         </div>
       </div>
     </div>
+    
+    
     <div class="panel panel-danger">
       <div class="panel-heading">
         <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapsefour"> Assign Tasks </a> </h4>
       </div>
     <div id="collapsefour" class="panel-collapse collapse">
       <div class="panel-body"> 
-        <form action="/RunMyErrand/Assigntask.do" method="post">
-           <select name="task">
-              <c:forEach var="tasksleft" items= "${unassigned}">
-                <option value="${tasksleft.taskDescription}">${tasksleft.taskDescription}</option>      
-              </c:forEach>
-          </select>
-          <select name="assigned">
-            <option value="${user.firstName}">${user.firstName}</option>
-            <c:forEach var="roomy" items= "${roomies}">
-              <option value="${roomy}">${roomy}</option>      
-            </c:forEach>
-          </select>
+      
           <input type ="hidden" name="email" value="${user.email}" /> 
-          <button type="submit">AssignTasks</button>
-        </form>
+         <a href="<c:url value="/unassignedtask" />">Unassigned Tasks</a>
       </div>
     </div>
    </div>

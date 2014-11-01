@@ -13,8 +13,12 @@ public class TaskRowMapper implements RowMapper{
 		
 		TaskInfo task = new TaskInfo();
 		task.setTaskDescription(rs.getString("taskdescription"));
-		task.setPoints(rs.getInt("score"));
-		task.setAssignedTo(rs.getString("assignedto"));
+		task.setPoints(rs.getInt("points"));
+		task.setStart_date(rs.getString(4));
+		task.setEnd_date(rs.getString(5));
+		task.setCompleted(rs.getInt(6));
+		task.setUseremail(rs.getString(7));
+		task.setRoom(rs.getString(8));
 		
 		return task;
 	}

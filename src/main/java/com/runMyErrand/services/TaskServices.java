@@ -25,31 +25,33 @@ private static TaskDao taskdao;
 		taskdao = taskd;
 	}
 	
-	public static List retriveAllTasks()
+	public static List retriveAllTasks(String room)
 	{
-		return getTaskDao().selectAll();
+		logger.debug("Entering retrieveTasks");
+		return getTaskDao().selectAll(room);
 	}
 	
-	public static List retrieveMyTasks(String firstname)
+	public static List retrieveMyTasks(String email)
 	{
-		return getTaskDao().selectAssigned(firstname);
+		logger.debug("retrieveMyTasks");
+		return getTaskDao().selectAssigned(email);
 	}
 	
-	public static List retrieveUnassignedTasks()
+	public static List retrieveUnassignedTasks(String room)
 	{
-		return getTaskDao().selectUnAssigned();
+		return getTaskDao().selectUnAssigned(room);
 	}
 	
-	public static void assignTask(String task, String name)
+	public static void assignTask(String task, String name, String room)
 	{
 		logger.debug("Entering Assign task");
 		logger.debug(task);
 		logger.debug(name);
-		getTaskDao().updateTaskAssignedto(task, name);
+		getTaskDao().updateTaskAssignedto(task, name, room);
 	}
 
-	public static void addTask(TaskInfo task) {
-		getTaskDao().insert(task);		
+	public static void addTask(TaskInfo task, String room) {
+		getTaskDao().insertTask(task, room);		
 	}
 	
 

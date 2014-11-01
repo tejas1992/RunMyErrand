@@ -21,36 +21,37 @@ private static final Logger logger = Logger.getLogger(TaskDao.class);
 		jdbcTemplate = jdbcTemp;
 	}
     
-	public static List<TaskInfo> selectAll()
+	public static List<TaskInfo> selectAll(String room)
 	{
-		sql = "select * from task";
-		List<TaskInfo> taskList = jdbcTemplate.query(sql, new TaskRowMapper());
-		logger.debug(taskList);
+		sql = "select * from task where room = ?";
+		List<TaskInfo> taskList = jdbcTemplate.query(sql,new Object[]{room}, new TaskRowMapper());
+		logger.debug("tasklist" +taskList);
 		
 		return taskList;
 	}
 	
-	public static List<TaskInfo> selectAssigned(String firstname){
+	public static List<TaskInfo> selectAssigned(String email){
 		
-		String selectSql = "SELECT * from task where assignedto = ?";
+		String selectSql = "SELECT * from task where useremail = ?";
 		List<TaskInfo> mytask;
 		try{
-			mytask = jdbcTemplate.query(selectSql, new Object[] {firstname}, new TaskRowMapper());
-			logger.debug(mytask);
+			mytask = jdbcTemplate.query(selectSql, new Object[] {email}, new TaskRowMapper());
+			logger.debug("Mytask:"+mytask);
 		}	
 		catch(Exception e)
 		{
+			logger.debug("no Mytask");
 			mytask = null;
 		}
 		return  mytask;
 	}
 	
-	public static List<TaskInfo> selectUnAssigned(){
+	public static List<TaskInfo> selectUnAssigned(String room){
 		
-		String selectSql = "SELECT * from task where assignedto is ?";
+		String selectSql = "SELECT * from task where useremail is ? and room = ?";
 		List<TaskInfo> unassignedtask;
 		try{
-			unassignedtask = jdbcTemplate.query(selectSql, new Object[] {null}, new TaskRowMapper());
+			unassignedtask = jdbcTemplate.query(selectSql, new Object[] {null, room}, new TaskRowMapper());
 			logger.debug(unassignedtask);
 		}	
 		catch(Exception e)
@@ -60,20 +61,20 @@ private static final Logger logger = Logger.getLogger(TaskDao.class);
 		return  unassignedtask;
 	}
 	
-	public void updateTaskAssignedto(String task, String name)
+	public void updateTaskAssignedto(String task, String email, String room)
 	{
-		jdbcTemplate.update("update task set assignedto = ? where taskDescription = ?", name, task);
+		jdbcTemplate.update("update task set useremail = ? where taskDescription = ? and room=?", email, task, room);
 	}
 
-	public void insert(TaskInfo task) {
-		String insertSql ="INSERT INTO task (TaskDescription, Score, Start_Date, End_Date, Completed) VALUES(?,?,?,?,?);";
+	public void insertTask(TaskInfo task, String room ) {
+		String insertSql ="INSERT INTO task (TaskDescription, points, Start_Date, End_Date, Completed, useremail, room) VALUES(?,?,?,?,?,?,?);";
 
 		String desc = task.getTaskDescription();
 		int points = task.getPoints();
-		String sdate = task.getStartDate();
-		String edate = task.getEndDate();
+		String sdate = task.getStart_date();
+		String edate = task.getEnd_date();
 
-		jdbcTemplate.update(insertSql,new Object[]{desc,points, sdate, edate,0});
+		jdbcTemplate.update(insertSql,new Object[]{desc, points, sdate, edate,0, null, room});
 		
 	}
 	

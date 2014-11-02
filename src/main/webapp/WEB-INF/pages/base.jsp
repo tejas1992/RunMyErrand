@@ -31,6 +31,67 @@
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
+                       <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Add a new task</h4>
+                      </div>
+                      <div class="modal-body">
+                     <form role="form" action="/RunMyErrand/addtask.do" method="post">
+                                <div class="form-group">
+                                  <label for="taskDescription">
+                                    Description:
+                                  </label>
+                                  <div>
+                                    <input type="text" class="form-control" id="taskDescription" placeholder="Enter Task Description" name="taskDescription">
+                                    <p class="help-block">
+                                    </p>
+                                  </div>
+                                </div>
+                             
+                                <div class="form-group">
+                                  <label for="points">
+                                    Points:
+                                  </label>
+                                  <div>
+                                    <input type="text" class="form-control" id="points" placeholder="Enter Task points" name="points">
+                                    <p class="help-block">
+                                    </p>
+                                  </div>
+                                </div>
+                             
+                                <div class="form-group">
+                                  <label for="startDate">
+                                    Start Date:
+                                  </label>
+                                  <div>
+                                    <input  type="text" class="form-control" placeholder="Click to select Start Date"   id="startDate" name="start_date">
+                                    <p class="help-block">
+                                    </p>
+                                  </div>
+                                </div>
+
+                                <div class="form-group">
+                                  <label for="endDate">
+                                    End Date:
+                                  </label>
+                                  <div>
+                                    <input  type="text" class="form-control" placeholder="Click to select date of birth"   id="endDate" name="end_date">
+                                    <p class="help-block">
+                                    </p>
+                                  </div>
+                                </div>
+                                <input type ="hidden" name="email" value="${user.email}" /> 
+                      <div class="modal-footer">
+                                <button type="submit" class="btn btn-success btn-sm">Add Task</button>
+                      </div>                                
+                              </form>
+                        </div>
+                    </div>
+                  </div>
+                </div>
       <div class="container">
         <div class="row">
           <div class = "col-md-3">
@@ -41,7 +102,9 @@
                </div>
                 <div class="well sidebar-nav">
                 <ul class="nav nav-list">
+                  
                   <li><a href="<c:url value="/dashboard" />"><span class="glyphicon glyphicon-list"></span> Dashboard</a></li>
+                  <li><a data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-plus"></span> Add task</a></li>
                   <li><a href="#"><span class="glyphicon glyphicon-tasks"></span> All tasks</a></li>
                   <li><a href="#"><span class="glyphicon glyphicon-ok"></span> Completed Tasks</a></li>
                   <li><a href="<c:url value="/unassignedtask" />"><span class="glyphicon glyphicon-star"></span> Assign Tasks</a></li>
@@ -49,10 +112,10 @@
                </ul>
                </div>
                 <div class="well sidebar-nav">
-                <h3><span class="glyphicon glyphicon-user"></span>My Roomates</li></h3>
+                <h3><span class="glyphicon glyphicon-user"></span>  My Roomates</li></h3>
                   <ul>
                     <c:forEach var="roomy" items= "${roomies}">
-                  <li><a href ="<c:url value="/roomyinfo/${roomy.email}"/>" > ${roomy.firstName}  ${roomy.lastName} ${roomy.email}</a> </li>              
+                  <li><a href ="<c:url value="/roomyinfo/${roomy.email}"/>" > ${roomy.firstName}  ${roomy.lastName}</a> </li>              
             </c:forEach>
           </ul>
                </div>

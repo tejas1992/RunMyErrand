@@ -53,6 +53,10 @@ private static TaskDao taskdao;
 	public static void addTask(TaskInfo task, String room) {
 		getTaskDao().insertTask(task, room);		
 	}
+
+	public static void updateTaskStatus(String taskDescription, String Room, int completed) {
+        getTaskDao().updateTaskStatus(taskDescription, Room, completed);		
+	}
 	
 
 }

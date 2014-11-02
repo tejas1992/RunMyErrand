@@ -78,5 +78,10 @@ private static final Logger logger = Logger.getLogger(TaskDao.class);
 		
 	}
 	
+	public void updateTaskStatus(String taskDescription, String room, int completed){
+        String sql = "UPDATE task SET completed = ? WHERE taskDescription = ? and room = ?";
+        jdbcTemplate.update(sql, new Object[]{completed, taskDescription, room});
+    }
+	
 	
 }

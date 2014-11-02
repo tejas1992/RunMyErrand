@@ -44,7 +44,7 @@
                        
                     </form>
                 </div>
-                <div class="panel-footer">Not Registered? <a id="signupLink">Sign Up here</a>
+                <div class="panel-footer">Not Registered? <a id="signupLink" data-toggle="modal" data-target="#myModal">Sign Up here</a>
                 </div>
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                   <div class="modal-dialog">

@@ -55,4 +55,23 @@ public class TaskController {
 		return new ModelAndView("forward:dashboard");
 
 	}
+	
+	@RequestMapping(value="/edittask", method = RequestMethod.POST)
+    public ModelAndView editMyTask(@RequestParam("taskDescription")String Description,
+            HttpSession session, @RequestParam("completed")String completed ){
+		
+		logger.debug("Entering edittask");
+        int status = -1;
+        ModelAndView model = new ModelAndView("forward:dashboard");
+        if(completed.equalsIgnoreCase("done")){
+            status = 1;
+        }
+        else{
+            status = 0;
+        }
+        UserInfo user = (UserInfo)session.getAttribute("user"); 
+        TaskServices.updateTaskStatus(Description, user.getRoom(), status);
+        
+        return model;
+    }
 }

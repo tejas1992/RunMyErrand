@@ -13,6 +13,7 @@
 	<context:component-scan base-package="com.runMyErrand.controllers"/>	
 	<mvc:resources mapping="bootstrap/css/**" location="bootstrap/css/"/>
 	<mvc:resources mapping="bootstrap/js/**" location="bootstrap/js/"/>
+	<mvc:resources mapping="bootstrap/fonts/**" location="bootstrap/fonts/"/>
 	<mvc:annotation-driven />
 	
 	<bean id = "dataSource" class = "org.springframework.jdbc.datasource.DriverManagerDataSource">

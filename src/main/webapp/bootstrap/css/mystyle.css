@@ -19,3 +19,16 @@ body{
 .datepicker{
 	z-index : 19999;
 }
+
+.form-group{
+	width: 300px;
+}
+.modal-dialog{width:25%;}
+
+#inputEmail3{
+	width: 350px;	
+}
+
+#inputPassword3{
+	width: 350px;	
+}

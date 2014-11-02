@@ -9,6 +9,8 @@ public class UserInfo {
 	private String email;
 	private String room;
 	private String phoneNo;
+	private int score;
+	
 		
 	public String getRoom() {
 		return room;
@@ -51,6 +53,12 @@ public class UserInfo {
 	}
 	public void setPhoneNo(String phoneNo) {
 		this.phoneNo = phoneNo;
+	}
+	public int getScore() {
+		return score;
+	}
+	public void setScore(int score) {
+		this.score = score;
 	}
 	
 }

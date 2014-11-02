@@ -21,7 +21,6 @@
         </div>
              <c:choose>
                <c:when test="${fn:length(mytasks) > 0}">
-                  <c:forEach var="mytasks" items= "${mytasks}">
                    <table class="table table-bordered table-striped">
                     <thead>
                       <tr>
@@ -34,7 +33,8 @@
                           <th>Action</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody>               
+                  <c:forEach var="mytasks" items= "${mytasks}">
                      <form action="/RunMyErrand/edittask" method="post">
                        <tr>
                         <td><input type="hidden" value="${mytasks.taskDescription}" name="taskDescription">${mytasks.taskDescription}</td>
@@ -59,11 +59,11 @@
                         <button type="submit">Edit</button>
                         </td>
                         </tr>
-                      </tbody>
-                      </table>
                     </form>
                   </c:forEach>
-                 </c:when>
+                </tbody>
+                </table>
+               </c:when>
                  <c:otherwise>
                       No Tasks to display
                  </c:otherwise>

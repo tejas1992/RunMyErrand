@@ -97,7 +97,7 @@
           <div class = "col-md-3">
                <div class="well sidebar-nav">
                 <h3>Welcome ${user.firstName}</h3>
-                <h3>Your Points:33</h3>
+                <h3>Your Points:${user.score}</h3>
                 <h4>Pending Score:12</h4>
                </div>
                 <div class="well sidebar-nav">

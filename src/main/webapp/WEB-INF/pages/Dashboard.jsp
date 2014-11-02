@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="bootstrap/css/mystyle.css">		
    </head>
 <body>
+<jsp:include page="base.jsp"/>
+<div class = "col-md-9">
   <div class="container">
     <div class = "row">
       <div class = "col-md-11">
@@ -91,29 +93,14 @@
 
 
 
-  <div class="panel-group" id="accordion">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" 
-                 href="#collapseOne"> Your Roomates are: </a> </h4>
-      </div>
-      <div id="collapseOne" class="panel-collapse collapse in">
-        <div class="panel-body"> 
+        <h4> Your Roomates are:  </h4>
           <ul>
             <c:forEach var="roomy" items= "${roomies}">
               <li><a href ="<c:url value="/roomyinfo/${roomy.email}"/>" > ${roomy.firstName}	${roomy.lastName} ${roomy.email}</a> </li>              
             </c:forEach>
           </ul>
-        </div>
-      </div>
-    </div>
-    <div class="panel panel-success">
-      <div class="panel-heading">
-        <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" 
-                 href="#collapseTwo">The Lists of Tasks are:</a> </h4>
-      </div>
-      <div id="collapseTwo" class="panel-collapse collapse">
-        <div class="panel-body"> 
+        
+        <h4>The Lists of Tasks are:</h4>
           <table style = "width:200px; border:1px" class = "table table-striped table-responsive">
             <tr>
               <td> Task Description</td> 
@@ -126,15 +113,7 @@
             </tr>  
             </c:forEach>
           </table>            
-        </div>
-      </div>
-    </div>
-    <div class="panel panel-info">
-      <div class="panel-heading">
-        <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Current Tasks assigned to you:</a></h4>
-      </div>
-      <div id="collapseThree" class="panel-collapse collapse">
-        <div class="panel-body">
+        <h4>Current Tasks assigned to you:</h4>
         <c:choose>
          <c:when test="${fn:length(mytasks) > 0 }">
         	<ul>
@@ -147,24 +126,10 @@
           	No Tasks for You!!
           </c:otherwise>
         </c:choose>
-        </div>
-      </div>
-    </div>
     
-    
-    <div class="panel panel-danger">
-      <div class="panel-heading">
-        <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapsefour"> Assign Tasks </a> </h4>
-      </div>
-    <div id="collapsefour" class="panel-collapse collapse">
-      <div class="panel-body"> 
-      
+        <h4>Assign Tasks</h4>   
           <input type ="hidden" name="email" value="${user.email}" /> 
          <a href="<c:url value="/unassignedtask" />">Unassigned Tasks</a>
-      </div>
-    </div>
-   </div>
-  </div>
 </div>
 </div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

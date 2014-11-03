@@ -18,20 +18,19 @@ public class UserController {
 	
 	private static final Logger logger = Logger.getLogger(UserController.class);
 	
-	@RequestMapping(value = "/roomyinfo/{email:.+}", method = RequestMethod.GET)
+	@RequestMapping(value = "roomyinfo/{email}", method = RequestMethod.GET)
 	public static ModelAndView  roomyInfo(@PathVariable String email){
 		
 		logger.debug("Entered roomyinfo "+ email);
 		
-		ModelAndView model = new ModelAndView("memberinfo");
-		ArrayList roomytask = (ArrayList) TaskServices.retrieveMyTasks(email);
+		ModelAndView model = new ModelAndView("NewFile");
+		//ArrayList roomytask = (ArrayList) TaskServices.retrieveMyTasks(email);
 			
-		model.addObject("roomytask", roomytask);
-		logger.debug("roomyInfo:" + roomytask);
+		//model.addObject("roomytask", roomytask);
+		//logger.debug("roomyInfo:" + roomytask);
 		
 		return model;
 	}
 	
 	
-
 }

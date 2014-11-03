@@ -24,7 +24,7 @@ public class TaskController {
 	
 	@RequestMapping(value="/unassignedtask")
 	public ModelAndView unassignedTasks(HttpSession session){
-		ModelAndView model= new ModelAndView("alltasks");
+		ModelAndView model= new ModelAndView("unassignedtasks");
 		ArrayList<UserInfo>roomies = (ArrayList<UserInfo>) session.getAttribute("roomies");
 		UserInfo user = (UserInfo)session.getAttribute("user");
 		ArrayList unassignedtasks = (ArrayList) TaskServices.retrieveUnassignedTasks(user.getRoom());

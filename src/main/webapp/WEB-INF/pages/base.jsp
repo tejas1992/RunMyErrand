@@ -24,7 +24,8 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">${user.firstName} <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                  <li><a href="<c:url value="j_spring_security_logout" />">Logout</a></li>
+                  <li><a href="<c:url value="j_spring_security_logout" />"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
                 </ul>
               </li>
             </ul>
@@ -108,14 +109,13 @@
                   <li><a href="#"><span class="glyphicon glyphicon-tasks"></span> All tasks</a></li>
                   <li><a href="#"><span class="glyphicon glyphicon-ok"></span> Completed Tasks</a></li>
                   <li><a href="<c:url value="/unassignedtask" />"><span class="glyphicon glyphicon-star"></span> Assign Tasks</a></li>
-                  <li><a href="#"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
                </ul>
                </div>
                 <div class="well sidebar-nav">
                 <h3><span class="glyphicon glyphicon-user"></span>  My Roomates</li></h3>
                   <ul>
                     <c:forEach var="roomy" items= "${roomies}">
-                  <li><a href ="<c:url value="/roomyinfo/${roomy.email}"/>" > ${roomy.firstName}  ${roomy.lastName}</a> </li>              
+                  <li><a href ="<c:url value="roomyinfo/${roomy.email}"/>" > ${roomy.firstName}  ${roomy.lastName}</a> </li>              
             </c:forEach>
           </ul>
                </div>

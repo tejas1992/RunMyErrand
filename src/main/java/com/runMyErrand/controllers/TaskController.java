@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.runMyErrand.model.TaskInfo;
 import com.runMyErrand.model.UserInfo;
 import com.runMyErrand.services.TaskServices;
+import com.runMyErrand.services.UserServices;
 
 @Controller
 
@@ -50,6 +51,7 @@ public class TaskController {
 		logger.debug("Entering add task controller");
 		logger.info(task.getTaskDescription());
 		logger.info(task.getPoints());
+		logger.debug(task.getRecurrence());
 		UserInfo user = (UserInfo)session.getAttribute("user");
 		TaskServices.addTask(task, user.getRoom());
 		return new ModelAndView("forward:dashboard");
@@ -62,16 +64,23 @@ public class TaskController {
 		
 		logger.debug("Entering edittask");
         int status = -1;
+        String check = null;
         ModelAndView model = new ModelAndView("forward:dashboard");
         if(completed.equalsIgnoreCase("done")){
+        	logger.debug("taskdone");
             status = 1;
         }
         else{
+        	logger.debug("taskdone");
             status = 0;
         }
-        UserInfo user = (UserInfo)session.getAttribute("user"); 
-        TaskServices.updateTaskStatus(Description, user.getRoom(), status);
+        UserInfo user = (UserInfo)session.getAttribute("user");
+        int score = TaskServices.updateTaskStatus(Description, user.getRoom(), status, user.getEmail());
+        UserServices.updateUserScore(user.getEmail(), score);
+        if(status == 1){
         
+        TaskServices.checkRecurrence(Description, user.getRoom());
+        }
         return model;
     }
 }

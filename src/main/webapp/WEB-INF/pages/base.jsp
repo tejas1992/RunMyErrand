@@ -115,7 +115,7 @@
                 <h3><span class="glyphicon glyphicon-user"></span>  My Roomates</li></h3>
                   <ul>
                     <c:forEach var="roomy" items= "${roomies}">
-                  <li><a href ="<c:url value="roomyinfo/${roomy.email}"/>" > ${roomy.firstName}  ${roomy.lastName}</a> </li>              
+                  <li><a href="/RunMyErrand/roomyinfo?email=${roomy.email}" > ${roomy.firstName}  ${roomy.lastName}</a> </li>              
             </c:forEach>
           </ul>
                </div>

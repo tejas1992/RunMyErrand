@@ -15,31 +15,35 @@
 <jsp:include page="base.jsp"/>
 <div class = "col-md-9">
     <div class = "well">
-    table>
-<tr>
-	<td>Task Description</td>
-	<td>Task Points</td>
-	<td>Start Date</td>
-	<td>End Date</td>
-	<td>Status</td>
-</tr>
- <c:forEach var="roomytask" items= "${roomytask}">
-     <tr>
-       <td> ${roomytask.taskDescription} </td> 
-       <td> ${roomytask.points}</td> 
-       <td> ${roomytask.start_date}</td>
-       <td> ${roomytask.end_date}</td>
-       <c:choose>
-       	<c:when test="${roomytask.completed == 0 }">
-       		<td>Pending</td>
-       	</c:when>
-       	<c:otherwise>
-       		<td>Completed</td>
-       	</c:otherwise>
-       </c:choose>           
-    </tr>  
- </c:forEach>
-</table>
+    <table class="table table-bordered table-striped">
+    	<thead>
+		<tr>
+			<td>Task Description</td>
+			<td>Task Points</td>
+			<td>Start Date</td>
+			<td>End Date</td>
+			<td>Status</td>
+		</tr>
+		</thead>
+		<tbody>
+		<c:forEach var="roomytask" items= "${roomytask}">
+  	   <tr>
+    	 <td> ${roomytask.taskDescription} </td> 
+    	 <td> ${roomytask.points}</td> 
+      	 <td> ${roomytask.start_date}</td>
+      	 <td> ${roomytask.end_date}</td>
+       	 <c:choose>
+       		<c:when test="${roomytask.completed == 0 }">
+       			<td>Pending</td>
+       		</c:when>
+       		<c:otherwise>
+       			<td>Completed</td>
+       		</c:otherwise>
+      	 </c:choose>           
+    	</tr>  
+		 </c:forEach>
+		 </tbody>
+	</table>
     </div>
  </div>
  </div>

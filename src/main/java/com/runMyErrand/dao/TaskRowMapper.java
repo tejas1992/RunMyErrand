@@ -19,7 +19,7 @@ public class TaskRowMapper implements RowMapper{
 		task.setCompleted(rs.getInt(6));
 		task.setUseremail(rs.getString(7));
 		task.setRoom(rs.getString(8));
-		
+		task.setRecurrence(rs.getString(9));
 		return task;
 	}
 	

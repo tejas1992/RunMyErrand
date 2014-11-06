@@ -21,6 +21,12 @@ private static JdbcTemplate jdbcTemplate;
 		jdbcTemplate = jdbcTemp;
 	}
 	
+	public void setScore(String email, int score){
+		String sql = "update userinfo set score = ? where email = ?";
+		jdbcTemplate.update(sql, new Object[]{score, email});
+		logger.debug("score updated");
+	}
+	
 	public UserInfo selectOne(String username)
 	{
 		String selectSql = "SELECT * from userinfo where email = ?";

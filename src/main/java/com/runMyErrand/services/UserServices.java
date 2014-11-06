@@ -2,12 +2,15 @@ package com.runMyErrand.services;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.runMyErrand.dao.UserDao;
 import com.runMyErrand.model.UserInfo;
 
 public class UserServices {
+	
+	private static final Logger logger = Logger.getLogger(UserServices.class);
 	
 	private static UserDao userdao;
 	
@@ -34,6 +37,12 @@ public class UserServices {
 	{
 		String success = getUserDao().insertUserInfo(userinfo, password);
 		return success;
+	}
+	
+	public static void updateUserScore(String email, int score){
+		logger.debug("updating user score");
+		getUserDao().setScore(email, score);
+		
 	}
 
 }

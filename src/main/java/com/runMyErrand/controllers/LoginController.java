@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.runMyErrand.model.UserInfo;
+import com.runMyErrand.services.MemberServices;
 import com.runMyErrand.services.UserServices;
 
 /* This controller manages all the login functionalities*/
@@ -36,6 +37,8 @@ public class LoginController{
 		return "signin";
 	}
 	
+	//@RequestMapping
+	
 	//displays a error message when login is failed
 	@RequestMapping("/loginfailed")
 	public ModelAndView loginfailed()
@@ -45,12 +48,13 @@ public class LoginController{
 		return model;
 	}
 	
-	//handles the registration control nd displays the necessary message	
+	//handles the registration control and displays the necessary message	
 	@RequestMapping(value = "/Register.do", method = RequestMethod.POST)
 	public ModelAndView signup(@ModelAttribute("userinfo") UserInfo user,
 			@RequestParam("password") String password) {
 		
 		ModelAndView model = new ModelAndView("signin");
+		logger.debug("adding user");
 		String success = UserServices.addUser(user, password);
 		
 		if (success != null) {
@@ -59,6 +63,8 @@ public class LoginController{
 		else {
 			model.addObject("message", "Registration Successful. Please Login");
 			model.addObject("user", user);
+			MemberServices.updateMembers(user);
+			
 		}
 		return model;
 	}

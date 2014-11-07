@@ -12,7 +12,7 @@ public class UserInfo {
 	private String email;
 	private String room;
 	private String phoneNo;
-	private int score;
+	private int score = 0;
 	private int pendingscore;
 	
 	public int getUserid() {

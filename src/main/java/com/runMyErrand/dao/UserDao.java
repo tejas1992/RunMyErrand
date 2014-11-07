@@ -77,7 +77,7 @@ private static JdbcTemplate jdbcTemplate;
 		}
 		catch(Exception e)
 		{
-			logger.debug("email already exists");
+			logger.debug(e);
 			return "Email already exist. Try signing up with a different email";
 		}
 		

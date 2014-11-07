@@ -8,6 +8,7 @@ public class MemberDao {
 	
 	private static JdbcTemplate jdbcTemplate;
 	private static final Logger logger = Logger.getLogger(MemberDao.class);
+	private static String sql;
 	
 	@Autowired
 	public void setJdbcTemplate(JdbcTemplate jdbcTemp) {
@@ -16,7 +17,7 @@ public class MemberDao {
 	
 	/* get the total points of particular room */
 	public int getTotalPoints(String room){
-		String sql = "Select totalpoints from roominfo where room = ?" ;
+		sql = "Select totalpoints from roominfo where room = ?" ;
 		int total = 0;
 		try{
 			total = jdbcTemplate.queryForObject(sql, new Object[]{room}, Integer.class);
@@ -28,9 +29,17 @@ public class MemberDao {
 		return total;
 	}
 	
+	/* update total points */
+	public void updateTotalPoints(int updatedpoints, String room){
+		
+		sql = "update roominfo set totalpoints = ? where room = ?";
+		jdbcTemplate.update(sql, new Object[]{updatedpoints, room});
+		logger.debug("updated totalpoints");
+	}
+	
 	/* gets the total no of members of the particular room */
 	public int getNoMembers(String room){
-		String sql = "Select members from roominfo where room = ?" ;
+		sql = "Select members from roominfo where room = ?" ;
 		int total = 0;
 		try{
 			total = jdbcTemplate.queryForObject(sql, new Object[]{room}, Integer.class);
@@ -39,5 +48,20 @@ public class MemberDao {
 			total = 0;
 		}
 		return total;
+	}
+	
+	/* update no of members */
+	public void updateMembers(int members, String room){
+		sql = "update roominfo set members = ? where room = ?";
+		jdbcTemplate.update(sql, new Object[]{members, room});
+		logger.debug("updated totalpoints"); 
+	}
+	
+	/* inserts new rooms */
+	public void insertNewRoom(String room){
+		sql = "INSERT INTO `roominfo`(`room`, `totalpoints`, `members`) VALUES (?,?,?)";
+		jdbcTemplate.update(sql, new Object[]{room, 0, 1});
+		logger.debug("inserted new room"); 
+		
 	}
 }

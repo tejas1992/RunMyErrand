@@ -59,7 +59,8 @@ public class TaskController {
 		
 		UserInfo user = (UserInfo)session.getAttribute("user");
 		TaskServices.addTask(task, user.getRoom());
-		//MemberServices.addPoints(task.getPoints(), user.getRoom());
+		logger.debug("adding points to roominfo");
+		MemberServices.addPoints(task.getPoints(), user.getRoom());
 		
 		return new ModelAndView("forward:dashboard");
 

@@ -22,8 +22,9 @@ public class UserController {
 	
 	private static final Logger logger = Logger.getLogger(UserController.class);
 	
+	/* Manages the roommates related information*/
 	@RequestMapping(value = "/roomyinfo", method = RequestMethod.GET)
-	public static ModelAndView roomyInfo(@RequestParam("email") String email){
+	public static ModelAndView roomyInfo(@RequestParam("email") String email ){
 		
 		logger.debug("Entered roomyinfo "+ email);
 		
@@ -31,6 +32,7 @@ public class UserController {
 		ArrayList roomytask = (ArrayList) TaskServices.retrieveMyTasks(email);
 			
 		model.addObject("roomytask", roomytask);
+		
 		logger.debug("roomyInfo:" + roomytask);
 		
 		return model;

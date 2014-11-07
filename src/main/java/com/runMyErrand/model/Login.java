@@ -1,5 +1,6 @@
 package com.runMyErrand.model;
 
+//Login model
 public class Login {
 	
 	private String email;

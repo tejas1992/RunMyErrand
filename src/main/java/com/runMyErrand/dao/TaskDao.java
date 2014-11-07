@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.runMyErrand.model.TaskInfo;
-import com.runMyErrand.model.UserInfo;
 
 public class TaskDao {
 	
@@ -21,6 +20,7 @@ private static final Logger logger = Logger.getLogger(TaskDao.class);
 		jdbcTemplate = jdbcTemp;
 	}
     
+	/* Selects all the tasks of a room */
 	public static List<TaskInfo> selectAll(String room)
 	{
 		sql = "select * from task where room = ?";
@@ -30,6 +30,7 @@ private static final Logger logger = Logger.getLogger(TaskDao.class);
 		return taskList;
 	}
 	
+	/* selects all assigned tasks to particular user */
 	public static List<TaskInfo> selectAssigned(String email){
 		
 		String selectSql = "SELECT * from task where useremail = ?";
@@ -46,6 +47,7 @@ private static final Logger logger = Logger.getLogger(TaskDao.class);
 		return  mytask;
 	}
 	
+	/* selects unassigned tasks in a particular room */
 	public static List<TaskInfo> selectUnAssigned(String room){
 		
 		String selectSql = "SELECT * from task where useremail is ? and room = ?";
@@ -61,11 +63,13 @@ private static final Logger logger = Logger.getLogger(TaskDao.class);
 		return  unassignedtask;
 	}
 	
-	public void updateTaskAssignedto(String task, String email, String room)
+	/* updates the table when the user is assigned a task*/
+	public void updateTaskAssignedto(int taskid, String email, String room)
 	{
-		jdbcTemplate.update("update task set useremail = ? where taskDescription = ? and room=?", email, task, room);
+		jdbcTemplate.update("update task set useremail = ? where taskid = ? and room=?", email, taskid, room);
 	}
-
+	
+	/* inserts a new task */
 	public void insertTask(TaskInfo task, String room ) {
 		String insertSql ="INSERT INTO task (TaskDescription, points, Start_Date, End_Date, Completed, useremail, room, recurrence) VALUES(?,?,?,?,?,?,?,?);";
 
@@ -78,12 +82,14 @@ private static final Logger logger = Logger.getLogger(TaskDao.class);
 		
 	}
 	
-	public void updateTaskStatus(String taskDescription, String room, int completed){
+	/* updates task status */
+	public void updateTaskStatus(int taskid, int completed){
 		logger.debug("entering updatetaskstatus");
-        String sql = "UPDATE task SET completed = ? WHERE taskDescription = ? and room = ?";
-        jdbcTemplate.update(sql, new Object[]{completed, taskDescription, room});
+        String sql = "UPDATE task SET completed = ? WHERE taskid = ?";
+        jdbcTemplate.update(sql, new Object[]{completed, taskid});
     }
 	
+	/* selects the total tasks completed and add the points to get score of the user */
 	public int updateScore(String email){
 		logger.debug("update score");
 		String sql = "Select sum(points) from task where useremail = ? and completed = 1";
@@ -97,20 +103,20 @@ private static final Logger logger = Logger.getLogger(TaskDao.class);
 		return score;
 	}
 	
-	public TaskInfo getTask(String taskDescription, String room){
+	/* gives the task information about a particular tasks*/
+	public TaskInfo getTask(int taskid){
 		logger.debug("getting task");
-		logger.debug(taskDescription);
-		logger.debug(room);
-		String sql = "Select * from task where taskDescription = ? and room = ? ";
-		List task  = (List)jdbcTemplate.query(sql, new Object[]{taskDescription, room}, new TaskRowMapper());
+		String sql = "Select * from task where taskid = ?";
+		List task  = (List)jdbcTemplate.query(sql, new Object[] {taskid}, new TaskRowMapper());
 		
 		logger.debug("task "+ task);
 		return (TaskInfo)task.get(0) ;
 	}
 	
-	public void removeTask(String taskDescription, String room){
+	/* removes a task */
+	public void removeTask(int taskid){
 		String sql = "Delete from task where taskDescription = ? and room = ?";
-		jdbcTemplate.update(sql, new Object[]{taskDescription, room});
+		jdbcTemplate.update(sql, new Object[]{taskid});
 	}
 	
 	 

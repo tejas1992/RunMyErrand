@@ -24,21 +24,26 @@ public class UserServices {
 		userdao = userd;
 	}
 	
+	//service to select a user
 	public static UserInfo selectUser(String username)
 	{
 		return getUserDao().selectOne(username);
 	}
 	
+	//service to select the roomates of the user
 	public static List<UserInfo> selectMyRoomies(String room, String email)
 	{
 		return getUserDao().selectRoomies(room, email);
 	}
+	
+	//service to add a new user
 	public static String addUser(UserInfo userinfo, String password)
 	{
 		String success = getUserDao().insertUserInfo(userinfo, password);
 		return success;
 	}
 	
+	//service to update score
 	public static void updateUserScore(String email, int score, int pendingscore){
 		logger.debug("updating user score");
 		getUserDao().setScore(email, score);

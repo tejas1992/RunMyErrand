@@ -26,11 +26,13 @@ private static TaskDao taskdao;
 		taskdao = taskd;
 	}
 	
+	//service to retrieve all tasks
 	public static List retriveAllTasks(String room) {
 		logger.debug("Entering retrieveTasks");
 		return getTaskDao().selectAll(room);
 	}
-
+	
+	//service to retrieve users tasks
 	public static List retrieveMyTasks(String email)
 	{
 		logger.debug("retrieveMyTasks");
@@ -38,37 +40,44 @@ private static TaskDao taskdao;
 		return TaskDao.selectAssigned(email);
 	}
 	
+	//service to retrieve unassigned tasks 
 	public static List retrieveUnassignedTasks(String room)
 	{
 		return getTaskDao().selectUnAssigned(room);
 	}
 	
-	public static void assignTask(String task, String name, String room)
+	//service to assin a task to user and update necessary tables
+	public static void assignTask(int taskid, String name, String room)
 	{
 		logger.debug("Entering Assign task");
-		logger.debug(task);
+		logger.debug(taskid);
 		logger.debug(name);
-		getTaskDao().updateTaskAssignedto(task, name, room);
+		getTaskDao().updateTaskAssignedto(taskid, name, room);
 	}
 
+	//service to add task and insert the the new task
 	public static void addTask(TaskInfo task, String room) {
 		getTaskDao().insertTask(task, room);		
 	}
 
-	public static int updateTaskStatus(String taskDescription, String Room, int completed, String email) {
+	//service to update task status as to completed or not and thus update the score
+	public static int updateTaskStatus(int taskid, int completed, String email) {
 		logger.debug("Entering updatetask");
-        getTaskDao().updateTaskStatus(taskDescription, Room, completed);
+        getTaskDao().updateTaskStatus(taskid, completed);
+        
         logger.debug("entering updatescore");
         return getTaskDao().updateScore(email);
 	}
 	
-	public static void checkRecurrence(String taskDescription, String room){
+	//service to check recurrence and do the necessary updates
+	public static void checkRecurrence(int taskid, String room){
 		
-		TaskInfo task =  getTaskDao().getTask(taskDescription, room);
+		TaskInfo task =  getTaskDao().getTask(taskid);
 		logger.debug("Entering checkrecurrence "+ task.getTaskDescription());
 		String type = null;
 		String date = null;
-		logger.debug(task.getRecurrence());
+		
+		logger.debug("checking if recurrence is weekly, monthly or null");
 		if (task.getRecurrence().equalsIgnoreCase("weekly")){
 			logger.debug("weekly");
 			type = "weekly";			
@@ -77,6 +86,8 @@ private static TaskDao taskdao;
 			logger.debug("monthly");
 			type = "monthly";
 		}
+		
+		
 		if(type != null){
 			try {
 				logger.debug("recurring taskfound");
@@ -84,12 +95,16 @@ private static TaskDao taskdao;
 			} catch (ParseException e) {
 				logger.error("Unable to Parse Date");
 			}
-			getTaskDao().removeTask(task.getTaskDescription(), room);
+			
+			//getTaskDao().removeTask(task.getTaskid());
 			logger.debug("taskremoved");
+			
+			logger.debug("setting updated dates");
 			task.setStart_date(task.getEnd_date());
 			task.setEnd_date(date);
 			task.setCompleted(0);
 			task.setUseremail(null);
+			
 			getTaskDao().insertTask(task, room);
 			logger.debug("task inserted");
 		}

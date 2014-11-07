@@ -36,17 +36,18 @@
                      <c:forEach var="tasksleft" items= "${unassigned}">
                      <form action="/RunMyErrand/Assigntask.do" method="post">
                        <tr>
-                          <td><input type="hidden" value="${tasksleft.taskDescription}" name="task">${tasksleft.taskDescription}</td>
+                          <td>${tasksleft.taskDescription}</td>
                           <td>${tasksleft.points}</td>
                           <td>${tasksleft.start_date}</td>
                           <td>${tasksleft.end_date}</td>
                          
-                          <td><select name="assigned">
+                          <td><select name="assigned" class="form-control">
                              <option value="${user.email}">${user.firstName}</option>
                             <c:forEach var="roomy" items= "${roomies}">
                               <option value="${roomy.email}">${roomy.firstName}</option>      
                             </c:forEach>
                             </select></td>
+                            <input type="hidden" value="${tasksleft.taskid}" name="taskid">
                           <td>
                           <button type="submit" class="btn btn-primary">AssignTasks</button>
                           </td>
@@ -57,7 +58,7 @@
                 </table>
                </c:when>
                <c:otherwise>
-                  No Tasks to display
+                 <h3> No Tasks to display </h3>
                </c:otherwise>
       </c:choose>      
     </div>

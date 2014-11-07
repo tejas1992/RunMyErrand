@@ -22,22 +22,27 @@ public class DashboardController {
 	
 	private static final Logger logger = Logger.getLogger(DashboardController.class);
 	
-	
+	/* /dashboard fetches all the necessary data which is required in the session it is redirected to 
+	 * Dashboard.jsp. It sets the session attributes as well as the tasks of the useras well as his roommates */
 	@RequestMapping("/dashboard**")	
-	public ModelAndView dashboard(HttpSession session)
-	{
+	public ModelAndView dashboard(HttpSession session){
+		
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 	   		
 		String username = auth.getName();
+		
 		logger.debug("Entered dashboard "+ username);
 		UserInfo user = UserServices.selectUser(username); 
 		ModelAndView model = new ModelAndView("Dashboard");
+		
 		ArrayList list_roomy = (ArrayList) UserServices.selectMyRoomies(user.getRoom(), user.getEmail());//getting other roommates
+		
 		logger.debug(list_roomy);
 		ArrayList list_task = (ArrayList) TaskServices.retriveAllTasks(user.getRoom());
+		
 		logger.debug(list_task);
 		ArrayList mytasks = (ArrayList) TaskServices.retrieveMyTasks(user.getEmail());
-		logger.debug("LOgin:"+mytasks);
+		logger.debug("Login:"+mytasks);
 		
 		session.setAttribute("user", user);
 		session.setAttribute("roomies", list_roomy);
@@ -49,7 +54,5 @@ public class DashboardController {
 				
 		return model;
 	}
-	
-	//public static ModelAndView myRoomies()
+}	
 
-}

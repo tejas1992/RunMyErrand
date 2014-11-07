@@ -84,6 +84,22 @@
                                     </p>
                                   </div>
                                 </div>
+                                
+                               <div class="form-group">
+                                  <label for="recurrence">
+                                    Recurrence:
+                                  </label>
+                                  <div>
+                                  	<select class="form-control" name = "recurrence">
+                                  		<option value = "no">No</option>
+                                  		<option value = "weekly">Weekly</option>
+                                  		<option value = "monthly">Monthly</option>
+                                  	</select>
+                                    <p class="help-block">
+                                    </p>
+                                  </div>
+                                </div>
+                                
                                 <input type ="hidden" name="email" value="${user.email}" /> 
                       <div class="modal-footer">
                                 <button type="submit" class="btn btn-success btn-sm">Add Task</button>

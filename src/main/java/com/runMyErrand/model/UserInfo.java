@@ -1,7 +1,10 @@
 package com.runMyErrand.model;
 
+
+//User model
 public class UserInfo {
 	
+	private int userid;
 	private String firstName;
 	private String lastName;
 	private String sex;
@@ -11,7 +14,13 @@ public class UserInfo {
 	private String phoneNo;
 	private int score;
 	private int pendingscore;
-		
+	
+	public int getUserid() {
+		return userid;
+	}
+	public void setUserid(int userid) {
+		this.userid = userid;
+	}
 	public int getPendingscore() {
 		return pendingscore;
 	}

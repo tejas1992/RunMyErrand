@@ -1,7 +1,9 @@
 package com.runMyErrand.model;
 
+//Task Model
 public class TaskInfo {
 	
+	private int taskid;
 	private String taskDescription;
 	private int points;
 	private String start_date;
@@ -11,6 +13,12 @@ public class TaskInfo {
 	private String room;
 	private String recurrence = "no";
 	
+	public int getTaskid() {
+		return taskid;
+	}
+	public void setTaskid(int taskid) {
+		this.taskid = taskid;
+	}
 	public String getRecurrence() {
 		return recurrence;
 	}

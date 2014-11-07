@@ -38,7 +38,7 @@
                   <c:forEach var="mytasks" items= "${mytasks}">
                      <form action="/RunMyErrand/edittask" method="post">
                        <tr>
-                        <td><input type="hidden" value="${mytasks.taskDescription}" name="taskDescription">${mytasks.taskDescription}</td>
+                        <td>${mytasks.taskDescription}</td>
                         <td>${mytasks.points}</td>
                         <td>${mytasks.start_date}</td>
                         <td>${mytasks.end_date}</td>
@@ -71,6 +71,7 @@
                         <button type="submit" class="btn btn-primary btn-sm">Edit</button>
                         </td>
                         </tr>
+                        <input type="hidden" value="${mytasks.taskid}" name="taskid">
                     </form>
                   </c:forEach>
                 </tbody>

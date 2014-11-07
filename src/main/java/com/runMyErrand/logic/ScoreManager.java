@@ -2,6 +2,7 @@ package com.runMyErrand.logic;
 
 public class ScoreManager {
 
+	//Calculates the pending score 
 	public static int pendingScore(int currentscore, int totalpoints,
 			int totalmembers) {
 

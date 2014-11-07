@@ -7,8 +7,9 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class DateManager {
-	
-	  public static String recurring(String date, String recurringType) throws ParseException {
+		
+	//Manages the recuuring dates
+	 public static String recurring(String date, String recurringType) throws ParseException {
 
 	        DateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd");
 	        Date d = dateformat.parse(date);

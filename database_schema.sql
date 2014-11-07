@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2014 at 10:17 PM
+-- Generation Time: Nov 07, 2014 at 10:23 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `test`
+-- Database: `runmyerrand`
 --
 
 -- --------------------------------------------------------
@@ -44,20 +44,22 @@ INSERT INTO `authority` (`username`, `role`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `circle`
+-- Table structure for table `roominfo`
 --
 
-CREATE TABLE IF NOT EXISTS `circle` (
-  `id` int(10) NOT NULL,
-  `name` varchar(10) NOT NULL
+CREATE TABLE IF NOT EXISTS `roominfo` (
+  `room` varchar(50) NOT NULL,
+  `totalpoints` int(30) NOT NULL,
+  `members` int(10) NOT NULL,
+  PRIMARY KEY (`room`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `circle`
+-- Dumping data for table `roominfo`
 --
 
-INSERT INTO `circle` (`id`, `name`) VALUES
-(1, 'tejas');
+INSERT INTO `roominfo` (`room`, `totalpoints`, `members`) VALUES
+('910N', 198, 3);
 
 -- --------------------------------------------------------
 
@@ -74,21 +76,23 @@ CREATE TABLE IF NOT EXISTS `task` (
   `completed` tinyint(5) NOT NULL,
   `useremail` varchar(50) DEFAULT NULL,
   `room` varchar(50) NOT NULL,
+  `recurrence` varchar(20) DEFAULT ' no',
   PRIMARY KEY (`taskid`),
   KEY `userid` (`useremail`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=56 ;
 
 --
 -- Dumping data for table `task`
 --
 
-INSERT INTO `task` (`taskid`, `TaskDescription`, `points`, `Start_Date`, `End_Date`, `completed`, `useremail`, `room`) VALUES
-(1, 'Cleaning Dishes', 20, '2014-10-08', '2014-10-16', 0, 'shah_tejas92@yahoo.co.in', '910N'),
-(2, 'Cooking', 40, '2014-10-14', '2014-10-13', 0, 'shah_tejas92@yahoo.co.in', '910N'),
-(3, 'Vacuum Cleaning', 10, '2014-10-15', '2014-10-08', 0, 'shah_tejas92@yahoo.co.in', '910N'),
-(4, 'Trash', 30, '0000-00-00', '0000-00-00', 0, NULL, '986N'),
-(5, 'Cleaning bathroom', 40, '0000-00-00', '0000-00-00', 0, NULL, '986N'),
-(6, 'Clean the Car', 30, '2014-10-31', '2014-11-08', 0, 'jmmodi@indiana.edu', '910N');
+INSERT INTO `task` (`taskid`, `TaskDescription`, `points`, `Start_Date`, `End_Date`, `completed`, `useremail`, `room`, `recurrence`) VALUES
+(2, 'Cooking', 40, '2014-10-14', '2014-10-15', 1, 'abhino@gmail.com', '910N', 'no'),
+(3, 'Vacuum Cleaning', 10, '2014-10-15', '2014-10-08', 1, 'shah_tejas92@yahoo.co.in', '910N', 'no'),
+(7, 'Clean the coffee pot', 55, '2014-10-29', '2014-11-21', 1, 'abhino@gmail.com', '910N', 'no'),
+(23, 'Pay the utilities bill', 10, '2014-11-07', '2014-11-18', 0, 'shah_tejas92@yahoo.co.in', '910N', 'no'),
+(43, 'Get mail from mailbox', 44, '2015-01-10', '2015-01-17', 1, 'abhino@gmail.com', '910N', 'no'),
+(52, 'Take out the trash', 15, '2014-11-08', '2014-11-15', 1, 'abhino@gmail.com', '910N', 'weekly'),
+(54, 'Pay the Rent', 55, '2014-11-01', '2014-11-30', 1, 'abhino@gmail.com', '910N', 'monthly');
 
 -- --------------------------------------------------------
 
@@ -105,6 +109,8 @@ CREATE TABLE IF NOT EXISTS `userinfo` (
   `email` varchar(50) NOT NULL,
   `phone` bigint(10) NOT NULL,
   `room` varchar(10) NOT NULL,
+  `score` int(20) NOT NULL,
+  `pending_score` int(20) NOT NULL,
   PRIMARY KEY (`userid`),
   UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
@@ -113,10 +119,10 @@ CREATE TABLE IF NOT EXISTS `userinfo` (
 -- Dumping data for table `userinfo`
 --
 
-INSERT INTO `userinfo` (`userid`, `fname`, `lname`, `sex`, `dob`, `email`, `phone`, `room`) VALUES
-(1, 'Tejas', 'Shah', 'male', '1992-07-09', 'shah_tejas92@yahoo.co.in', 8123696631, '910N'),
-(7, 'Jay', 'Modi', 'male', '1992-05-28', 'jmmodi@indiana.edu', 8123696652, '910N'),
-(8, 'Abhinav', 'Vijaykumar', 'male', '2014-10-14', 'abhino@gmail.com', 234, '986N');
+INSERT INTO `userinfo` (`userid`, `fname`, `lname`, `sex`, `dob`, `email`, `phone`, `room`, `score`, `pending_score`) VALUES
+(1, 'Tejas', 'Shah', 'male', '1992-07-09', 'shah_tejas92@yahoo.co.in', 8123696631, '910N', 84, 0),
+(7, 'Jay', 'Modi', 'male', '1992-05-28', 'jmmodi@indiana.edu', 8123696652, '910N', 0, 0),
+(8, 'Abhinav', 'Vijaykumar', 'male', '2014-10-14', 'abhino@gmail.com', 234, '910N', 209, 0);
 
 -- --------------------------------------------------------
 

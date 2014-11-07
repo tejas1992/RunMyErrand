@@ -94,6 +94,8 @@ private static TaskDao taskdao;
 			logger.debug("task inserted");
 		}
 	}
+	
+	
 
 	
 

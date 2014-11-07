@@ -10,8 +10,14 @@ public class UserInfo {
 	private String room;
 	private String phoneNo;
 	private int score;
-	
+	private int pendingscore;
 		
+	public int getPendingscore() {
+		return pendingscore;
+	}
+	public void setPendingscore(int pendingscore) {
+		this.pendingscore = pendingscore;
+	}
 	public String getRoom() {
 		return room;
 	}

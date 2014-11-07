@@ -39,10 +39,10 @@ public class UserServices {
 		return success;
 	}
 	
-	public static void updateUserScore(String email, int score){
+	public static void updateUserScore(String email, int score, int pendingscore){
 		logger.debug("updating user score");
 		getUserDao().setScore(email, score);
-		
+		getUserDao().setPendingScore(email, pendingscore);
 	}
 
 }

@@ -1,6 +1,13 @@
 package com.runMyErrand.controllers;
 
+import java.util.ArrayList;
+
+import javax.servlet.http.HttpSession;
+
 import org.apache.log4j.Logger;
+import org.springframework.http.HttpRequest;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.runMyErrand.model.TaskInfo;
 import com.runMyErrand.model.UserInfo;
+import com.runMyErrand.services.TaskServices;
 import com.runMyErrand.services.UserServices;
 
 @Controller

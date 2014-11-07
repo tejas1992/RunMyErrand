@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.runMyErrand.model.TaskInfo;
+import com.runMyErrand.model.UserInfo;
 
 public class TaskDao {
 	
@@ -111,6 +112,8 @@ private static final Logger logger = Logger.getLogger(TaskDao.class);
 		String sql = "Delete from task where taskDescription = ? and room = ?";
 		jdbcTemplate.update(sql, new Object[]{taskDescription, room});
 	}
+	
+	 
 	
 	
 	

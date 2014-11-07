@@ -21,12 +21,4 @@ public class DateManager {
 	        String output = dateformat.format(c.getTime());
 	        return output;
 	    }
-
-	    public static void main(String[] args) throws ParseException {
-
-	        String date1 = "2014-11-30";
-	        String updatedDate = recurring(date1, "Monthly");
-	        System.out.println(updatedDate);
-	    }
-
 }

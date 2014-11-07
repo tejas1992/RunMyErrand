@@ -43,6 +43,14 @@
 		<property name="taskDao" ref = "taskDao"/>
 	</bean>
 	
+	<bean id="memberDao" class = "com.runMyErrand.dao.MemberDao">
+		<property name="jdbcTemplate" ref = "jdbcTemplate" />
+	</bean>
+	
+	<bean id = "memberservices" class = "com.runMyErrand.services.MemberServices">
+		<property name="memberDao" ref = "memberDao"/>
+	</bean>
+	
 	 <bean id="viewResolver"
     	class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
         <property name="prefix">

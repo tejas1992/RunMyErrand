@@ -16,6 +16,7 @@ import com.runMyErrand.model.TaskInfo;
 import com.runMyErrand.model.UserInfo;
 import com.runMyErrand.services.TaskServices;
 import com.runMyErrand.services.UserServices;
+import com.runMyErrand.services.MemberServices;
 
 @Controller
 
@@ -58,29 +59,33 @@ public class TaskController {
 
 	}
 	
-	@RequestMapping(value="/edittask", method = RequestMethod.POST)
-    public ModelAndView editMyTask(@RequestParam("taskDescription")String Description,
-            HttpSession session, @RequestParam("completed")String completed ){
-		
+	@RequestMapping(value = "/edittask", method = RequestMethod.POST)
+	public ModelAndView editMyTask(
+			@RequestParam("taskDescription") String Description,
+			HttpSession session, @RequestParam("completed") String completed) {
+
 		logger.debug("Entering edittask");
-        int status = -1;
-        String check = null;
-        ModelAndView model = new ModelAndView("forward:dashboard");
-        if(completed.equalsIgnoreCase("done")){
-        	logger.debug("taskdone");
-            status = 1;
-        }
-        else{
-        	logger.debug("taskdone");
-            status = 0;
-        }
-        UserInfo user = (UserInfo)session.getAttribute("user");
-        int score = TaskServices.updateTaskStatus(Description, user.getRoom(), status, user.getEmail());
-        UserServices.updateUserScore(user.getEmail(), score);
-        if(status == 1){
-        
-        TaskServices.checkRecurrence(Description, user.getRoom());
-        }
-        return model;
-    }
+		int status = -1;
+		String check = null;
+		ModelAndView model = new ModelAndView("forward:dashboard");
+		if (completed.equalsIgnoreCase("done")) {
+			logger.debug("taskdone");
+			status = 1;
+		} else {
+			logger.debug("taskdone");
+			status = 0;
+		}
+		UserInfo user = (UserInfo) session.getAttribute("user");
+		int score = TaskServices.updateTaskStatus(Description, user.getRoom(),
+				status, user.getEmail());
+		logger.debug("setting Pending Score: Previous" + user.getPendingscore());
+		user.setPendingscore(MemberServices.updatePendingScore(user.getRoom(), score));
+		logger.debug("Updating Score");
+		UserServices.updateUserScore(user.getEmail(), score, user.getPendingscore());
+		if (status == 1) {
+			TaskServices.checkRecurrence(Description, user.getRoom());
+		}
+		
+		return model;
+	}
 }

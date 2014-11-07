@@ -1,10 +1,13 @@
 package com.runMyErrand.dao;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 
 import com.runMyErrand.model.UserInfo;
 
@@ -45,6 +48,12 @@ private static JdbcTemplate jdbcTemplate;
 		
 		List<UserInfo> roomies = jdbcTemplate.query(sql, new Object[]{ room, email}, new UserRowMapper());
         return roomies;
+	}
+	
+	public void setPendingScore(String email, int pendingscore){
+		String sql = "update userinfo set pending_score = ? where email = ?";
+		jdbcTemplate.update(sql, new Object[]{pendingscore, email});
+		logger.debug("score updated");
 	}
 	
 	public String insertUserInfo(UserInfo user, String password){

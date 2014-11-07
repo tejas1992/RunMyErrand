@@ -23,6 +23,7 @@ public class UserRowMapper implements RowMapper<UserInfo>
 		user.setPhoneNo(resultSet.getString(7));
 		user.setRoom(resultSet.getString(8));
 		user.setScore(resultSet.getInt(9));
+		user.setPendingscore(resultSet.getInt(10));
 				
 		return user;
 	}

@@ -99,7 +99,7 @@
                <div class="well sidebar-nav">
                 <h3>Welcome ${user.firstName}</h3>
                 <h3>Your Points:${user.score}</h3>
-                <h4>Pending Score:12</h4>
+                <h4>Pending Score:${user.pendingscore}</h4>
                </div>
                 <div class="well sidebar-nav">
                 <ul class="nav nav-list">

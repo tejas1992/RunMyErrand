@@ -46,7 +46,7 @@
                                     Description:
                                   </label>
                                   <div>
-                                    <input type="text" class="form-control" id="taskDescription" placeholder="Enter Task Description" name="taskDescription">
+                                    <input type="text" class="form-control" id="taskDescription" placeholder="Enter Task Description" name="taskDescription" required = "required">
                                     <p class="help-block">
                                     </p>
                                   </div>
@@ -57,7 +57,7 @@
                                     Points:
                                   </label>
                                   <div>
-                                    <input type="text" class="form-control" id="points" placeholder="Enter Task points" name="points">
+                                    <input type="text" class="form-control" id="points" placeholder="Enter Task points" name="points" required = "required">
                                     <p class="help-block">
                                     </p>
                                   </div>
@@ -68,7 +68,7 @@
                                     Start Date:
                                   </label>
                                   <div>
-                                    <input  type="text" class="form-control" placeholder="Click to select Start Date"   id="startDate" name="start_date">
+                                    <input  type="text" class="form-control" placeholder="Click to select Start Date"   id="startDate" name="start_date" required = "required">
                                     <p class="help-block">
                                     </p>
                                   </div>
@@ -79,7 +79,7 @@
                                     End Date:
                                   </label>
                                   <div>
-                                    <input  type="text" class="form-control" placeholder="Click to select date of birth"   id="endDate" name="end_date">
+                                    <input  type="text" class="form-control" placeholder="Click to select date of birth"   id="endDate" name="end_date" required = "required">
                                     <p class="help-block">
                                     </p>
                                   </div>
@@ -115,7 +115,7 @@
                 <h3><span class="glyphicon glyphicon-user"></span>  My Roomates</li></h3>
                   <ul>
                     <c:forEach var="roomy" items= "${roomies}">
-                  <li><a href="/RunMyErrand/roomyinfo?email=${roomy.email}" > ${roomy.firstName}  ${roomy.lastName}</a> </li>              
+                  <li><a href="/RunMyErrand/roomyinfo?email=${roomy.email}&&name=${roomy.firstName}" > ${roomy.firstName}  ${roomy.lastName}</a> </li>              
             </c:forEach>
           </ul>
                </div>

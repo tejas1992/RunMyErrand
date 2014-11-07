@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.runMyErrand.model.TaskInfo;
-import com.runMyErrand.model.UserInfo;
 
 public class TaskDao {
 	

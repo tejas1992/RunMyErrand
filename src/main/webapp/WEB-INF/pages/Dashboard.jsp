@@ -28,6 +28,7 @@
                           <th>Task points</th>    
                           <th>Start Date</th>
                           <th>Due Date</th>    
+                          <th>Recurring</th>                          
                           <th>Status</th>
                           <th>Update Status</th>
                           <th>Action</th>
@@ -41,6 +42,17 @@
                         <td>${mytasks.points}</td>
                         <td>${mytasks.start_date}</td>
                         <td>${mytasks.end_date}</td>
+                        <c:choose>
+                            <c:when test = "${mytasks.recurrence eq 'monthly'}">
+                              <td>Monthly</td>
+                            </c:when>
+                            <c:when test = "${mytasks.recurrence eq 'weekly'}">
+                              <td>Weekly</td>
+                            </c:when>
+                            <c:otherwise>
+                              <td>No</td>
+                            </c:otherwise>
+                        </c:choose>
                         <c:choose>
                             <c:when test = "${mytasks.completed == 1}">
                               <td><span class="label label-success">DONE</span></td>
@@ -56,7 +68,7 @@
                           </select>
                         </td>
                         <td>
-                        <button type="submit">Edit</button>
+                        <button type="submit" class="btn btn-primary btn-sm">Edit</button>
                         </td>
                         </tr>
                     </form>

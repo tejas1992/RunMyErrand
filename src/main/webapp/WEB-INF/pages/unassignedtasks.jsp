@@ -48,7 +48,7 @@
                             </c:forEach>
                             </select></td>
                           <td>
-                          <button type="submit">AssignTasks</button>
+                          <button type="submit" class="btn btn-primary">AssignTasks</button>
                           </td>
                         </tr>
                       </form>

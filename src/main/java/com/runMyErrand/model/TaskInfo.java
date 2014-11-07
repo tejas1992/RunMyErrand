@@ -9,7 +9,7 @@ public class TaskInfo {
 	private int completed;
 	private String useremail;
 	private String room;
-	private String recurrence;
+	private String recurrence = "no";
 	
 	public String getRecurrence() {
 		return recurrence;

@@ -44,13 +44,4 @@ public class TaskControllerTest {
 		assert taskcontroller.assigntask(task, assignedto, session)== null:"return object not null";
 		
 	}*/
-	@Test
-	public void testeditMyTask()
-	{
-		System.out.println("editask test");
-		assert taskcontroller.editMyTask("oo", "pp", session)==null:"object is null";
-		
-		
-	}
-
 }

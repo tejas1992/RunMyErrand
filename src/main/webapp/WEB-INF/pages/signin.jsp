@@ -26,13 +26,13 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
                             <div class="col-sm-9">
-                                <input class="form-control" id="inputEmail3" placeholder="Email" type="email" name="username">
+                                <input class="form-control" id="inputEmail3" placeholder="Email" type="email" name="username" required="required">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputPassword3" class="col-sm-3 control-label">Password</label>
                             <div class="col-sm-9">
-                                <input class="form-control" id="inputPassword3" placeholder="Password" type="password" name="password">
+                                <input class="form-control" id="inputPassword3" placeholder="Password" type="password" name="password" required="required">
                             </div>
                         </div>
                         <div class="form-group last">
@@ -60,7 +60,7 @@
                                     First Name:
                                   </label>
                                   <div>
-                                    <input type="text" class="form-control" id="firstname" placeholder="Enter First Name" name="firstName">
+                                    <input type="text" class="form-control" id="firstname" placeholder="Enter First Name" name="firstName" required="required">
                                     <p class="help-block">
                                     </p>
                                   </div>
@@ -71,7 +71,7 @@
                                     Last Name:
                                   </label>
                                   <div>
-                                    <input type="text" class="form-control" id="lastname" placeholder="Enter Last Name" name="lastName">
+                                    <input type="text" class="form-control" id="lastname" placeholder="Enter Last Name" name="lastName" required="required">
                                     <p class="help-block">
                                     </p>
                                   </div>
@@ -98,7 +98,7 @@
                                     Date of Birth:
                                   </label>
                                   <div>
-                                    <input  type="text" class="form-control" placeholder="Click to select date of birth"   id="dob" name="dob">
+                                    <input  type="text" class="form-control" placeholder="Click to select date of birth"   id="dob" name="dob" required="required">
                                     <p class="help-block">
                                     </p>
                                   </div>
@@ -110,7 +110,7 @@
                                     Email address:
                                   </label>
                                   <div>
-                                    <input type="email" class="form-control" id="emailaddress" placeholder="Enter email address" name="email">
+                                    <input type="email" class="form-control" id="emailaddress" placeholder="Enter email address" name="email" required="required">
                                     <p class="help-block">
                                       Example: abc@xyz.com
                                     </p>
@@ -124,7 +124,7 @@
                                     Phone Number:
                                   </label>
                                   <div>
-                                    <input type="text" class="form-control" id="phonenumber" placeholder="Enter Phone Number" name="phoneNo">
+                                    <input type="text" class="form-control" id="phonenumber" placeholder="Enter Phone Number" name="phoneNo" required="required">
                                     <p class="help-block">
                                     </p>
                                   </div>
@@ -132,27 +132,16 @@
                                 <label for="room">
                                     Room
                                   </label>
-                                <input type="text" class="form-control" id="password" placeholder="Enter Password" name="room">
+                                <input type="text" class="form-control" id="password" placeholder="Enter Password" name="room" required="required">
                                 <div class="form-group">
                                   <label for="password">
                                     Password:
                                   </label>
                                   <div>
-                                    <input type="password" class="form-control" id="password" placeholder="Enter Password" name="password">
+                                    <input type="password" class="form-control" id="password" placeholder="Enter Password" name="password" required="required" size="10">
                                     <p class="help-block">
                                     </p>
                                   </div>
-                                </div>
-                             
-                                <div class="form-group">
-                                  <label for="repassword">
-                                    Re- enter Password:
-                                  </label>
-                                  <div>
-                                    <input type="password" class="form-control" id="repassword" placeholder="Re-Enter Password">
-                                  </div>
-                                    <p class="help-block">
-                                    </p>
                                 </div>
                       <div class="modal-footer">
                                 <button type="submit" class="btn btn-success btn-sm">Register</button>

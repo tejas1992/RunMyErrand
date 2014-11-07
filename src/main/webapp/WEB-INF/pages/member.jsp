@@ -15,6 +15,9 @@
 <jsp:include page="base.jsp"/>
 <div class = "col-md-9">
     <div class = "well">
+	    <div class = "page-header">
+  			<h1>${roomyName}'s Tasks:</h1>
+		</div>
     <table class="table table-bordered table-striped">
     	<thead>
 		<tr>
@@ -34,10 +37,10 @@
       	 <td> ${roomytask.end_date}</td>
        	 <c:choose>
        		<c:when test="${roomytask.completed == 0 }">
-       			<td>Pending</td>
+       			<td><h4><span class="label label-danger">Pending</span></h4></td>
        		</c:when>
        		<c:otherwise>
-       			<td>Completed</td>
+       			<td><h4><span class="label label-success">Completed</span></h4></td>
        		</c:otherwise>
       	 </c:choose>           
     	</tr>  

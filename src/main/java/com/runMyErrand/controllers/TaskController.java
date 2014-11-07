@@ -83,9 +83,4 @@ public class TaskController {
         }
         return model;
     }
-
-	public Object editMyTask(Object description, Object session, Object sess) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

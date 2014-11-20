@@ -64,6 +64,7 @@ public class LoginController{
 			model.addObject("message", "Registration Successful. Please Login");
 			model.addObject("user", user);
 			MemberServices.updateMembers(user);
+			UserServices.pendingScoresBatchUpdate(user.getRoom());
 			
 		}
 		return model;

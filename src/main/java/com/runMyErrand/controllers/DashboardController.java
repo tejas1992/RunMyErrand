@@ -12,18 +12,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.runMyErrand.model.TaskInfo;
 import com.runMyErrand.model.UserInfo;
 import com.runMyErrand.services.TaskServices;
 import com.runMyErrand.services.UserServices;
 
 @Controller
 @SessionAttributes("user")
+@SuppressWarnings("unchecked")
 public class DashboardController {
 	
 	private static final Logger logger = Logger.getLogger(DashboardController.class);
 	
 	/* /dashboard fetches all the necessary data which is required in the session it is redirected to 
-	 * Dashboard.jsp. It sets the session attributes as well as the tasks of the useras well as his roommates */
+	 * Dashboard.jsp. It sets the session attributes as well as the tasks of the user as well as his roommates */
 	@RequestMapping("/dashboard**")	
 	public ModelAndView dashboard(HttpSession session){
 		
@@ -35,13 +37,13 @@ public class DashboardController {
 		UserInfo user = UserServices.selectUser(username); 
 		ModelAndView model = new ModelAndView("Dashboard");
 		
-		ArrayList list_roomy = (ArrayList) UserServices.selectMyRoomies(user.getRoom(), user.getEmail());//getting other roommates
+		ArrayList<UserInfo> list_roomy = (ArrayList<UserInfo>) UserServices.selectMyRoomies(user.getRoom(), user.getEmail());//getting other roommates
 		
 		logger.debug(list_roomy);
-		ArrayList list_task = (ArrayList) TaskServices.retriveAllTasks(user.getRoom());
+		ArrayList<TaskInfo> list_task = (ArrayList<TaskInfo>) TaskServices.retriveAllTasks(user.getRoom());
 		
 		logger.debug(list_task);
-		ArrayList mytasks = (ArrayList) TaskServices.retrieveMyTasks(user.getEmail());
+		ArrayList<TaskInfo> mytasks = (ArrayList<TaskInfo>) TaskServices.retrieveMyTasks(user.getEmail());
 		logger.debug("Login:"+mytasks);
 		
 		session.setAttribute("user", user);

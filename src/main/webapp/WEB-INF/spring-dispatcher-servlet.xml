@@ -51,6 +51,16 @@
 		<property name="memberDao" ref = "memberDao"/>
 	</bean>
 	
+	<bean id = "masterDao" class = "com.runMyErrand.dao.MasterTaskDao">
+		<property name="jdbcTemplate" ref = "jdbcTemplate"/>
+	</bean>
+	
+	<bean id = "masterservices" class = "com.runMyErrand.services.MasterTaskServices">
+		<property name="masterTaskDao" ref = "masterDao"/>
+	</bean>
+	
+	
+	
 	 <bean id="viewResolver"
     	class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
         <property name="prefix">

@@ -1,4 +1,4 @@
-package com.runMyErrand.controllers.test;
+/*package com.runMyErrand.controllers.test;
 
 import static org.junit.Assert.*;
 
@@ -49,4 +49,4 @@ public class UserControllerTest {
 	}
 
 }
-	
+	*/

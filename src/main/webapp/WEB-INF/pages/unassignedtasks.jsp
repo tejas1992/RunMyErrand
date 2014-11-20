@@ -28,7 +28,7 @@
                           <th>Task points</th>    
                           <th>Start Date</th>
                           <th>Due Date</th>    
-                          <th>Roomate</th>
+                          <th>Roommate</th>
                           <th>Assign to </th>
                       </tr>
                     </thead>
@@ -48,10 +48,12 @@
                             </c:forEach>
                             </select></td>
                             <input type="hidden" value="${tasksleft.taskid}" name="taskid">
+                            <input type="hidden" value="${fn:length(unassigned)}" name="length">
                           <td>
                           <button type="submit" class="btn btn-primary">AssignTasks</button>
                           </td>
                         </tr>
+                  
                       </form>
                       </c:forEach>
                     </tbody>

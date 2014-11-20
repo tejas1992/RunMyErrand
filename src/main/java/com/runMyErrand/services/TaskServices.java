@@ -50,14 +50,13 @@ private static TaskDao taskdao;
 	public static void assignTask(int taskid, String name, String room)
 	{
 		logger.debug("Entering Assign task");
-		logger.debug(taskid);
-		logger.debug(name);
 		getTaskDao().updateTaskAssignedto(taskid, name, room);
 	}
 
 	//service to add task and insert the the new task
 	public static void addTask(TaskInfo task, String room) {
-		getTaskDao().insertTask(task, room);		
+		getTaskDao().insertTask(task, room); 
+		
 	}
 
 	//service to update task status as to completed or not and thus update the score
@@ -69,10 +68,13 @@ private static TaskDao taskdao;
         return getTaskDao().updateScore(email);
 	}
 	
+	public static TaskInfo getSpecificTask(int taskid){
+		return getTaskDao().getTask(taskid);
+	}
 	//service to check recurrence and do the necessary updates
 	public static void checkRecurrence(int taskid, String room){
 		
-		TaskInfo task =  getTaskDao().getTask(taskid);
+		TaskInfo task = TaskServices.getSpecificTask(taskid); 
 		logger.debug("Entering checkrecurrence "+ task.getTaskDescription());
 		String type = null;
 		String date = null;
@@ -110,8 +112,7 @@ private static TaskDao taskdao;
 		}
 	}
 	
-	
-
-	
-
+	public static void updateAssignedPoints(int mastertaskid, float points){
+		getTaskDao().updatePoints(mastertaskid, points);
+	}
 }

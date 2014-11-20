@@ -23,23 +23,26 @@ public class MemberServices {
 		memberdao = membd;
 	}
 	
+	public static float totalRoomPoints(String room){
+		return getMemberDao().getTotalPoints(room);
+	}
+	
 	/* Manages the logic for pending score retrieves necessary values to calculate */
-	public static int updatePendingScore(String room, int currentScore){
+	public static float updatePendingScore(String room, float currentScore){
 		logger.debug("updatePendingScore");
-		int totalpoints = getMemberDao().getTotalPoints(room);
+		float totalpoints = MemberServices.totalRoomPoints(room);
 		logger.debug(totalpoints);
 		int totalmembers = getMemberDao().getNoMembers(room);
 		logger.debug(totalmembers);
 
-		ScoreManager sc = new ScoreManager();
-		return sc.pendingScore(currentScore, totalpoints, totalmembers);
+		return ScoreManager.pendingScore(currentScore, totalpoints, totalmembers);
 	}
 	
 	/* Adds points to roomyinfo table when added points */
-	public static void addPoints(int taskpoints, String room){
+	public static void addPoints(float taskpoints, String room){
 		
 		logger.debug("Entering add points");
-		int totalpoints = getMemberDao().getTotalPoints(room);
+		float totalpoints = getMemberDao().getTotalPoints(room);
 		logger.debug(totalpoints);
 		taskpoints += totalpoints;
 		logger.debug(totalpoints);
@@ -55,9 +58,8 @@ public class MemberServices {
 		if(members != 0){
 			members+=1;
 			getMemberDao().updateMembers(members, user.getRoom());
-			int pending = updatePendingScore(user.getRoom(), 0);
-			UserServices.getUserDao().setPendingScore(user.getEmail(), pending);
-			
+			float pending = updatePendingScore(user.getRoom(), 0.0f);
+			UserServices.updateUserScore(user.getEmail(), 0, pending);
 		}
 		else{
 			getMemberDao().insertNewRoom(user.getRoom());

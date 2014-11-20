@@ -1,4 +1,4 @@
-package com.runMyErrand.controllers.test;
+/*package com.runMyErrand.controllers.test;
 import static org.junit.Assert.*;
 
 import java.lang.Object;
@@ -69,8 +69,8 @@ public class DashboardControllerTest {
 	@Test(expected=NullPointerException.class)
 	public void testDashboard() {
 		//fail("Not yet implemented");
-/*		System.out.println("inside dash");
-		assert dashcon.dashboard(session)!=null:"session does not return null";*/
+	System.out.println("inside dash");
+		assert dashcon.dashboard(session)!=null:"session does not return null";
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		   		String username = auth.getName();
 		UserInfo user = (UserInfo)UserServices.selectUser(username);
@@ -90,4 +90,4 @@ public class DashboardControllerTest {
 		 ModelAndView model2= dashcon.dashboard(session);
 		 assert model==model2:"expected equal to actual";	 
 	}
-}
+}*/

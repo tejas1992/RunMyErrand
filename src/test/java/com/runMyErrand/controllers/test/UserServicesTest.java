@@ -1,6 +1,4 @@
-/**91
- * 
- */
+/*
 package com.runMyErrand.controllers.test;
 
 import java.util.ArrayList;
@@ -17,19 +15,11 @@ import com.runMyErrand.dao.UserDao;
 import com.runMyErrand.model.UserInfo;
 import com.runMyErrand.services.UserServices;
 
-/**
- * @author DELL
- *
- */
 @RunWith(MockitoJUnitRunner.class)
 public class UserServicesTest {
 	UserServices userservicestest;
 	@Mock
 	UserDao userDao;
-
-	/**
-	 * @throws java.lang.Exception
-	 */
 	@Before
 	public void setUp() throws Exception {
 
@@ -52,3 +42,4 @@ public class UserServicesTest {
 	}
 
 }
+*/

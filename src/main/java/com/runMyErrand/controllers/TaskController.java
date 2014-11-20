@@ -14,12 +14,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.runMyErrand.model.TaskInfo;
 import com.runMyErrand.model.UserInfo;
+import com.runMyErrand.services.MasterTaskServices;
 import com.runMyErrand.services.TaskServices;
 import com.runMyErrand.services.UserServices;
 import com.runMyErrand.services.MemberServices;
 /*Manages all task related mechanisms */
 @Controller
-@SuppressWarnings({"rawtypes"})
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class TaskController {
 	
 	private static final Logger logger = Logger.getLogger(TaskController.class);
@@ -43,25 +44,42 @@ public class TaskController {
 	/* updates tables when task is assigned*/
 	@RequestMapping(value="/Assigntask.do" ,method = RequestMethod.POST)
 	public ModelAndView assigntask(@RequestParam("taskid") int taskid, @RequestParam("assigned") String assignedto,
-			HttpSession session){
+			HttpSession session, @RequestParam("length") int length){
 		
-		logger.debug("task: "+taskid);
-		logger.debug("assignedto: "+assignedto);
+		logger.info("task: "+taskid);
+		logger.info("assignedto: "+assignedto);
 		UserInfo user = (UserInfo)session.getAttribute("user");
 		TaskServices.assignTask(taskid, assignedto, user.getRoom());
+		if(length>1){
+			MasterTaskServices.updateAssignedTaskPoints(taskid, user.getRoom());
+			logger.debug("updated tasks");
+		}
 		return new ModelAndView("forward:unassignedtask");
 	}
 	
-	/* Manages add task related process*/
+	/** 
+	 * Working: Adds tasks to task and master table;
+	 * 			updates total points in roominfo; 
+	 * 			updates pending scores.
+	 * 
+	 * @param task (Model Object TaskInfo)
+	 * 		 ModelAttributes sets the task information given by user
+	 * @param session
+	 * 		 
+	 * @return ModelAndView (forwards request to Dashboard Controller)			
+	 **/
+	
 	@RequestMapping(value = "/addtask.do", method = RequestMethod.POST)
 	public ModelAndView addtask(@ModelAttribute("task") TaskInfo task,HttpSession session) {
 		logger.debug("Entering add task controller");
 		
 		UserInfo user = (UserInfo)session.getAttribute("user");
+		int masterid = MasterTaskServices.insertMasterTask(task, user.getRoom());
+		task.setMasterId(masterid);
 		TaskServices.addTask(task, user.getRoom());
 		logger.debug("adding points to roominfo");
 		MemberServices.addPoints(task.getPoints(), user.getRoom());
-		
+		UserServices.pendingScoresBatchUpdate(user.getRoom());
 		return new ModelAndView("forward:dashboard");
 
 	}
@@ -74,7 +92,6 @@ public class TaskController {
 
 		logger.debug("Entering edittask");
 		int status = -1;
-		String check = null;
 		ModelAndView model = new ModelAndView("forward:dashboard");
 		
 		logger.debug("checking if task is todo or completed");

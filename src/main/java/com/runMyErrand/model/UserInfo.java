@@ -12,20 +12,26 @@ public class UserInfo {
 	private String email;
 	private String room;
 	private String phoneNo;
-	private int score = 0;
-	private int pendingscore;
+	private float score;
+	private float pendingscore;
 	
+	public float getScore() {
+		return score;
+	}
+	public void setScore(float score) {
+		this.score = score;
+	}
+	public float getPendingscore() {
+		return pendingscore;
+	}
+	public void setPendingscore(float pendingscore) {
+		this.pendingscore = pendingscore;
+	}
 	public int getUserid() {
 		return userid;
 	}
 	public void setUserid(int userid) {
 		this.userid = userid;
-	}
-	public int getPendingscore() {
-		return pendingscore;
-	}
-	public void setPendingscore(int pendingscore) {
-		this.pendingscore = pendingscore;
 	}
 	public String getRoom() {
 		return room;
@@ -69,11 +75,6 @@ public class UserInfo {
 	public void setPhoneNo(String phoneNo) {
 		this.phoneNo = phoneNo;
 	}
-	public int getScore() {
-		return score;
-	}
-	public void setScore(int score) {
-		this.score = score;
-	}
+	
 	
 }

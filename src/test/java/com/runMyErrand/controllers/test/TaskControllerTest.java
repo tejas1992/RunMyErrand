@@ -1,20 +1,12 @@
-package com.runMyErrand.controllers.test;
+/*package com.runMyErrand.controllers.test;
 import org.mockito.*;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpSession;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -76,9 +68,9 @@ public class TaskControllerTest {
 		
 		
 	}
-	@SuppressWarnings("static-access")
+	@SuppressWarnings("static-access")*/
 	/* The test returns null as the database does'nt hold values for assignedtasks*/
-	@Test(expected=NullPointerException.class)
+/*	@Test(expected=NullPointerException.class)
 	public void testunassignedTasks()
 	{
 		System.out.println("editask test");
@@ -89,9 +81,9 @@ public class TaskControllerTest {
 		@SuppressWarnings("rawtypes")
 		ArrayList expected_unassignedtasks = (ArrayList) TaskServices.retrieveUnassignedTasks(user.getRoom());
 		when(mocktaskservices.retrieveUnassignedTasks("910N")).thenReturn(expected_unassignedtasks);
-	}
+	}*/
 	/* The test returns null as the database does'nt hold values for assignedtasks*/
-	@Test(expected=NullPointerException.class)
+/*	@Test(expected=NullPointerException.class)
 	public void testaddtash()
 	{
 		UserInfo user = (UserInfo)session.getAttribute("user");
@@ -102,3 +94,4 @@ public class TaskControllerTest {
 		assert model!=null :"object value returning not null";		
 	}
 	}
+*/

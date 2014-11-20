@@ -16,9 +16,9 @@ public class MemberDao {
 	}
 	
 	/* get the total points of particular room */
-	public int getTotalPoints(String room){
+	public float getTotalPoints(String room){
 		sql = "Select totalpoints from roominfo where room = ?" ;
-		int total = 0;
+		float total = 0;
 		try{
 			total = jdbcTemplate.queryForObject(sql, new Object[]{room}, Integer.class);
 		}
@@ -30,7 +30,7 @@ public class MemberDao {
 	}
 	
 	/* update total points */
-	public void updateTotalPoints(int updatedpoints, String room){
+	public void updateTotalPoints(float updatedpoints, String room){
 		
 		sql = "update roominfo set totalpoints = ? where room = ?";
 		jdbcTemplate.update(sql, new Object[]{updatedpoints, room});

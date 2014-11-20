@@ -5,13 +5,15 @@ public class TaskInfo {
 	
 	private int taskid;
 	private String taskDescription;
-	private int points;
+	private float points;
 	private String start_date;
 	private String end_date;
 	private int completed;
 	private String useremail;
 	private String room;
 	private String recurrence = "no";
+	private int masterId;
+	
 	
 	public int getTaskid() {
 		return taskid;
@@ -22,6 +24,10 @@ public class TaskInfo {
 	public String getRecurrence() {
 		return recurrence;
 	}
+	
+	public float getPoints() {
+		return points;
+	}
 	public void setRecurrence(String recurrence) {
 		this.recurrence = recurrence;
 	}
@@ -31,10 +37,7 @@ public class TaskInfo {
 	public void setTaskDescription(String taskDescription) {
 		this.taskDescription = taskDescription;
 	}
-	public int getPoints() {
-		return points;
-	}
-	public void setPoints(int points) {
+	public void setPoints(float points) {
 		this.points = points;
 	}
 	public String getStart_date() {
@@ -66,6 +69,12 @@ public class TaskInfo {
 	}
 	public void setRoom(String room) {
 		this.room = room;
+	}
+	public int getMasterId() {
+		return masterId;
+	}
+	public void setMasterId(int masterId) {
+		this.masterId = masterId;
 	}
 	                            
 }

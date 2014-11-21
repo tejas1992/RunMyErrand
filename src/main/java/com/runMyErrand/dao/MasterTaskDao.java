@@ -21,14 +21,14 @@ public class MasterTaskDao {
 		jdbcTemplate = jdbcTemp;
 	}
 	
-	public void insertMaster(TaskInfo task, String room){
+	public void insertMaster(TaskInfo task, String room, int defaultdays){
 		
-		sql = "INSERT into mastertask(mastertaskdesc, room, points) VALUES(?,?,?)";
+		sql = "INSERT into mastertask(mastertaskdesc, room, points, Defaultdays) VALUES(?,?,?,?)";
 		
 		String mastertask = task.getTaskDescription();
 		float points = task.getPoints();
 		
-		jdbcTemplate.update(sql, new Object[]{mastertask, room, points});
+		jdbcTemplate.update(sql, new Object[]{mastertask, room, points, defaultdays});
 		
 	}
 	

@@ -1,11 +1,13 @@
 package com.runMyErrand.services;
 
+import java.text.ParseException;
 import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.runMyErrand.dao.MasterTaskDao;
+import com.runMyErrand.logic.DateManager;
 import com.runMyErrand.logic.ScoreManager;
 import com.runMyErrand.model.MasterTaskInfo;
 import com.runMyErrand.model.TaskInfo;
@@ -25,7 +27,9 @@ public class MasterTaskServices {
 	}
 	
 	public static int insertMasterTask(TaskInfo task, String room){
-		getMasterTaskDao().insertMaster(task, room);
+		int defaultdays = DateManager.dateDifference(task.getStart_date(), task.getEnd_date());
+		logger.debug("Date Difference calculated");
+		getMasterTaskDao().insertMaster(task, room, defaultdays);
 		int masterid = getMasterTaskDao().getTaskId(task, room);
 		logger.debug("Task updated");
 		return masterid;

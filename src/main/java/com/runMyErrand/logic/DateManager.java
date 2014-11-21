@@ -22,4 +22,18 @@ public class DateManager {
 	        String output = dateformat.format(c.getTime());
 	        return output;
 	    }
+	 
+	 public static int dateDifference(String date1, String date2){
+
+		 long diffDays =0;
+		 try{
+			 DateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd");
+			 Date d1 = dateformat.parse(date1);
+			 Date d2 = dateformat.parse(date2);
+			 long diff = d2.getTime() - d1.getTime();
+			 diffDays = diff / (24 * 60 * 60 * 1000);
+		 }
+		 catch(Exception e){}
+         return (int) diffDays;
+     }
 }

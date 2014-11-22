@@ -72,7 +72,7 @@ public class TaskController {
 	@RequestMapping(value = "/addtask.do", method = RequestMethod.POST)
 	public ModelAndView addtask(@ModelAttribute("task") TaskInfo task,HttpSession session) {
 		logger.debug("Entering add task controller");
-		
+		ModelAndView model= new ModelAndView("forward:dashboard");
 		UserInfo user = (UserInfo)session.getAttribute("user");
 		int masterid = MasterTaskServices.insertMasterTask(task, user.getRoom());
 		task.setMasterId(masterid);
@@ -80,7 +80,7 @@ public class TaskController {
 		logger.debug("adding points to roominfo");
 		MemberServices.addPoints(task.getPoints(), user.getRoom());
 		UserServices.pendingScoresBatchUpdate(user.getRoom());
-		return new ModelAndView("forward:dashboard");
+		return model;
 
 	}
 	

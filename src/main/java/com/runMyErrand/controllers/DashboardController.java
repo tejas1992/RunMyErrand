@@ -46,6 +46,10 @@ public class DashboardController {
 		ArrayList<TaskInfo> mytasks = (ArrayList<TaskInfo>) TaskServices.retrieveMyTasks(user.getEmail());
 		logger.debug("Login:"+mytasks);
 		
+		ArrayList masterTasks = (ArrayList) TaskServices.retrieveMasterTasks(user.getRoom());
+		logger.debug(masterTasks);
+		model.addObject("masterTasks", masterTasks);
+		
 		session.setAttribute("user", user);
 		session.setAttribute("roomies", list_roomy);
 		

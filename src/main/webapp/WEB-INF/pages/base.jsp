@@ -41,6 +41,23 @@
                       </div>
                       <div class="modal-body">
                      <form role="form" action="/RunMyErrand/addtask.do" method="post">
+                     <div class="form-group">
+                                  <label for="masterTasks">
+                                    Reuse Tasks:
+                                  </label>
+                                  <div>
+									         <select id="inputsa" class="form-control"  onchange = "functionCopyAtoB();">
+                             			<option value=" "> </option>      									
+                            			<c:forEach var="masterTasks" items= "${masterTasks}">
+                              			<option value="${masterTasks.mastertaskdesc}|${masterTasks.points}">${masterTasks.mastertaskdesc}</option>      
+                            			</c:forEach>
+                            		</select>
+                                    <p class="help-block">
+                                    </p>
+                                  </div>
+                                </div>
+                     
+                     
                                 <div class="form-group">
                                   <label for="taskDescription">
                                     Description:
@@ -100,6 +117,7 @@
                                   </div>
                                 </div>
                                 
+                  			                                
                                 <input type ="hidden" name="email" value="${user.email}" /> 
                       <div class="modal-footer">
                                 <button type="submit" class="btn btn-success btn-sm">Add Task</button>

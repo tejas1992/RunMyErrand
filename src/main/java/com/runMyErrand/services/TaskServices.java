@@ -1,6 +1,7 @@
 package com.runMyErrand.services;
 
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.runMyErrand.dao.TaskDao;
 import com.runMyErrand.logic.DateManager;
+import com.runMyErrand.model.MasterTaskInfo;
 import com.runMyErrand.model.TaskInfo;
 
 @SuppressWarnings({"rawtypes", "static-access"})
@@ -114,5 +116,10 @@ private static TaskDao taskdao;
 	
 	public static void updateAssignedPoints(int mastertaskid, float points){
 		getTaskDao().updatePoints(mastertaskid, points);
+	}
+
+	public static List<MasterTaskInfo> retrieveMasterTasks(String room) {
+		// TODO Auto-generated method stub
+		return getTaskDao().selectMaster(room);
 	}
 }

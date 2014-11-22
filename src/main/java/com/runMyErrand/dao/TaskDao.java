@@ -1,11 +1,13 @@
 package com.runMyErrand.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import com.runMyErrand.model.MasterTaskInfo;
 import com.runMyErrand.model.TaskInfo;
 
 public class TaskDao{
@@ -126,8 +128,21 @@ private static final Logger logger = Logger.getLogger(TaskDao.class);
 		 jdbcTemplate.update(sql, new Object[]{points, taskid, null});
 		 logger.debug("task updated");
 	 }
-	
-	
-	
-	
+
+	public List<MasterTaskInfo> selectMaster(String room) {
+		// TODO Auto-generated method stub
+		sql = "SELECT * from mastertask where room = ?";
+		List<MasterTaskInfo> masterTasks;
+		try{
+			masterTasks = jdbcTemplate.query(sql, new Object[] {room}, new MasterTaskRowMapper());
+			logger.debug(masterTasks);
+		}	
+		
+		catch(Exception e)
+		{
+			masterTasks = null;
+		}
+
+		return  masterTasks;
+		}
 }

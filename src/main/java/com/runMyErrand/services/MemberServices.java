@@ -46,8 +46,12 @@ public class MemberServices {
 		logger.debug(totalpoints);
 		taskpoints += totalpoints;
 		logger.debug(totalpoints);
-		getMemberDao().updateTotalPoints(taskpoints, room);
 		
+		MemberServices.updatePoints(taskpoints, room);
+	}
+	
+	public static void updatePoints(float points, String room){
+		getMemberDao().updateTotalPoints(points, room);
 	}
 	
 	//updates new user in roominfo table: sets pending score if room already exists 

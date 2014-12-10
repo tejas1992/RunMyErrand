@@ -30,6 +30,7 @@
   	<param-value>
   		/WEB-INF/spring-dispatcher-servlet.xml,
   		/WEB-INF/spring-security.xml
+  		/WEB-INF/spring-schedular.xml
   	</param-value>
   </context-param>
   

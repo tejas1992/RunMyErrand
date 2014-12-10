@@ -25,8 +25,8 @@ public class UserRowMapper implements RowMapper<UserInfo>
 		user.setEmail(resultSet.getString(6));
 		user.setPhoneNo(resultSet.getString(7));
 		user.setRoom(resultSet.getString(8));
-		user.setScore(resultSet.getInt(9));
-		user.setPendingscore(resultSet.getInt(10));
+		user.setScore(resultSet.getFloat(9));
+		user.setPendingscore(resultSet.getFloat(10));
 				
 		return user;
 	}

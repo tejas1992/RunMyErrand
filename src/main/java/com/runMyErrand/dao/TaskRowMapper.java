@@ -16,7 +16,7 @@ public class TaskRowMapper implements RowMapper<TaskInfo>{
 		task.setTaskid(rs.getInt(1));
 		task.setMasterId(rs.getInt(2));
 		task.setTaskDescription(rs.getString(3));
-		task.setPoints(rs.getInt(4));
+		task.setPoints(rs.getFloat(4));
 		task.setStart_date(rs.getString(5));
 		task.setEnd_date(rs.getString(6));
 		task.setCompleted(rs.getInt(7));

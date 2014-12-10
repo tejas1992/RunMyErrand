@@ -27,7 +27,7 @@ public class ScoreManager {
 	
 	public static float increaseTaskPoints(float points, float difference, float dividingfactor){
 		
-		points += difference*dividingfactor/points;
+		points += difference*(points/dividingfactor);
 		return points;
 	}
 }

@@ -1,6 +1,5 @@
 package com.runMyErrand.services;
 
-import java.text.ParseException;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -44,13 +43,14 @@ public class MasterTaskServices {
 		
 		logger.info("Decreased points:"+ temp);
 		getMasterTaskDao().updatePoints(task.getMasterId(), temp);
+		TaskServices.updateAssignedPoints(task.getMasterId(), temp);
 		float difference = ScoreManager.pointsDifference(task.getPoints());
 		logger.info("difference:"+ difference);
 		
 		List<MasterTaskInfo> tasks = getMasterTaskDao().getTasks(task.getMasterId(), room);
 		logger.info("MasterID:"+ task.getMasterId());
 		logger.info("sizeof list:"+ tasks.size());
-		float dividingfactor = MemberServices.totalRoomPoints(room) - task.getPoints();
+		float dividingfactor =  MemberServices.totalRoomPoints(room) - task.getPoints();;
 		logger.info("dividing factor:"+ dividingfactor);
 		logger.debug("Increasing Points");
 		for(int i=0; i<tasks.size(); i++){
@@ -62,4 +62,12 @@ public class MasterTaskServices {
 		}
 		
 	}
+	public static float getUpdatedPoints(TaskInfo task){
+		return getMasterTaskDao().getTaskPoints(task);
+	}
+	
+	public static List<MasterTaskInfo> retrieveMasterTasks(String room) {
+		return getMasterTaskDao().selectMaster(room);
+	}
+
 }

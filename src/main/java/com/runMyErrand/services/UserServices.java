@@ -1,13 +1,11 @@
 package com.runMyErrand.services;
 
 import java.util.List;
-import java.util.ArrayList;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.runMyErrand.dao.UserDao;
-import com.runMyErrand.logic.ScoreManager;
 import com.runMyErrand.model.UserInfo;
 
 public class UserServices {
@@ -55,11 +53,15 @@ public class UserServices {
 	//calculates and updates the pending score of each user while adding a new task and while adding a new member
 	public static void pendingScoresBatchUpdate(String room){
 		logger.debug("In PendingScoresUpdate");
-		List<UserInfo> users = getUserDao().selectAll(room);
+		List<UserInfo> users = UserServices.selectMembers(room);
 		for(int i=0; i<users.size(); i++){
 			users.get(i).setPendingscore(MemberServices.updatePendingScore(room, users.get(i).getScore()));
 		}
 		getUserDao().batchUpdatePendingScore(room, users);
+	}
+	
+	public static List<UserInfo> selectMembers(String room){
+		return getUserDao().selectAll(room);
 	}
 
 }

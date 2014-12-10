@@ -58,9 +58,9 @@ public class TaskController {
 	}
 	
 	/** 
-	 * Working: Adds tasks to task and master table;
-	 * 			updates total points in roominfo; 
-	 * 			updates pending scores.
+	 *  The method adds tasks to task and master table;
+	 * 	it further updates total points in roominfo which is required while calculating pending score; 
+	 * 	and updates pending scores of all the users of the room.
 	 * 
 	 * @param task (Model Object TaskInfo)
 	 * 		 ModelAttributes sets the task information given by user
@@ -72,15 +72,15 @@ public class TaskController {
 	@RequestMapping(value = "/addtask.do", method = RequestMethod.POST)
 	public ModelAndView addtask(@ModelAttribute("task") TaskInfo task,HttpSession session) {
 		logger.debug("Entering add task controller");
-		ModelAndView model= new ModelAndView("forward:dashboard");
+		
 		UserInfo user = (UserInfo)session.getAttribute("user");
 		int masterid = MasterTaskServices.insertMasterTask(task, user.getRoom());
 		task.setMasterId(masterid);
 		TaskServices.addTask(task, user.getRoom());
 		logger.debug("adding points to roominfo");
-		MemberServices.addPoints(task.getPoints(), user.getRoom());
-		UserServices.pendingScoresBatchUpdate(user.getRoom());
-		return model;
+		//MemberServices.addPoints(task.getPoints(), user.getRoom());
+		//UserServices.pendingScoresBatchUpdate(user.getRoom());
+		return new ModelAndView("forward:dashboard");
 
 	}
 	
@@ -95,7 +95,7 @@ public class TaskController {
 		ModelAndView model = new ModelAndView("forward:dashboard");
 		
 		logger.debug("checking if task is todo or completed");
-				if (completed.equalsIgnoreCase("done")) {
+		if (completed.equalsIgnoreCase("done")) {
 			logger.debug("taskdone");
 			status = 1;
 		} else {
@@ -106,17 +106,17 @@ public class TaskController {
 		UserInfo user = (UserInfo) session.getAttribute("user");
 		
 		logger.debug("getting score and setting Pending Score: Previous " + user.getPendingscore());
-		int score = TaskServices.updateTaskStatus(taskid ,status, user.getEmail());
+		float score = TaskServices.updateTaskStatus(taskid ,status, user.getEmail());
 		user.setPendingscore(MemberServices.updatePendingScore(user.getRoom(), score));
 		
 		logger.debug("Updating User Score");
 		UserServices.updateUserScore(user.getEmail(), score, user.getPendingscore());
 		
-		logger.debug("Updating dates if tasks complete");
+	/*	logger.debug("Updating dates if tasks complete");
 		if (status == 1) {
 			TaskServices.checkRecurrence(taskid, user.getRoom());
 		}
 		
-		return model;
+	*/	return model;
 	}
 }

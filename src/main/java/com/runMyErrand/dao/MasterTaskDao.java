@@ -46,6 +46,19 @@ public class MasterTaskDao {
 		return id;
 	}
 	
+	public float getTaskPoints(TaskInfo task){
+		sql = "SELECT points FROM mastertask WHERE masterid = ?";
+		int masterid = task.getMasterId();
+		float points = 0;
+		try{
+			points = jdbcTemplate.queryForObject(sql, new Object[]{masterid}, Float.class);
+		}
+		catch(Exception e){}
+		
+		return points;
+		
+	}
+	
 	public void updatePoints(int masterid, float points){
 		sql = "UPDATE mastertask SET points = ? WHERE masterid = ?";
 		jdbcTemplate.update(sql, new Object[]{points, masterid});
@@ -58,4 +71,36 @@ public class MasterTaskDao {
 		logger.debug("List retrieved");
 		return tasks;
 	}
+	
+	public List<MasterTaskInfo> selectMaster(String room) {
+
+		sql = "SELECT * from mastertask where room = ?";
+		List<MasterTaskInfo> masterTasks;
+		try{
+			masterTasks = jdbcTemplate.query(sql, new Object[] {room}, new MasterTaskRowMapper());
+			logger.debug(masterTasks);
+		}	
+		catch(Exception e){
+			masterTasks = null;
+		}
+
+		return  masterTasks;
+	}
+	
+	public int getTotalPoints(int masterid, String room){
+		sql = "SELECT sum(points) from mastertask where masterid != ? and room = ?";
+
+		int id = -1;
+		try{
+			id = jdbcTemplate.queryForObject(sql, new Object[]{masterid, room}, Integer.class);
+		}
+		catch(Exception e){
+			logger.debug(e);
+			id = 0;
+		}
+		return id;
+	}
+
 }
+
+

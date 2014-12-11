@@ -16,7 +16,8 @@ public class MasterTaskRowMapper implements RowMapper<MasterTaskInfo>{
 			task.setMastertaskdesc(rs.getString(2));
 			task.setPoints(rs.getFloat(4));
 			task.setRoom(rs.getString(3));
-			
+			task.setDefaultdays(rs.getInt(5));
+
 			return task;
 		}
 

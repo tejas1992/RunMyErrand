@@ -46,10 +46,10 @@
                                     Reuse Tasks:
                                   </label>
                                   <div>
-									         <select id="inputsa" class="form-control"  onchange = "functionCopyAtoB();">
+									<select id="inputsa" class="form-control"  onchange = "reusableTasks();">
                              			<option value=" "> </option>      									
                             			<c:forEach var="masterTasks" items= "${masterTasks}">
-                              			<option value="${masterTasks.mastertaskdesc}|${masterTasks.points}">${masterTasks.mastertaskdesc}</option>      
+                              			<option value="${masterTasks.mastertaskdesc}|${masterTasks.points}|${masterTasks.defaultdays}">${masterTasks.mastertaskdesc}</option>      
                             			</c:forEach>
                             		</select>
                                     <p class="help-block">
@@ -91,12 +91,12 @@
                                   </div>
                                 </div>
 
-                                <div class="form-group">
-                                  <label for="endDate">
-                                    End Date:
+                    		   <div class="form-group">
+                                  <label for="number_of_days">
+                                    Number of days:
                                   </label>
                                   <div>
-                                    <input  type="text" class="form-control" placeholder="Click to select date of birth"   id="endDate" name="end_date" required = "required">
+                                    <input  type="text" class="form-control" placeholder="Click to select date of birth"   id="number_of_days" name="number_of_days" required = "required">
                                     <p class="help-block">
                                     </p>
                                   </div>
@@ -119,6 +119,8 @@
                                 
                   			                                
                                 <input type ="hidden" name="email" value="${user.email}" /> 
+                                <input type ="hidden" name="flag" id = "flag" value="0" /> 
+                                
                       <div class="modal-footer">
                                 <button type="submit" class="btn btn-success btn-sm">Add Task</button>
                       </div>                                

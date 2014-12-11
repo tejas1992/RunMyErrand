@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.runMyErrand.logic.DateManager;
 import com.runMyErrand.model.TaskInfo;
 import com.runMyErrand.model.UserInfo;
 import com.runMyErrand.services.MasterTaskServices;
@@ -70,12 +71,20 @@ public class TaskController {
 	 **/
 	
 	@RequestMapping(value = "/addtask.do", method = RequestMethod.POST)
-	public ModelAndView addtask(@ModelAttribute("task") TaskInfo task,HttpSession session) {
+	public ModelAndView addtask(@ModelAttribute("task") TaskInfo task,HttpSession session,@RequestParam("flag") String flag) {
 		logger.debug("Entering add task controller");
-		
+		logger.debug("Flag from page: "+flag);
 		UserInfo user = (UserInfo)session.getAttribute("user");
-		int masterid = MasterTaskServices.insertMasterTask(task, user.getRoom());
-		task.setMasterId(masterid);
+		logger.debug("Task Description: "+task.getTaskDescription());
+		logger.debug("Task points: "+task.getPoints());
+		logger.debug("Number of days: "+task.getNumber_of_days());
+		String end_date = DateManager.recurring(task.getStart_date(), task.getNumber_of_days());
+		task.setEnd_date(end_date);
+		int addFlag = Integer.parseInt(flag);
+		if(addFlag == 0){
+			int masterid = MasterTaskServices.insertMasterTask(task, user.getRoom());
+			task.setMasterId(masterid);			
+		}
 		TaskServices.addTask(task, user.getRoom());
 		logger.debug("adding points to roominfo");
 		//MemberServices.addPoints(task.getPoints(), user.getRoom());

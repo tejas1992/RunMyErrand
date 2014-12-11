@@ -13,8 +13,15 @@ public class TaskInfo {
 	private String room;
 	private String recurrence = "no";
 	private int masterId;
+	private int number_of_days;
+
 	
-	
+	public int getNumber_of_days() {
+		return number_of_days;
+	}
+	public void setNumber_of_days(int number_of_days) {
+		this.number_of_days = number_of_days;
+	}
 	public int getTaskid() {
 		return taskid;
 	}

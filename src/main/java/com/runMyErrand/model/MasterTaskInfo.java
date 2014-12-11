@@ -6,6 +6,15 @@ public class MasterTaskInfo {
 	private String mastertaskdesc;
 	private String room;
 	private float points;
+	private int defaultdays;
+
+	
+	public int getDefaultdays() {
+		return defaultdays;
+	}
+	public void setDefaultdays(int defaultdays) {
+		this.defaultdays = defaultdays;
+	}
 	public int getMasterid() {
 		return masterid;
 	}

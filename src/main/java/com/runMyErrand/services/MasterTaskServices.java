@@ -26,9 +26,9 @@ public class MasterTaskServices {
 	}
 	
 	public static int insertMasterTask(TaskInfo task, String room){
-		int defaultdays = DateManager.dateDifference(task.getStart_date(), task.getEnd_date());
+		//int defaultdays = DateManager.dateDifference(task.getStart_date(), task.getEnd_date());
 		logger.debug("Date Difference calculated");
-		getMasterTaskDao().insertMaster(task, room, defaultdays);
+		getMasterTaskDao().insertMaster(task, room);
 		int masterid = getMasterTaskDao().getTaskId(task, room);
 		logger.debug("Task updated");
 		return masterid;

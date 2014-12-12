@@ -19,7 +19,6 @@ import com.runMyErrand.services.UserServices;
  *  The class is a controller that manages all the login functionalities
  *  Spring-security.xml is configured to use this controller to manage the control flow while user logs in
  *  
- *  @author Tejas
  *  */
 @Controller
 @SessionAttributes("user")

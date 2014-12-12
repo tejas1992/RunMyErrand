@@ -9,6 +9,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import com.runMyErrand.model.MasterTaskInfo;
 import com.runMyErrand.model.TaskInfo;
 
+/**
+ * Manages the queries that are related to MasterTask Table 
+ */
 public class MasterTaskDao {
 
 	private static String sql;
@@ -21,6 +24,15 @@ public class MasterTaskDao {
 		jdbcTemplate = jdbcTemp;
 	}
 	
+	
+	/**
+	 * Inserts new Master task
+	 * 
+	 * @param task
+	 * 		task information
+	 * @param room
+	 * 		room no for he task
+	 */
 	public void insertMaster(TaskInfo task, String room){
 		
 		sql = "INSERT into mastertask(mastertaskdesc, room, points, Defaultdays) VALUES(?,?,?,?)";
@@ -32,6 +44,13 @@ public class MasterTaskDao {
 		
 	}
 	
+	/**
+	 * Gets TaskId of a particular MAster task 
+	 * 
+	 * @param task
+	 * @param room
+	 * @return int Id of the task
+	 */
 	public int getTaskId(TaskInfo task, String room){
 		sql = "SELECT masterid from mastertask where mastertaskdesc = ? and room = ?";
 
@@ -46,6 +65,12 @@ public class MasterTaskDao {
 		return id;
 	}
 	
+	/**
+	 * Retrieves updated tasks points from master
+	 * 
+	 * @param task
+	 * @return points
+	 */
 	public float getTaskPoints(TaskInfo task){
 		sql = "SELECT points FROM mastertask WHERE masterid = ?";
 		int masterid = task.getMasterId();
@@ -53,53 +78,79 @@ public class MasterTaskDao {
 		try{
 			points = jdbcTemplate.queryForObject(sql, new Object[]{masterid}, Float.class);
 		}
-		catch(Exception e){}
+		catch(Exception e){
+			logger.debug(e);
+		}
 		
 		return points;
 		
 	}
 	
+	
+	/**
+	 * updates points of a particular master task
+	 * 
+	 * @param masterid
+	 * @param points
+	 */
 	public void updatePoints(int masterid, float points){
 		sql = "UPDATE mastertask SET points = ? WHERE masterid = ?";
 		jdbcTemplate.update(sql, new Object[]{points, masterid});
 		logger.debug("points updated");
 	}
 	
-	public List<MasterTaskInfo> getTasks(int taskid, String room){
-		sql = "SELECT * FROM mastertask WHERE room = ? AND masterid != ?";
+	/*/**
+	 * retrieves tasks other than the given task 
+	 * @param taskid
+	 * @param room
+	 * @return
+	 *
+	public List<MasterTaskInfo> getTasks(int taskid, String room){ 
+		sql = "SELECT * FROM mastertask WHERE room = ? AND masterid != ?"; 
 		List<MasterTaskInfo> tasks = jdbcTemplate.query(sql, new Object[]{room, taskid}, new MasterTaskRowMapper());
 		logger.debug("List retrieved");
 		return tasks;
-	}
+	}*/
 	
+	/**
+	 * Retrieves all master tasks for a particular room
+	 * @param room
+	 * @return Lists of Tasks
+	 */
 	public List<MasterTaskInfo> selectMaster(String room) {
 
 		sql = "SELECT * from mastertask where room = ?";
 		List<MasterTaskInfo> masterTasks;
-		try{
-			masterTasks = jdbcTemplate.query(sql, new Object[] {room}, new MasterTaskRowMapper());
+		try {
+			masterTasks = jdbcTemplate.query(sql, new Object[] { room },
+					new MasterTaskRowMapper());
 			logger.debug(masterTasks);
-		}	
-		catch(Exception e){
+		} catch (Exception e) {
 			masterTasks = null;
 		}
 
-		return  masterTasks;
+		return masterTasks;
 	}
 	
-	public int getTotalPoints(int masterid, String room){
+	/**
+	 * 
+	 * @param masterid
+	 * @param room
+	 * @return
+	 *
+	public int getTotalPoints(int masterid, String room) {
 		sql = "SELECT sum(points) from mastertask where masterid != ? and room = ?";
 
 		int id = -1;
-		try{
-			id = jdbcTemplate.queryForObject(sql, new Object[]{masterid, room}, Integer.class);
-		}
-		catch(Exception e){
+		try {
+			id = jdbcTemplate.queryForObject(sql,
+					new Object[] { masterid, room }, Integer.class);
+		} catch (Exception e) {
 			logger.debug(e);
 			id = 0;
 		}
 		return id;
-	}
+	}*/
 
 }
 

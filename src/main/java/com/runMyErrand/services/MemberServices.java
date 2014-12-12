@@ -28,7 +28,11 @@ public class MemberServices {
 		return getMemberDao().getTotalPoints(room);
 	}
 	
-	/* Manages the logic for pending score retrieves necessary values to calculate */
+	/** Manages the logic for pending score retrieves necessary values to calculate
+	 * @param room
+	 * @param currentScore
+	 * @return
+	 */
 	public static float updatePendingScore(String room, float currentScore){
 		logger.debug("updatePendingScore");
 		float totalpoints = MemberServices.totalRoomPoints(room);
@@ -39,7 +43,10 @@ public class MemberServices {
 		return ScoreManager.pendingScore(currentScore, totalpoints, totalmembers);
 	}
 	
-	/* Adds points to roomyinfo table when added points */
+	/** Adds points to roomyinfo table when added points
+	 * @param taskpoints
+	 * @param room
+	 */
 	public static void addPoints(float taskpoints, String room){
 		
 		logger.debug("Entering add points");
@@ -51,11 +58,17 @@ public class MemberServices {
 		MemberServices.updatePoints(taskpoints, room);
 	}
 	
+	/** Update points for a particular room in database
+	 * @param points
+	 * @param room
+	 */
 	public static void updatePoints(float points, String room){
 		getMemberDao().updateTotalPoints(points, room);
 	}
 	
-	//updates new user in roominfo table: sets pending score if room already exists 
+	/** Updates new user in roominfo table: sets pending score if room already exists
+	 * @param user
+	 */
 	public static void updateMembers(UserInfo user){
 		
 		logger.debug("Entering update user");
@@ -70,6 +83,10 @@ public class MemberServices {
 			getMemberDao().insertNewRoom(user.getRoom());
 		}
 	}
+	/** Retrieves number of members for a particular room
+	 * @param room
+	 * @return
+	 */
 	public static int numberOfMembers(String room){
 		return getMemberDao().getNoMembers(room);
 	}

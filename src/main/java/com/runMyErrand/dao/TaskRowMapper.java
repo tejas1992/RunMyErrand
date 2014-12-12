@@ -7,7 +7,10 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.runMyErrand.model.TaskInfo;
 
-/* Maps each row of result into the modelattribute taskinfo*/
+/**
+ * Maps each row of result into the modelattribute taskinfo
+ *
+ */
 public class TaskRowMapper implements RowMapper<TaskInfo>{
 
 	public TaskInfo mapRow(ResultSet rs, int index) throws SQLException {

@@ -20,17 +20,27 @@ import com.runMyErrand.services.MasterTaskServices;
 import com.runMyErrand.services.TaskServices;
 import com.runMyErrand.services.UserServices;
 
-/*Manages all task related mechanisms */
+/**
+ * Manages all tasks related functionality
+ */
 @Controller
 @SuppressWarnings({"rawtypes", "unchecked"})
 public class TaskController {
 	
+    /**
+     * retrieves adjustment value for points from properties file 
+     */
     @Value("${auto.adjustment}")
     private String adjustment;
 	
 	private static final Logger logger = Logger.getLogger(TaskController.class);
 	
-	/* retrieves all unassigned tasks of a particular room so that tasks can be assigned*/
+	/**
+	 * Retrieves all unassigned tasks of a particular room so that tasks can be assigned
+	 * 
+	 * @param session
+	 * @return ModelAndView (redirects to unassigned.jsp)
+	 */
 	@RequestMapping(value="/unassignedtask")
 	public ModelAndView unassignedTasks(HttpSession session){
 		
@@ -46,7 +56,18 @@ public class TaskController {
 		return model;
 	}
 	
-	/* updates tables when task is assigned*/
+	/**
+	 * Assigns a task to a particular user and manages audjestment of points
+	 * 
+	 * @param taskid
+	 * 			Id of task being assigned
+	 * @param assignedto
+	 * 			task being assigned to
+	 * @param session
+	 * @param length
+	 * 			length of tasks 
+	 * @return
+	 */
 	@RequestMapping(value="/Assigntask.do" ,method = RequestMethod.POST)
 	public ModelAndView assigntask(@RequestParam("taskid") int taskid, @RequestParam("assigned") String assignedto,
 			HttpSession session, @RequestParam("length") int length){
@@ -93,14 +114,20 @@ public class TaskController {
 		}
 		TaskServices.addTask(task, user.getRoom());
 		logger.debug("adding points to roominfo");
-		//MemberServices.addPoints(task.getPoints(), user.getRoom());
-		//UserServices.pendingScoresBatchUpdate(user.getRoom());
 		return new ModelAndView("forward:dashboard");
-
 	}
-	
-	/* Edit task does the necessary job when the user completes the task. the database is updated and 
-	 * recurrence is checked*/
+
+	/**
+	 * Changes the status of task once completed; 
+	 * manages related scores
+	 * 
+	 * @param taskid
+	 * 			Id of task being completed
+	 * @param session
+	 * @param completed
+	 * 			status
+	 * @return
+	 */
 	@RequestMapping(value = "/edittask", method = RequestMethod.POST)
 	public ModelAndView editMyTask(
 			@RequestParam("taskid") int taskid, HttpSession session, @RequestParam("completed") String completed) {
@@ -138,6 +165,12 @@ public class TaskController {
 		return model;
 	}
 	
+	/**
+	 * Retrieves all overdue Tasks
+	 * 
+	 * @param session
+	 * @return (redirects to overduetasks.jsp)
+	 */
 	@RequestMapping(value="/overduetasks",method=RequestMethod.GET)
     public static ModelAndView overdueTasks(HttpSession session)
     {
@@ -151,18 +184,20 @@ public class TaskController {
     
     }
 	
+	/**
+	 * Retrieves all task from users roon
+	 * @param session
+	 * @return redirects to alltasks.jsp
+	 */
 	@RequestMapping(value="/alltasks")
     public ModelAndView allTasks(HttpSession session){
         
         ModelAndView model= new ModelAndView("alltasks");
         
-        //ArrayList<UserInfo>roomies = (ArrayList<UserInfo>)session.getAttribute("roomies");
         UserInfo user = (UserInfo)session.getAttribute("user");
         ArrayList<TaskInfo> Alltasks = (ArrayList<TaskInfo>) TaskServices.completetask(user.getRoom());
         logger.debug("unassignedtasks retrieved");
         model.addObject("alltasks", Alltasks);
-        /*model.addObject("unassigned", unassignedtasks);*/
         return model;
     }   
-    
 }

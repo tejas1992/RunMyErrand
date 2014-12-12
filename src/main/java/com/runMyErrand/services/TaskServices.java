@@ -27,13 +27,19 @@ private static TaskDao taskdao;
 		taskdao = taskd;
 	}
 	
-	//service to retrieve all tasks
+	/** Service to retrieve all tasks
+	 * @param room
+	 * @return
+	 */
 	public static List retriveAllTasks(String room) {
 		logger.debug("Entering retrieveTasks");
 		return getTaskDao().selectAll(room);
 	}
 	
-	//service to retrieve users tasks
+	/** Service to retrieve users tasks
+	 * @param email
+	 * @return
+	 */
 	public static List<TaskInfo> retrieveMyTasks(String email)
 	{
 		logger.debug("retrieveMyTasks");
@@ -41,20 +47,30 @@ private static TaskDao taskdao;
 		return TaskDao.selectAssigned(email);
 	}
 	
-	//service to retrieve unassigned tasks 
+	/** Service to retrieve unassigned tasks
+	 * @param room
+	 * @return
+	 */
 	public static List retrieveUnassignedTasks(String room)
 	{
 		return getTaskDao().selectUnAssigned(room);
 	}
 	
-	//service to assin a task to user and update necessary tables
+	/** Service to assign a task to user and update necessary tables
+	 * @param taskid
+	 * @param name
+	 * @param room
+	 */
 	public static void assignTask(int taskid, String name, String room)
 	{
 		logger.debug("Entering Assign task");
 		getTaskDao().updateTaskAssignedto(taskid, name, room);
 	}
 
-	//service to add task and insert the the new task
+	/** Service to add task and insert the the new task
+	 * @param task
+	 * @param room
+	 */
 	public static void addTask(TaskInfo task, String room) {
 		getTaskDao().insertTask(task, room);
 		int totalmembers = MemberServices.numberOfMembers(room);
@@ -64,7 +80,11 @@ private static TaskDao taskdao;
 	}
 	
 	
-	//service to update task status as to completed or not and thus update the score
+	/** Service to update task status as to completed or not and thus update the score
+	 * @param taskid
+	 * @param completed
+	 * @param email
+	 */
 	public static void updateTaskStatus(int taskid, int completed, String email) {
 		logger.debug("Entering updatetask");
         getTaskDao().updateTaskStatus(taskid, completed);
@@ -73,18 +93,32 @@ private static TaskDao taskdao;
        // return TaskServices.changeUserScore(email);
 	}
 	
+	/** Gets value for total unassigned points for a particular room
+	 * @param room
+	 * @return
+	 */
 	public static float totalUnassigned(String room){
         return getTaskDao().getTotalUnassigned(room);
     }
+	/** Changes user Score for a particular user
+	 * @param email
+	 * @return
+	 */
 	public static float changeUserScore(String email){
 		return getTaskDao().updateScore(email);
 	}
 	
+	/** Get Specific Task
+	 * @param taskid
+	 * @return
+	 */
 	public static TaskInfo getSpecificTask(int taskid){
 		return getTaskDao().getTask(taskid);
 	}
 	
-	//service to check recurrence and do the necessary updates
+	/** service to check recurrence and do the necessary updates
+	 * @param date
+	 */
 	public static void checkRecurrence(String date){
 		logger.debug("---Checking for RecurringTasks Due on "+ SchedulingService.getCurrentSystemDate()+"---");
 		Date d = DateManager.convertStringDate(date);
@@ -129,24 +163,43 @@ private static TaskDao taskdao;
 		
 		
 	}
+	/** Retrieve a list of rooms
+	 * @return
+	 */
 	public static List<String> getRooms(){
 		return getTaskDao().getRooms();
 	}
 	
+	/** Get timebox points for a particular room
+	 * @param room
+	 * @return
+	 */
 	public static float getTimeboxPoints(String room){
 		return getTaskDao().getTimeboxPoints(room);
 	}
 	
+	/** Updates assigned points for a master task
+	 * @param mastertaskid
+	 * @param points
+	 */
 	public static void updateAssignedPoints(int mastertaskid, float points){
 		getTaskDao().updatePoints(mastertaskid, points);
 	}
 	
+	/** Get list of overdue tasks for a room
+	 * @param room
+	 * @return
+	 */
 	public static List alloverduetasks(String room) {
         logger.debug("Entering alloverdue tasks");
         getTaskDao();
         return TaskDao.alldueTasks(room);
     }
 	
+	/** Get list of all completed Tasks for a room
+	 * @param room
+	 * @return
+	 */
 	public static List completetask(String room)
     {
         return getTaskDao().selectAll(room);

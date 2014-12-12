@@ -7,6 +7,9 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.runMyErrand.model.MasterTaskInfo;
 
+/**
+ * Maps Each row of master Task to MasterTaskInfo
+ */
 public class MasterTaskRowMapper implements RowMapper<MasterTaskInfo>{
 
 	public MasterTaskInfo mapRow(ResultSet rs, int index) throws SQLException {

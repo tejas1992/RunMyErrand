@@ -19,14 +19,20 @@ public class UserDao {
 		jdbcTemplate = jdbcTemp;
 	}
 	
-	/* Sets score of the user */
+	/**Sets score of the user 
+	 * @param email
+	 * @param score
+	 */
 	public void setScore(String email, float score){
 		sql = "update userinfo set score = ? where email = ?";
 		jdbcTemplate.update(sql, new Object[]{score, email});
 		logger.debug("score updated");
 	}
 	
-	/* selects one user and stores its information in model userinfo */ 
+	/** Selects one user and stores its information in model userinfo
+	 * @param username
+	 * @return
+	 */
 	public UserInfo selectOne(String username){
 		sql = "SELECT * from userinfo where email = ?";
 		UserInfo info;
@@ -41,7 +47,11 @@ public class UserDao {
 		return  info;
 	}
 	
-	/* Selects roommates of the user */
+	/** Selects roommates of the user
+	 * @param room
+	 * @param email
+	 * @return
+	 */
 	public List<UserInfo> selectRoomies(String room, String email)
 	{
 		sql = "Select * from userinfo where room = ? and email != ?";
@@ -50,14 +60,20 @@ public class UserDao {
         return roomies;
 	}
 	
-	/* updates a pending score attribute */
+	/** Updates a pending score attribute
+	 * @param email
+	 * @param pendingscore
+	 */
 	public void setPendingScore(String email, float pendingscore){
 		sql = "update userinfo set pending_score = ? where email = ?";
 		jdbcTemplate.update(sql, new Object[]{pendingscore, email});
 		logger.debug("pending score updated");
 	}
 	
-	/*selects all users of a particular room*/
+	/** Selects all users of a particular room
+	 * @param room
+	 * @return
+	 */
 	public List<UserInfo> selectAll(String room){
 		sql = "SELECT * FROM USERINFO WHERE ROOM = ? ";
 		logger.debug("Selecting all users");
@@ -66,7 +82,10 @@ public class UserDao {
 		return users;
 	}
 	
-	/*updates pending score of each user*/
+	/** Updates pending score of each user
+	 * @param Room
+	 * @param users
+	 */
 	public void batchUpdatePendingScore(String Room, List<UserInfo>users){
 		sql ="update userinfo set pending_score=? where email = ?";
 		for(int i=0; i<users.size(); i++){
@@ -74,11 +93,20 @@ public class UserDao {
 		}
 	}
 	
+	/** Updates weekly goal value for each timebox
+	 * @param email
+	 * @param weekly
+	 */
 	public void updateGoal(String email, float weekly){
 		sql = "UPDATE userinfo SET weeklygoal = ? WHERE email = ?";
 		jdbcTemplate.update(sql, new Object[]{weekly, email});
 	}
-	/* inserts a new user and updates the necessary authority and user table  */
+
+	/** Inserts a new user and updates the necessary authority and user table
+	 * @param user
+	 * @param password
+	 * @return
+	 */
 	public String insertUserInfo(UserInfo user, String password){
 		String insertUserInfo ="INSERT INTO Userinfo (fname, lname, sex, dob, room, email, phone, pending_score) VALUES(?,?,?,?,?,?,?,?);";
 		String insertUser = "INSERT INTO users(username, password, enabled) VALUES(?, ?, ?);";

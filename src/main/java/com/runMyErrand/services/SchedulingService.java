@@ -34,14 +34,23 @@ public class SchedulingService {
 	@Value("${timeboxdays}")
 	private static String timeboxdays;
 	
+	/** Get Timebox start date
+	 * @return
+	 */
 	public static String getTimeboxstartDate() {
 		return TimeboxstartDate;
 	}
 
+	/** Get Timebox end date
+	 * @return
+	 */
 	public static String getTimeboxendDate() {
 		return TimeboxendDate;
 	}
 	
+	/** Get System date
+	 * @return
+	 */
 	public static String getCurrentSystemDate(){
 		return CurrentSystemDate;
 	}

@@ -16,7 +16,7 @@
 <div class = "col-md-9">
     <div class = "well">
 	    <div class = "page-header">
-  			<h1>${roomyName}'s Tasks:</h1>
+  			<h1>${roomy.firstName}'s Tasks:</h1>
 		</div>
     <table class="table table-bordered table-striped">
     	<thead>

@@ -29,13 +29,10 @@ import com.runMyErrand.services.UserServices;
 /**
  * The class contains functions manages the admin and user dashboard.
  * 
- * @author Tejas
- * @author Abhinav
- *
  */
 
 @Controller
-@SessionAttributes("user")
+@SessionAttributes({"user", "current", "masterTasks"})
 @SuppressWarnings("unchecked")
 public class DashboardController {
 

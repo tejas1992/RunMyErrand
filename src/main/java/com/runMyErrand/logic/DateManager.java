@@ -12,6 +12,10 @@ public class DateManager {
 	private static final Logger logger = Logger.getLogger(DateManager.class);
 	private static DateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd");
 	
+	/** Converts a String date to Date Object
+	 * @param date
+	 * @return
+	 */
 	public static Date convertStringDate(String date){
 		Date d =null;
 		try{
@@ -21,6 +25,10 @@ public class DateManager {
         return d;
 	}
 	
+	/** Converts a Date object to String date
+	 * @param d
+	 * @return
+	 */
 	public static String convertDateString(Date d){
 		String date=null;
 		try{
@@ -30,8 +38,12 @@ public class DateManager {
 		
 		return date;
 	}
-	//Manages the recuuring dates
-	 public static String addDate(String date, int days){
+	 /** Manages the recurring dates
+	 * @param date
+	 * @param days
+	 * @return
+	 */
+	public static String addDate(String date, int days){
 		 	
 		 	String output = "";
 		 	try{
@@ -47,7 +59,12 @@ public class DateManager {
 	        return output;
 	    }
 	 
-	 public static int dateDifference(String date1, String date2){
+	 /** Evaluates Date Difference between two dates
+	 * @param date1
+	 * @param date2
+	 * @return
+	 */
+	public static int dateDifference(String date1, String date2){
 
 		 long diffDays =0;
 		 try{

@@ -92,6 +92,11 @@ private static final Logger logger = Logger.getLogger(TaskDao.class);
 		
 	}
 	
+	/**
+	 * Retrieves Total unassigned points for a particular room
+	 * @param room
+	 * @return
+	 */
 	public float getTotalUnassigned(String room){
         logger.debug("update score");
         sql = "SELECT sum(points) FROM task WHERE useremail is ? AND room = ?";
@@ -106,14 +111,20 @@ private static final Logger logger = Logger.getLogger(TaskDao.class);
     }
 	
 	
-	/* updates task status */
+	/** Updates task status for a task instance 
+	 * @param taskid
+	 * @param completed
+	 */
 	public void updateTaskStatus(int taskid, int completed){
 		logger.debug("entering updatetaskstatus");
         sql = "UPDATE task SET completed = ? WHERE taskid = ?";
         jdbcTemplate.update(sql, new Object[]{completed, taskid});
     }
-	
-	/* selects the total tasks completed and add the points to get score of the user */
+		
+	/** selects the total tasks completed and add the points to get score of the user
+	 * @param email
+	 * @return
+	 */
 	public float updateScore(String email){
 		logger.debug("update score");
 		sql = "Select sum(points) from task where useremail = ? and completed = 1";
@@ -128,7 +139,10 @@ private static final Logger logger = Logger.getLogger(TaskDao.class);
 		return score;
 	}
 	
-	/* gives the task information about a particular tasks*/
+	/** Gives the task information about a particular tasks
+	 * @param taskid
+	 * @return
+	 */
 	public TaskInfo getTask(int taskid){
 		logger.debug("getting task");
 		sql = "Select * from task where taskid = ?";
@@ -139,6 +153,10 @@ private static final Logger logger = Logger.getLogger(TaskDao.class);
 		return task.get(0);
 	}
 	
+	/** Retrieves all tasks from the task table
+	 * @param date
+	 * @return
+	 */
 	public static List<TaskInfo> selectAll(Date date){
 		
 		sql = "SELECT * FROM task where END_DATE = ? AND RECURRENABLE = 0";
@@ -148,24 +166,29 @@ private static final Logger logger = Logger.getLogger(TaskDao.class);
 		return tasks;
 	}				
 	
-	/* removes a task */
-	public void removeTask(int taskid){
-		sql = "Delete from task where taskDescription = ? and room = ?";
-		jdbcTemplate.update(sql, new Object[]{taskid});
-	}
 	
+	/** Method Updates assigned points for task instances
+	 * @param taskid
+	 * @param points
+	 */
 	public void updatePoints(int taskid, float points){
 		 sql = "UPDATE task SET points = ? WHERE masterid = ? AND useremail is ?";
 		 jdbcTemplate.update(sql, new Object[]{points, taskid, null});
 		 logger.debug("task updated");
 	 }
 	
+	/** Method which disables recurrences for the given task id
+	 * @param taskid
+	 */
 	public void disableRecurrence(int taskid){
 		sql = "UPDATE task SET recurrenable=1 WHERE taskid = ?";
 		jdbcTemplate.update(sql, new Object[]{taskid});
 		logger.debug("disabled recurrence");
 	}
 	
+	/** Retrieves Unique Room information from Task table
+	 * @return
+	 */
 	public List<String> getRooms(){
 		sql = "SELECT DISTINCT room FROM task";
 		List<String> rooms = jdbcTemplate.query(sql, new RowMapper<String>(){
@@ -177,6 +200,10 @@ private static final Logger logger = Logger.getLogger(TaskDao.class);
 		return rooms;
 	}
 	
+	/** Retrieves Timebox points after the start date of timebox
+	 * @param room
+	 * @return
+	 */
 	public float getTimeboxPoints(String room){
 		//sql = "SELECT sum(points) FROM task WHERE end_date >= ? AND room = ? AND completed==0";
 		sql = "SELECT sum(points) FROM task WHERE useremail is ? AND room =? AND start_date >= ?";
@@ -190,20 +217,29 @@ private static final Logger logger = Logger.getLogger(TaskDao.class);
 		return points;
 	}
 	
+	/** Retrieves value of Current System date from database
+	 * @return
+	 */
 	public String getCurrentSystemDate(){
 		sql = "SELECT current FROM timebox";
 		String date = null;
 		date = jdbcTemplate.queryForObject(sql, String.class);
 		return date;
 	}
-	
+
+	/** Retrieves value of Start date from database
+	 * @return
+	 */
 	public String getTimeboxStartDate(){
 		sql = "SELECT start FROM timebox";
 		String date = null;
 		date = jdbcTemplate.queryForObject(sql, String.class);
 		return date;
 	}
-	
+
+	/** Retrieves value of End date from database
+	 * @return
+	 */
 	public String getTimeboxEndDate(){
 		sql = "SELECT end FROM timebox";
 		String date = null;
@@ -211,26 +247,41 @@ private static final Logger logger = Logger.getLogger(TaskDao.class);
 		return date;
 	}
 	
+	/** Sets value of current date on the database
+	 * @return
+	 */
 	public void setCurrentDate(String date){
 		sql = "UPDATE timebox SET current = ?";
 		jdbcTemplate.update(sql, new Object[]{date});
 		logger.debug("Current set");
 	}
+	
+	/** Sets value of start date on the database
+	 * @return
+	 */	
 	public void setTimeboxStartDate(String date){
 		sql = "UPDATE timebox SET start = ?";
 		jdbcTemplate.update(sql, new Object[]{date});
 		logger.debug("Timebox set");
 	}
+	
+	/** Sets value of end date on the database
+	 * @return
+	 */
 	public void setTimeboxEndDate(String date){
 		sql = "UPDATE timebox SET end = ?";
 		jdbcTemplate.update(sql, new Object[]{date});
 		logger.debug("End set");
 	}
 	
+	/** Retrieves all overdue tasks for a given Room
+	 * @param room
+	 * @return
+	 */
 	public static List<TaskInfo> alldueTasks(String room)
     {
-        sql = "select * from task  where room = ? and completed=0 and DATE(NOW())>= DATE(End_Date)";
-        List<TaskInfo> overduetaskList = jdbcTemplate.query(sql,new Object[]{room}, new TaskRowMapper());
+        sql = "select * from task  where room = ? and completed=0 and end_date < ?";
+        List<TaskInfo> overduetaskList = jdbcTemplate.query(sql,new Object[]{room, SchedulingService.getCurrentSystemDate()}, new TaskRowMapper());
         logger.debug("tasklist" +overduetaskList);
         return overduetaskList;
     }

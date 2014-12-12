@@ -8,7 +8,9 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.runMyErrand.model.UserInfo;
 
-//Maps each row of resultset into model userinfo
+/** Maps each row of resultset into model userinfo
+ *
+ */
 public class UserRowMapper implements RowMapper<UserInfo> 
 {
 	

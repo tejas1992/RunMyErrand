@@ -227,4 +227,11 @@ private static final Logger logger = Logger.getLogger(TaskDao.class);
 		logger.debug("End set");
 	}
 	
+	public static List<TaskInfo> alldueTasks(String room)
+    {
+        sql = "select * from task  where room = ? and completed=0 and DATE(NOW())>= DATE(End_Date)";
+        List<TaskInfo> overduetaskList = jdbcTemplate.query(sql,new Object[]{room}, new TaskRowMapper());
+        logger.debug("tasklist" +overduetaskList);
+        return overduetaskList;
+    }
 }

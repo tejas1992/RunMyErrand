@@ -143,8 +143,8 @@
                   
                   <li><a href="<c:url value="/dashboard" />"><span class="glyphicon glyphicon-list"></span> Dashboard</a></li>
                   <li><a data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-plus"></span> Add task</a></li>
-                  <li><a href="#"><span class="glyphicon glyphicon-tasks"></span> All tasks</a></li>
-                  <li><a href="#"><span class="glyphicon glyphicon-ok"></span> Completed Tasks</a></li>
+                  <li><a href="<c:url value="/alltasks" />"><span class="glyphicon glyphicon-tasks"></span> All tasks</a></li>
+                  <li><a href="<c:url value="/overduetasks?email=${user.email}" />"><span class="glyphicon glyphicon-remove-circle"></span> Overdue Tasks</a></li>
                   <li><a href="<c:url value="/unassignedtask" />"><span class="glyphicon glyphicon-star"></span> Assign Tasks</a></li>
                </ul>
                </div>
@@ -153,7 +153,7 @@
                   <p>As of ${current}</p>
                   <ul>
                     <c:forEach var="roomy" items= "${roomies}">
-                  <li><a href="/RunMyErrand/roomyinfo?email=${roomy.email}&&name=${roomy.firstName}" > ${roomy.firstName} </a> needs ${roomy.pendingscore}</li>              
+                  <li><a href="/RunMyErrand/roomyinfo?email=${roomy.email}&&name=${roomy.firstName}" > ${roomy.firstName} </a> needs ${roomy.weeklygoal}</li>              
             </c:forEach>
           </ul>
                </div>

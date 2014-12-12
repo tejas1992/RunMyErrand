@@ -140,4 +140,15 @@ private static TaskDao taskdao;
 	public static void updateAssignedPoints(int mastertaskid, float points){
 		getTaskDao().updatePoints(mastertaskid, points);
 	}
+	
+	public static List alloverduetasks(String room) {
+        logger.debug("Entering alloverdue tasks");
+        getTaskDao();
+        return TaskDao.alldueTasks(room);
+    }
+	
+	public static List completetask(String room)
+    {
+        return getTaskDao().selectAll(room);
+    }
 }

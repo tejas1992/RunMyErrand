@@ -137,4 +137,32 @@ public class TaskController {
 		
 		return model;
 	}
+	
+	@RequestMapping(value="/overduetasks",method=RequestMethod.GET)
+    public static ModelAndView overdueTasks(HttpSession session)
+    {
+        logger.debug("entering overdue tasks");
+        ModelAndView model=new ModelAndView("overduetasks");
+        UserInfo user = (UserInfo)session.getAttribute("user");
+        ArrayList list_comp=(ArrayList) TaskServices.alloverduetasks(user.getRoom());
+        logger.debug("after modelview"+list_comp);
+        model.addObject("list_comp",list_comp);
+        return model;
+    
+    }
+	
+	@RequestMapping(value="/alltasks")
+    public ModelAndView allTasks(HttpSession session){
+        
+        ModelAndView model= new ModelAndView("alltasks");
+        
+        //ArrayList<UserInfo>roomies = (ArrayList<UserInfo>)session.getAttribute("roomies");
+        UserInfo user = (UserInfo)session.getAttribute("user");
+        ArrayList<TaskInfo> Alltasks = (ArrayList<TaskInfo>) TaskServices.completetask(user.getRoom());
+        logger.debug("unassignedtasks retrieved");
+        model.addObject("alltasks", Alltasks);
+        /*model.addObject("unassigned", unassignedtasks);*/
+        return model;
+    }   
+    
 }

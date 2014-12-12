@@ -49,7 +49,18 @@ public class UserServices {
 		getUserDao().setScore(email, score);
 		getUserDao().setPendingScore(email, pendingscore);
 	}
+	public static void updateWeeklyGoal(String email, float weeklygoal){
+		getUserDao().updateGoal(email, weeklygoal);
+	}
 	
+	public static void pendingScoresBatchUpdate(String room, float points){
+		logger.debug("In PendingScoresUpdate");
+		List<UserInfo> users = UserServices.selectMembers(room);
+		for(int i=0; i<users.size(); i++){
+			users.get(i).setPendingscore(users.get(i).getPendingscore()+points);
+		}
+		getUserDao().batchUpdatePendingScore(room, users);
+	}
 	//calculates and updates the pending score of each user while adding a new task and while adding a new member
 	public static void pendingScoresBatchUpdate(String room){
 		logger.debug("In PendingScoresUpdate");

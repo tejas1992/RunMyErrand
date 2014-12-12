@@ -27,7 +27,7 @@ public class UserRowMapper implements RowMapper<UserInfo>
 		user.setRoom(resultSet.getString(8));
 		user.setScore(resultSet.getFloat(9));
 		user.setPendingscore(resultSet.getFloat(10));
-				
+		user.setWeeklygoal(resultSet.getFloat(11));
 		return user;
 	}
 }

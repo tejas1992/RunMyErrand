@@ -43,7 +43,7 @@
                      <form role="form" action="/RunMyErrand/addtask.do" method="post">
                      <div class="form-group">
                                   <label for="masterTasks">
-                                    Reuse Tasks:
+                                    <h4>Reuse Tasks:</h4>
                                   </label>
                                   <div>
 									<select id="inputsa" class="form-control"  onchange = "reusableTasks();">
@@ -136,6 +136,7 @@
                 <h3>Welcome ${user.firstName}</h3>
                 <h3>Your Points:${user.score}</h3>
                 <h4>Pending Score:${user.pendingscore}</h4>
+             	<h4>Weekly Goal: ${user.weeklygoal}</h4>
                </div>
                 <div class="well sidebar-nav">
                 <ul class="nav nav-list">
@@ -149,9 +150,10 @@
                </div>
                 <div class="well sidebar-nav">
                 <h3><span class="glyphicon glyphicon-user"></span>  My Roomates</li></h3>
+                  <p>As of ${current}</p>
                   <ul>
                     <c:forEach var="roomy" items= "${roomies}">
-                  <li><a href="/RunMyErrand/roomyinfo?email=${roomy.email}&&name=${roomy.firstName}" > ${roomy.firstName}  ${roomy.lastName}</a> </li>              
+                  <li><a href="/RunMyErrand/roomyinfo?email=${roomy.email}&&name=${roomy.firstName}" > ${roomy.firstName} </a> needs ${roomy.pendingscore}</li>              
             </c:forEach>
           </ul>
                </div>

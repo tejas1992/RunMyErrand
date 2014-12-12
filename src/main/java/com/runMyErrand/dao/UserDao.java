@@ -74,6 +74,10 @@ public class UserDao {
 		}
 	}
 	
+	public void updateGoal(String email, float weekly){
+		sql = "UPDATE userinfo SET weeklygoal = ? WHERE email = ?";
+		jdbcTemplate.update(sql, new Object[]{weekly, email});
+	}
 	/* inserts a new user and updates the necessary authority and user table  */
 	public String insertUserInfo(UserInfo user, String password){
 		String insertUserInfo ="INSERT INTO Userinfo (fname, lname, sex, dob, room, email, phone, pending_score) VALUES(?,?,?,?,?,?,?,?);";

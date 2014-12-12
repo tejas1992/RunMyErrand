@@ -34,33 +34,33 @@ public class MasterTaskServices {
 		return masterid;
 	}
 	
-	public static void updateAssignedTaskPoints(int taskid, String room){
-		
-		TaskInfo task = TaskServices.getSpecificTask(taskid);
-		
-		logger.info("Current points:"+ task.getPoints());
-		float temp = ScoreManager.decreaseTaskPoints(task.getPoints());
-		
-		logger.info("Decreased points:"+ temp);
-		getMasterTaskDao().updatePoints(task.getMasterId(), temp);
-		TaskServices.updateAssignedPoints(task.getMasterId(), temp);
-		float difference = ScoreManager.pointsDifference(task.getPoints());
-		logger.info("difference:"+ difference);
-		
-		List<MasterTaskInfo> tasks = getMasterTaskDao().getTasks(task.getMasterId(), room);
-		logger.info("MasterID:"+ task.getMasterId());
-		logger.info("sizeof list:"+ tasks.size());
-		float dividingfactor =  MemberServices.totalRoomPoints(room) - task.getPoints();;
-		logger.info("dividing factor:"+ dividingfactor);
-		logger.debug("Increasing Points");
-		for(int i=0; i<tasks.size(); i++){
-			logger.info("points before:"+tasks.get(i).getPoints());
-			temp = ScoreManager.increaseTaskPoints(tasks.get(i).getPoints(), difference, dividingfactor);
-			logger.info("pointsAfter:"+ temp);
-			getMasterTaskDao().updatePoints(tasks.get(i).getMasterid(), temp);
-			TaskServices.updateAssignedPoints(tasks.get(i).getMasterid(), temp);
-		}
-		
+public static void updateAssignedTaskPoints(int taskid, String room,float adjustmentValue){
+        
+        TaskInfo task = TaskServices.getSpecificTask(taskid);
+        
+        logger.info("Current points:"+ task.getPoints());
+        float temp = ScoreManager.decreaseTaskPoints(task.getPoints(),adjustmentValue);
+        
+        logger.info("Decreased points:"+ temp);
+        getMasterTaskDao().updatePoints(task.getMasterId(), temp);
+        TaskServices.updateAssignedPoints(task.getMasterId(), temp);
+        float difference = ScoreManager.pointsDifference(task.getPoints(),adjustmentValue);
+        logger.info("difference:"+ difference);
+        
+        List<MasterTaskInfo> tasks = getMasterTaskDao().getTasks(task.getMasterId(), room);
+        logger.info("MasterID:"+ task.getMasterId());
+        logger.info("sizeof list:"+ tasks.size());
+        //float dividingfactor =  MemberServices.totalRoomPoints(room) - task.getPoints();
+        float dividingfactor = TaskServices.totalUnassigned(room);
+        logger.info("dividing factor:"+ dividingfactor);
+        logger.debug("Increasing Points");
+        for(int i=0; i<tasks.size(); i++){
+            logger.info("points before:"+tasks.get(i).getPoints());
+            temp = ScoreManager.increaseTaskPoints(tasks.get(i).getPoints(), difference, dividingfactor);
+            logger.info("pointsAfter:"+ temp);
+            getMasterTaskDao().updatePoints(tasks.get(i).getMasterid(), temp);
+            TaskServices.updateAssignedPoints(tasks.get(i).getMasterid(), temp);
+        }
 	}
 	public static float getUpdatedPoints(TaskInfo task){
 		return getMasterTaskDao().getTaskPoints(task);

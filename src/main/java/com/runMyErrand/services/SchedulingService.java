@@ -68,41 +68,45 @@ public class SchedulingService {
 	private static final Logger logger = Logger.getLogger(SchedulingService.class);
 	//@Autowired
 	//@Scheduled(cron = "0 0/30 * * * ?")
-	public static void changeCurrentDate(){
+	public static void changeCurrentDate(int goals){
 			
-			SchedulingService.setCurrentSystemDate(DateManager.recurring(SchedulingService.CurrentSystemDate, 1));
+			SchedulingService.setCurrentSystemDate(DateManager.addDate(SchedulingService.CurrentSystemDate, 1));
 			TaskServices.getTaskDao().setCurrentDate(SchedulingService.CurrentSystemDate);
 			logger.debug("managingrecurrences");
 			//Date todaysdate = new Date();
 			//String date = DateManager.convertDateString(SchedulingService);
 			TaskServices.checkRecurrence(SchedulingService.CurrentSystemDate);
-			timebox();
+			timebox(goals);
 	}
 	
 	
 	
 	//@Scheduled(cron = "*/500 * * * * ?")
-	public static void timebox(){
+	public static void timebox(int goals){
 		logger.debug("Timebox");
 		String todaysdate = SchedulingService.CurrentSystemDate;
-		if(DateManager.recurring(SchedulingService.TimeboxendDate, 1).equals(todaysdate)){
-			SchedulingService.TimeboxstartDate = DateManager.recurring(todaysdate, 1);
+		if(DateManager.addDate(SchedulingService.TimeboxendDate, 1).equals(todaysdate)){
+			SchedulingService.TimeboxstartDate = DateManager.addDate(todaysdate, 1);
 			TaskServices.getTaskDao().setTimeboxStartDate(todaysdate);
 			logger.info("TimeboxStartDate update:"+SchedulingService.TimeboxstartDate);
-			SchedulingService.TimeboxendDate = DateManager.recurring(todaysdate, 7);
+			SchedulingService.TimeboxendDate = DateManager.addDate(todaysdate, 7);
 			logger.debug(timeboxdays);
 			TaskServices.getTaskDao().setTimeboxEndDate(SchedulingService.TimeboxendDate);
 			logger.info("Timebox end date update:"+SchedulingService.getTimeboxendDate());
 			List<String> rooms = TaskServices.getRooms();
 			for(int i=0; i<rooms.size(); i++){
 				List<UserInfo> users = UserServices.selectMembers(rooms.get(i));
-				float points = TaskServices.getTimeboxPoints(rooms.get(i));
-				MemberServices.updatePoints(points, rooms.get(i));
+				//float points = TaskServices.getTimeboxPoints(rooms.get(i));
+			//	MemberServices.updatePoints(points, rooms.get(i));
 				for(int j=0; j<users.size(); j++){
 					UserInfo u = users.get(j);
-					float score = TaskServices.changeUserScore(u.getEmail());
-					float nowpending =  MemberServices.updatePendingScore(u.getRoom(), score);
-					UserServices.updateUserScore(u.getEmail(), score, u.getPendingscore() + nowpending);
+					float score = 0;
+					//float score = TaskServices.changeUserScore(u.getEmail());
+				//	float nowpending =  MemberServices.updatePendingScore(u.getRoom(), score);
+					UserServices.getUserDao().setScore(u.getEmail(), score);
+				//	UserServices.updateUserScore(u.getEmail(), score, u.getPendingscore() + nowpending);
+//					UserServices.updateWeeklyGoal(u.getEmail(), u.getWeeklygoal()+15);
+					UserServices.updateWeeklyGoal(u.getEmail(), u.getWeeklygoal()+goals);					
 				}
 			}
 		}

@@ -11,6 +11,7 @@ import com.runMyErrand.model.UserInfo;
  * It hides the multiple tasks if necessary from controller */
 public class MemberServices {
 	
+	
 	private static final Logger logger = Logger.getLogger(MemberServices.class);
 	private static MemberDao memberdao;
 	
@@ -69,5 +70,7 @@ public class MemberServices {
 			getMemberDao().insertNewRoom(user.getRoom());
 		}
 	}
-
+	public static int numberOfMembers(String room){
+		return getMemberDao().getNoMembers(room);
+	}
 }

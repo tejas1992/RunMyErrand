@@ -14,7 +14,15 @@ public class UserInfo {
 	private String phoneNo;
 	private float score;
 	private float pendingscore;
+	private float weeklygoal;
 	
+	
+	public float getWeeklygoal() {
+		return weeklygoal;
+	}
+	public void setWeeklygoal(float weeklygoal) {
+		this.weeklygoal = weeklygoal;
+	}
 	public float getScore() {
 		return score;
 	}

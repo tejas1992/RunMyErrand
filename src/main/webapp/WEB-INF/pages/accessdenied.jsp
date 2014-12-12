@@ -9,6 +9,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	403 Access Denied
+	<h1>403 Access Denied</h1>
 </body>
 </html>

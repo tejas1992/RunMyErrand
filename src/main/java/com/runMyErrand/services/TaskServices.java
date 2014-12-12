@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.runMyErrand.dao.TaskDao;
 import com.runMyErrand.logic.DateManager;
+import com.runMyErrand.logic.ScoreManager;
 import com.runMyErrand.model.TaskInfo;
 
 @SuppressWarnings({"rawtypes", "static-access"})
@@ -55,20 +56,26 @@ private static TaskDao taskdao;
 
 	//service to add task and insert the the new task
 	public static void addTask(TaskInfo task, String room) {
-		getTaskDao().insertTask(task, room); 
-		MemberServices.addPoints(task.getPoints(), room);
-		UserServices.pendingScoresBatchUpdate(room);
+		getTaskDao().insertTask(task, room);
+		int totalmembers = MemberServices.numberOfMembers(room);
+		float pendingscore = ScoreManager.pendingScore(task.getPoints(), totalmembers);
+		//MemberServices.addPoints(task.getPoints(), room);
+		UserServices.pendingScoresBatchUpdate(room, pendingscore);
 	}
-
+	
+	
 	//service to update task status as to completed or not and thus update the score
-	public static float updateTaskStatus(int taskid, int completed, String email) {
+	public static void updateTaskStatus(int taskid, int completed, String email) {
 		logger.debug("Entering updatetask");
         getTaskDao().updateTaskStatus(taskid, completed);
         
         logger.debug("entering updatescore");
-        return TaskServices.changeUserScore(email);
+       // return TaskServices.changeUserScore(email);
 	}
 	
+	public static float totalUnassigned(String room){
+        return getTaskDao().getTotalUnassigned(room);
+    }
 	public static float changeUserScore(String email){
 		return getTaskDao().updateScore(email);
 	}
@@ -102,12 +109,12 @@ private static TaskDao taskdao;
 			if(type != null){
 				logger.debug("recurring taskfound");
 				if(type.equalsIgnoreCase("weekly"))
-					date = DateManager.recurring(task.getEnd_date(), 8);
+					date = DateManager.addDate(task.getEnd_date(), 8);
 				else{
-					date = DateManager.recurring(task.getEnd_date(), 31);
+					date = DateManager.addDate(task.getEnd_date(), 31);
 				}
 			logger.debug("setting updated dates");
-			task.setStart_date(DateManager.recurring(task.getEnd_date(),1));
+			task.setStart_date(DateManager.addDate(task.getEnd_date(),1));
 			task.setEnd_date(date);
 			task.setCompleted(0);
 			task.setUseremail(null);

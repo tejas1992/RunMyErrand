@@ -92,6 +92,20 @@ private static final Logger logger = Logger.getLogger(TaskDao.class);
 		
 	}
 	
+	public float getTotalUnassigned(String room){
+        logger.debug("update score");
+        sql = "SELECT sum(points) FROM task WHERE useremail is ? AND room = ?";
+        float total = 0;
+        try{
+         total = jdbcTemplate.queryForObject(sql, new Object[]{null, room}, Integer.class);
+        }
+        catch(Exception e){
+            total = 0;
+        }
+        return total;
+    }
+	
+	
 	/* updates task status */
 	public void updateTaskStatus(int taskid, int completed){
 		logger.debug("entering updatetaskstatus");
@@ -102,12 +116,13 @@ private static final Logger logger = Logger.getLogger(TaskDao.class);
 	/* selects the total tasks completed and add the points to get score of the user */
 	public float updateScore(String email){
 		logger.debug("update score");
-		sql = "Select sum(points) from task where useremail = ? and completed = 1 and end_date >= ?";
+		sql = "Select sum(points) from task where useremail = ? and completed = 1";
 		float score = 0;
 		try{
-		 score = jdbcTemplate.queryForObject(sql, new Object[]{email, SchedulingService.getTimeboxstartDate()}, Integer.class);
+		 score = jdbcTemplate.queryForObject(sql, new Object[]{email}, Integer.class);
 		}
 		catch(Exception e){
+			logger.debug(e);
 			score = 0;
 		}
 		return score;
@@ -163,10 +178,13 @@ private static final Logger logger = Logger.getLogger(TaskDao.class);
 	}
 	
 	public float getTimeboxPoints(String room){
-		sql = "SELECT sum(points) FROM task WHERE end_date >= ? AND room = ?";
+		//sql = "SELECT sum(points) FROM task WHERE end_date >= ? AND room = ? AND completed==0";
+		sql = "SELECT sum(points) FROM task WHERE useremail is ? AND room =? AND start_date >= ?";
 		float points = 0;
 		try{
-			points = jdbcTemplate.queryForObject(sql, new Object[]{SchedulingService.getTimeboxstartDate(), room}, Float.class);
+			//points = jdbcTemplate.queryForObject(sql, new Object[]{SchedulingService.getTimeboxstartDate(), room}, Float.class);
+			points = jdbcTemplate.queryForObject(sql, new Object[]{null, room, SchedulingService.getTimeboxstartDate()}, Float.class);
+			
 		}
 		catch(Exception e){}
 		return points;

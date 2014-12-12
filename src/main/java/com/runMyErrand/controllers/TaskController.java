@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,11 +19,14 @@ import com.runMyErrand.model.UserInfo;
 import com.runMyErrand.services.MasterTaskServices;
 import com.runMyErrand.services.TaskServices;
 import com.runMyErrand.services.UserServices;
-import com.runMyErrand.services.MemberServices;
+
 /*Manages all task related mechanisms */
 @Controller
 @SuppressWarnings({"rawtypes", "unchecked"})
 public class TaskController {
+	
+    @Value("${auto.adjustment}")
+    private String adjustment;
 	
 	private static final Logger logger = Logger.getLogger(TaskController.class);
 	
@@ -47,12 +51,14 @@ public class TaskController {
 	public ModelAndView assigntask(@RequestParam("taskid") int taskid, @RequestParam("assigned") String assignedto,
 			HttpSession session, @RequestParam("length") int length){
 		
+		float adjustmentValue = Float.parseFloat(adjustment);
+		logger.debug("Adjustment value: "+adjustmentValue);
 		logger.info("task: "+taskid);
 		logger.info("assignedto: "+assignedto);
 		UserInfo user = (UserInfo)session.getAttribute("user");
 		TaskServices.assignTask(taskid, assignedto, user.getRoom());
 		if(length>1){
-			MasterTaskServices.updateAssignedTaskPoints(taskid, user.getRoom());
+			MasterTaskServices.updateAssignedTaskPoints(taskid, user.getRoom(),adjustmentValue);
 			logger.debug("updated tasks");
 		}
 		return new ModelAndView("forward:unassignedtask");
@@ -78,7 +84,7 @@ public class TaskController {
 		logger.debug("Task Description: "+task.getTaskDescription());
 		logger.debug("Task points: "+task.getPoints());
 		logger.debug("Number of days: "+task.getNumber_of_days());
-		String end_date = DateManager.recurring(task.getStart_date(), task.getNumber_of_days());
+		String end_date = DateManager.addDate(task.getStart_date(), task.getNumber_of_days());
 		task.setEnd_date(end_date);
 		int addFlag = Integer.parseInt(flag);
 		if(addFlag == 0){
@@ -100,32 +106,35 @@ public class TaskController {
 			@RequestParam("taskid") int taskid, HttpSession session, @RequestParam("completed") String completed) {
 
 		logger.debug("Entering edittask");
-		int status = -1;
 		ModelAndView model = new ModelAndView("forward:dashboard");
 		
-		logger.debug("checking if task is todo or completed");
-		if (completed.equalsIgnoreCase("done")) {
-			logger.debug("taskdone");
-			status = 1;
-		} else {
-			logger.debug("taskdone");
-			status = 0;
-		}
-				
 		UserInfo user = (UserInfo) session.getAttribute("user");
+		TaskInfo task = TaskServices.getSpecificTask(taskid);
+
+		TaskServices.updateTaskStatus(taskid ,1, user.getEmail());
 		
-		logger.debug("getting score and setting Pending Score: Previous " + user.getPendingscore());
-		float score = TaskServices.updateTaskStatus(taskid ,status, user.getEmail());
-		user.setPendingscore(MemberServices.updatePendingScore(user.getRoom(), score));
-		
-		logger.debug("Updating User Score");
-		UserServices.updateUserScore(user.getEmail(), score, user.getPendingscore());
-		
-	/*	logger.debug("Updating dates if tasks complete");
-		if (status == 1) {
-			TaskServices.checkRecurrence(taskid, user.getRoom());
+		float score = user.getScore()+task.getPoints();
+		user.setScore(score);
+		logger.debug("new user score" + user.getScore()+task.getPoints());
+		logger.debug("Pending Score: Previous " + user.getPendingscore());
+		float pendingscore = 0;
+		if((user.getPendingscore()- task.getPoints())>=0){
+			pendingscore = user.getPendingscore()- task.getPoints();
+			user.setPendingscore(pendingscore);
 		}
+		else{
+			user.setPendingscore(0);
+		}
+		if((user.getWeeklygoal()-task.getPoints()>=0)){
+			user.setWeeklygoal(user.getWeeklygoal()-task.getPoints());
+		}
+		else{
+			user.setWeeklygoal(0);
+		}
+		UserServices.updateWeeklyGoal(user.getEmail(), user.getWeeklygoal());
+		logger.debug("Updating User Score");
+		UserServices.updateUserScore(user.getEmail(), score, pendingscore);
 		
-	*/	return model;
+		return model;
 	}
 }

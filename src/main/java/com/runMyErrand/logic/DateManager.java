@@ -31,7 +31,7 @@ public class DateManager {
 		return date;
 	}
 	//Manages the recuuring dates
-	 public static String recurring(String date, int days){
+	 public static String addDate(String date, int days){
 		 	
 		 	String output = "";
 		 	try{

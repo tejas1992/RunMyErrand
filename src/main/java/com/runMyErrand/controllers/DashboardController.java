@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -37,8 +38,11 @@ import com.runMyErrand.services.UserServices;
 @SessionAttributes("user")
 @SuppressWarnings("unchecked")
 public class DashboardController {
-	
+
 	private static final Logger logger = Logger.getLogger(DashboardController.class);
+	
+	@Value("${weekly.goal}")
+    private String weeklyGoal;
 	
 	/**
 	 * Fetches all the necessary user data which is required in the session;
@@ -49,39 +53,41 @@ public class DashboardController {
 	 *  
 	 * */
 	@RequestMapping("/dashboard**")	
-	public ModelAndView dashboard(HttpSession session){
-		
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-	   		
-		String username = auth.getName();
-		
-		logger.debug("Entered dashboard "+ username);
-		UserInfo user = UserServices.selectUser(username); 
-		ModelAndView model = new ModelAndView("Dashboard");
-		
-		ArrayList<UserInfo> list_roomy = (ArrayList<UserInfo>) UserServices.selectMyRoomies(user.getRoom(), user.getEmail());//getting other roommates
-		
-		logger.debug(list_roomy);
-		ArrayList<TaskInfo> list_task = (ArrayList<TaskInfo>) TaskServices.retriveAllTasks(user.getRoom());
-		
-		logger.debug(list_task);
-		ArrayList<TaskInfo> mytasks = (ArrayList<TaskInfo>) TaskServices.retrieveMyTasks(user.getEmail());
-		logger.debug("Login:"+mytasks);
-		
-		ArrayList<MasterTaskInfo> masterTasks = (ArrayList<MasterTaskInfo>) MasterTaskServices.retrieveMasterTasks(user.getRoom());
-		logger.debug(masterTasks);
-		
-		session.setAttribute("user", user);
-		session.setAttribute("roomies", list_roomy);
-		
-		model.addObject("user", user);
-		model.addObject("roomies", list_roomy);
-		model.addObject("tasks", list_task);
-		model.addObject("mytasks", mytasks);
-		model.addObject("masterTasks", masterTasks);
-		
-		return model;
-	}
+public ModelAndView dashboard(HttpSession session){
+        
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+            
+        String username = auth.getName();
+        
+        logger.debug("Entered dashboard "+ username);
+        UserInfo user = UserServices.selectUser(username); 
+        ModelAndView model = new ModelAndView("Dashboard");
+        
+        ArrayList<UserInfo> list_roomy = (ArrayList<UserInfo>) UserServices.selectMyRoomies(user.getRoom(), user.getEmail());//getting other roommates
+        
+        logger.debug(list_roomy);
+        ArrayList<TaskInfo> list_task = (ArrayList<TaskInfo>) TaskServices.retriveAllTasks(user.getRoom());
+        
+        logger.debug(list_task);
+        ArrayList<TaskInfo> mytasks = (ArrayList<TaskInfo>) TaskServices.retrieveMyTasks(user.getEmail());
+        logger.debug("Login:"+mytasks);
+        
+        ArrayList<MasterTaskInfo> masterTasks = (ArrayList<MasterTaskInfo>) MasterTaskServices.retrieveMasterTasks(user.getRoom());
+        logger.debug(masterTasks);
+        
+        logger.debug("Weekly goal: "+user.getWeeklygoal());
+        session.setAttribute("user", user);
+        session.setAttribute("roomies", list_roomy);
+        
+        model.addObject("user", user);
+        model.addObject("roomies", list_roomy);
+        model.addObject("tasks", list_task);
+        model.addObject("mytasks", mytasks);
+        model.addObject("masterTasks", masterTasks);
+        model.addObject("current", SchedulingService.getCurrentSystemDate());
+        
+        return model;
+    }
 	
 	/**
 	 * Accessed only when admin logs in into the system;
@@ -109,7 +115,8 @@ public class DashboardController {
 	 */
 	@RequestMapping(value = "/fastforward", method= RequestMethod.POST)
 	public ModelAndView fastforward(@RequestParam("date") String date){
-		
+		logger.debug("Weekly Goal: "+weeklyGoal);
+		int goals = Integer.parseInt(weeklyGoal);
 		ModelAndView model = new ModelAndView("admindashboard");
 		Date givenDate = DateManager.convertStringDate(date);
 		Date currentSystemDate = DateManager.convertStringDate(SchedulingService.getCurrentSystemDate());
@@ -123,7 +130,7 @@ public class DashboardController {
 			for(int i=1; i<=days; i++){
 				logger.debug("current date:"+currentSystemDate);
 				//SchedulingService.setCurrentSystemDate(DateManager.recurring(SchedulingService.getCurrentSystemDate(), 1));
-				SchedulingService.changeCurrentDate();;
+				SchedulingService.changeCurrentDate(goals);
 			}
 			model.addObject("error", "Done Successfully");
 			model.addObject("currentdate", SchedulingService.getCurrentSystemDate());

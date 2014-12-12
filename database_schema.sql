@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 07, 2014 at 10:23 PM
+-- Generation Time: Dec 12, 2014 at 10:43 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -38,8 +38,36 @@ CREATE TABLE IF NOT EXISTS `authority` (
 
 INSERT INTO `authority` (`username`, `role`) VALUES
 ('abhino@gmail.com', 'ROLE_USER'),
-('jmmodi@indiana.edu', 'ROLE_USER'),
+('admin@admin.com', 'ROLE_ADMIN'),
+('jmodi@indiana.edu', 'ROLE_USER'),
+('njagasia@indiana.edu', 'ROLE_USER'),
+('pvijaya@indiana.edu', 'ROLE_USER'),
 ('shah_tejas92@yahoo.co.in', 'ROLE_USER');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mastertask`
+--
+
+CREATE TABLE IF NOT EXISTS `mastertask` (
+  `masterid` int(20) NOT NULL AUTO_INCREMENT,
+  `mastertaskdesc` varchar(50) NOT NULL,
+  `room` varchar(50) NOT NULL,
+  `points` double NOT NULL,
+  `Defaultdays` int(10) NOT NULL,
+  PRIMARY KEY (`masterid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=97 ;
+
+--
+-- Dumping data for table `mastertask`
+--
+
+INSERT INTO `mastertask` (`masterid`, `mastertaskdesc`, `room`, `points`, `Defaultdays`) VALUES
+(93, 'Clean the Car', '910N', 15, 16),
+(94, 'Dishes', '910N', 20, 2),
+(95, 'Pay the Rent', '910N', 20, 11),
+(96, 'Take out the trash', '910N', 10, 16);
 
 -- --------------------------------------------------------
 
@@ -49,7 +77,7 @@ INSERT INTO `authority` (`username`, `role`) VALUES
 
 CREATE TABLE IF NOT EXISTS `roominfo` (
   `room` varchar(50) NOT NULL,
-  `totalpoints` int(30) NOT NULL,
+  `totalpoints` float NOT NULL,
   `members` int(10) NOT NULL,
   PRIMARY KEY (`room`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -59,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `roominfo` (
 --
 
 INSERT INTO `roominfo` (`room`, `totalpoints`, `members`) VALUES
-('910N', 198, 3);
+('910N', 0, 5);
 
 -- --------------------------------------------------------
 
@@ -69,30 +97,50 @@ INSERT INTO `roominfo` (`room`, `totalpoints`, `members`) VALUES
 
 CREATE TABLE IF NOT EXISTS `task` (
   `taskid` int(10) NOT NULL AUTO_INCREMENT,
+  `masterid` int(50) NOT NULL,
   `TaskDescription` varchar(100) NOT NULL,
-  `points` int(11) NOT NULL,
+  `points` float NOT NULL,
   `Start_Date` date NOT NULL,
   `End_Date` date NOT NULL,
   `completed` tinyint(5) NOT NULL,
   `useremail` varchar(50) DEFAULT NULL,
   `room` varchar(50) NOT NULL,
   `recurrence` varchar(20) DEFAULT ' no',
+  `recurrenable` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`taskid`),
-  KEY `userid` (`useremail`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=56 ;
+  KEY `userid` (`useremail`),
+  KEY `masterid` (`masterid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=148 ;
 
 --
 -- Dumping data for table `task`
 --
 
-INSERT INTO `task` (`taskid`, `TaskDescription`, `points`, `Start_Date`, `End_Date`, `completed`, `useremail`, `room`, `recurrence`) VALUES
-(2, 'Cooking', 40, '2014-10-14', '2014-10-15', 1, 'abhino@gmail.com', '910N', 'no'),
-(3, 'Vacuum Cleaning', 10, '2014-10-15', '2014-10-08', 1, 'shah_tejas92@yahoo.co.in', '910N', 'no'),
-(7, 'Clean the coffee pot', 55, '2014-10-29', '2014-11-21', 1, 'abhino@gmail.com', '910N', 'no'),
-(23, 'Pay the utilities bill', 10, '2014-11-07', '2014-11-18', 0, 'shah_tejas92@yahoo.co.in', '910N', 'no'),
-(43, 'Get mail from mailbox', 44, '2015-01-10', '2015-01-17', 1, 'abhino@gmail.com', '910N', 'no'),
-(52, 'Take out the trash', 15, '2014-11-08', '2014-11-15', 1, 'abhino@gmail.com', '910N', 'weekly'),
-(54, 'Pay the Rent', 55, '2014-11-01', '2014-11-30', 1, 'abhino@gmail.com', '910N', 'monthly');
+INSERT INTO `task` (`taskid`, `masterid`, `TaskDescription`, `points`, `Start_Date`, `End_Date`, `completed`, `useremail`, `room`, `recurrence`, `recurrenable`) VALUES
+(144, 93, 'Clean the Car', 15, '2014-12-13', '2014-12-29', 0, NULL, '910N', 'no', 0),
+(145, 94, 'Dishes', 20, '2014-12-13', '2014-12-15', 0, NULL, '910N', 'no', 0),
+(146, 95, 'Pay the Rent', 20, '2014-12-13', '2014-12-24', 0, NULL, '910N', 'no', 0),
+(147, 96, 'Take out the trash', 10, '2014-12-13', '2014-12-29', 0, NULL, '910N', 'weekly', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `timebox`
+--
+
+CREATE TABLE IF NOT EXISTS `timebox` (
+  `current` date NOT NULL,
+  `start` date NOT NULL,
+  `end` date NOT NULL,
+  PRIMARY KEY (`current`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `timebox`
+--
+
+INSERT INTO `timebox` (`current`, `start`, `end`) VALUES
+('2014-12-11', '2014-12-07', '2014-12-14');
 
 -- --------------------------------------------------------
 
@@ -109,20 +157,23 @@ CREATE TABLE IF NOT EXISTS `userinfo` (
   `email` varchar(50) NOT NULL,
   `phone` bigint(10) NOT NULL,
   `room` varchar(10) NOT NULL,
-  `score` int(20) NOT NULL,
-  `pending_score` int(20) NOT NULL,
+  `score` float NOT NULL DEFAULT '0',
+  `pending_score` float NOT NULL DEFAULT '0',
+  `weeklygoal` float NOT NULL DEFAULT '25',
   PRIMARY KEY (`userid`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `userinfo`
 --
 
-INSERT INTO `userinfo` (`userid`, `fname`, `lname`, `sex`, `dob`, `email`, `phone`, `room`, `score`, `pending_score`) VALUES
-(1, 'Tejas', 'Shah', 'male', '1992-07-09', 'shah_tejas92@yahoo.co.in', 8123696631, '910N', 84, 0),
-(7, 'Jay', 'Modi', 'male', '1992-05-28', 'jmmodi@indiana.edu', 8123696652, '910N', 0, 0),
-(8, 'Abhinav', 'Vijaykumar', 'male', '2014-10-14', 'abhino@gmail.com', 234, '910N', 209, 0);
+INSERT INTO `userinfo` (`userid`, `fname`, `lname`, `sex`, `dob`, `email`, `phone`, `room`, `score`, `pending_score`, `weeklygoal`) VALUES
+(1, 'Tejas', 'Shah', 'male', '2014-12-08', 'shah_tejas92@yahoo.co.in', 8123696631, '910N', 0, 11.7, 25),
+(2, 'Abhinav', 'Vijaykumar', 'male', '2014-12-09', 'abhino@gmail.com', 124235244, '910N', 0, 11.7, 25),
+(3, 'Namrata', 'Jagasia', 'female', '1991-12-01', 'njagasia@indiana.edu', 8329047753, '910N', 0, 11.7, 25),
+(4, 'Purnima', 'Vijaya', 'female', '1990-12-01', 'pvijaya@indiana.edu', 8326664453, '910N', 0, 11.7, 25),
+(5, 'Jai', 'Modi', 'male', '2014-12-17', 'jmodi@indiana.edu', 8326664453, '910N', 0, 11.7, 25);
 
 -- --------------------------------------------------------
 
@@ -142,19 +193,12 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`username`, `password`, `enabled`) VALUES
-('abhino@gmail.com', 'ABCD', 1),
-('jmmodi@indiana.edu', 'xyz', 1),
+('abhino@gmail.com', 'abcd', 1),
+('admin@admin.com', 'abcd', 1),
+('jmodi@indiana.edu', 'abcd', 1),
+('njagasia@indiana.edu', 'abcd', 1),
+('pvijaya@indiana.edu', 'abcd', 1),
 ('shah_tejas92@yahoo.co.in', 'abcd', 1);
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `authority`
---
-ALTER TABLE `authority`
-  ADD CONSTRAINT `authority_ibfk_1` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

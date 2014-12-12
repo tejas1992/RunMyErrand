@@ -1,0 +1,4 @@
+2014-12-12 16:47:15.711 DEBUG SchedulingService:62 - CurrentDateSet:2014-12-31
+2014-12-12 16:47:15.724 DEBUG SchedulingService:67 - TimeboxStartSet:2014-12-31
+2014-12-12 16:47:15.732 DEBUG SchedulingService:72 - TimeboxEndSet:2015-01-07
+2014-12-12 16:47:15.732 DEBUG LoginController:40 - Entering Controller

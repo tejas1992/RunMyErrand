@@ -6,7 +6,6 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.runMyErrand.dao.MasterTaskDao;
-import com.runMyErrand.logic.DateManager;
 import com.runMyErrand.logic.ScoreManager;
 import com.runMyErrand.model.MasterTaskInfo;
 import com.runMyErrand.model.TaskInfo;
